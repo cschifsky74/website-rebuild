@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site.js';
+const title = 'Page Not Found | Schifsky Companies';
+const description = 'Sorry, we couldn’t find that page. Explore our landscaping services, portfolio, or get in touch.';
+---
+
+<Base title={title} description={description} path="/404/">
+  <section class="page-hero" style="padding:90px 0;">
+    <div class="wrap" style="text-align:center;">
+      <span class="eyebrow on-dark center">404</span>
+      <h1>We couldn&rsquo;t find that page</h1>
+      <p style="margin:0 auto 26px;">
+        The page may have moved. Try one of these instead — or give us a call.
+      </p>
+      <div class="hero-cta-row" style="justify-content:center;">
+        <a class="btn btn-primary btn-lg" href="/">Back to Home</a>
+        <a class="btn btn-ghost btn-lg" href="/portfolio/">View Our Work</a>
+        <a class="btn btn-ghost btn-lg js-call" href={site.callHref}>Call {site.callPhone}</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="wrap" style="text-align:center;">
+      <p style="color:var(--muted);">
+        Popular pages:
+        <a href="/services/">Services</a> ·
+        <a href="/portfolio/">Portfolio</a> ·
+        <a href="/about/">About</a> ·
+        <a href="/blog/">Blog</a> ·
+        <a href="/contact/">Contact</a>
+      </p>
+    </div>
+  </section>
+</Base>

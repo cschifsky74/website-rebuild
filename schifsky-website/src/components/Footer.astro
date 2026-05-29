@@ -1,0 +1,51 @@
+---
+import { site } from '../data/site.js';
+const a = site.address;
+const mapsQ = encodeURIComponent(`${site.name} ${a.street} ${a.city} ${a.state} ${a.zip}`);
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="foot-logo">
+          <img src="/logo.png" alt="Schifsky Companies" width="200" height="69" />
+        </div>
+        <p>
+          Family-owned Twin Cities landscape design &amp; build for {site.yearsInBusiness}+ years —
+          outdoor living, pools, patios, pergolas, retaining walls, drainage, and snow removal.
+        </p>
+      </div>
+
+      <div class="foot-contact">
+        <a class="js-call" href={site.phoneHref}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#ebd200"/></svg>
+          {site.phone}
+        </a>
+        <a href={`mailto:${site.email}`}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#ebd200" stroke-width="2"/><path d="M3 7l9 6 9-6" stroke="#ebd200" stroke-width="2"/></svg>
+          {site.email}
+        </a>
+        <a href={`https://maps.google.com/?q=${mapsQ}`} target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="#ebd200" stroke-width="2"/><circle cx="12" cy="11" r="2.4" stroke="#ebd200" stroke-width="2"/></svg>
+          {a.street}, {a.city}, {a.state} {a.zip}
+        </a>
+      </div>
+
+      <nav class="foot-links" aria-label="Footer">
+        <a href="/services/">Services</a>
+        <a href="/portfolio/">Portfolio</a>
+        <a href="/about/">About</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© {year} {site.name}. All rights reserved. Licensed &amp; Insured.</span>
+      <span>Landscape Design &amp; Build · Serving the Twin Cities Metro</span>
+    </div>
+  </div>
+</footer>

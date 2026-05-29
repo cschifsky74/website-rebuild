@@ -1,0 +1,62 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site, projects } from '../../data/site.js';
+
+// Project detail pages at /projects/<slug>/ — preserves the old WordPress URLs.
+export async function getStaticPaths() {
+  return projects.map((project, i) => ({
+    params: { slug: project.slug },
+    props: { project, prev: projects[(i + projects.length - 1) % projects.length], next: projects[(i + 1) % projects.length] },
+  }));
+}
+
+const { project, next } = Astro.props;
+const title = `${project.name} | Landscape Project in ${project.where} | Schifsky Companies`;
+const description = `${project.name} — ${project.blurb} Landscape design & build by Schifsky Companies in ${project.where}.`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: project.name,
+  about: 'Landscape design and build project',
+  locationCreated: { '@type': 'Place', name: project.where },
+  creator: { '@type': 'Organization', name: site.name },
+};
+---
+
+<Base title={title} description={description} path={`/projects/${project.slug}/`} jsonLd={jsonLd}>
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Project · {project.where}</span>
+      <h1>{project.name}</h1>
+      <p>{project.blurb}</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="split-img reveal" style="aspect-ratio:16/9;max-width:1000px;margin:0 auto;">
+        <span class="ph-flag">Photo needed</span>
+        <img src={project.img} alt={`${project.name} — landscape project in ${project.where} by Schifsky Companies`} width="1100" height="619" />
+      </div>
+      <p style="text-align:center;color:var(--muted);font-size:14px;margin-top:18px;">
+        Sample image shown — send the real photos from this project and we&rsquo;ll add a full gallery here.
+      </p>
+      <div style="text-align:center;margin-top:26px;">
+        <a class="btn btn-dark" href="/portfolio/">&larr; All Projects</a>
+        <a class="btn btn-primary" href={`/projects/${next.slug}/`} style="margin-left:10px;">Next Project &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <span class="eyebrow on-dark center">Start Your Project</span>
+      <h2>Want a Space Like This?</h2>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary btn-lg" href="/contact/">Get a Free Quote</a>
+        <a class="btn btn-ghost btn-lg js-call" href={site.callHref}>Call {site.callPhone}</a>
+      </div>
+    </div>
+  </section>
+</Base>

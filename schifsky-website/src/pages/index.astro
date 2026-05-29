@@ -1,0 +1,193 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, services, projects as allProjects, testimonials, aggregateRating } from '../data/site.js';
+
+const title = 'Schifsky Companies | Landscape Design & Build in the Twin Cities, MN';
+const description =
+  'Family-owned landscape design & build in Hugo, MN, serving the Twin Cities for 37+ years. Custom patios, retaining walls, pools, pergolas & outdoor living. See our work.';
+
+// LocalBusiness + AggregateRating + Review schema (invisible — pure SEO).
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LandscapingBusiness',
+  '@id': `${site.domain}/#business`,
+  name: site.name,
+  url: site.domain,
+  telephone: site.phone,
+  email: site.email,
+  foundingDate: String(site.foundedYear),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.address.street,
+    addressLocality: site.address.city,
+    addressRegion: site.address.state,
+    postalCode: site.address.zip,
+    addressCountry: site.address.country,
+  },
+  geo: { '@type': 'GeoCoordinates', latitude: site.geo.lat, longitude: site.geo.lng },
+  areaServed: site.serviceArea.map((a) => ({ '@type': 'City', name: a })),
+  sameAs: [site.social.facebook, site.social.instagram, site.social.youtube],
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: aggregateRating.ratingValue,
+    reviewCount: aggregateRating.reviewCount,
+  },
+  review: testimonials.map((t) => ({
+    '@type': 'Review',
+    author: { '@type': 'Person', name: t.name },
+    reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+    reviewBody: t.text,
+  })),
+};
+
+// Top 6 projects to hook visitors — same photos/names as the Portfolio page.
+const projects = allProjects.slice(0, 6);
+
+const featuredReviews = testimonials.filter((t) => t.location).slice(0, 2);
+---
+
+<Base title={title} description={description} path="/" jsonLd={jsonLd}>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero-show">
+    <div class="wrap">
+      <div class="hero-show-copy">
+        <span class="eyebrow on-dark">Family-Owned · Serving the Twin Cities</span>
+        <h1>Twin Cities Landscape Design &amp; Build</h1>
+        <p class="sub">
+          Custom patios, pools, pergolas, and outdoor living &mdash; designed and built by
+          Schifsky Companies for 37 years.
+        </p>
+        <div class="hero-cta-row">
+          <a class="btn btn-primary btn-lg" href="#work">View Our Work</a>
+          <a class="btn btn-ghost btn-lg" href="/contact/">Get a Free Quote</a>
+        </div>
+        <div class="hero-rating">
+          <span class="stars" aria-hidden="true">★★★★★</span>
+          <span><b>5.0 on Google</b></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WORK (centerpiece) ===================== -->
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow center">Our Work</span>
+        <h2>Outdoor Spaces We&rsquo;ve Built Across the Twin Cities</h2>
+      </div>
+      <div class="gallery">
+        {projects.map((p) => (
+          <a class="tile reveal" href={`/projects/${p.slug}/`}>
+            <img src={p.img} alt={`${p.name} — landscape project in ${p.where} by Schifsky Companies`} width="1100" height="733" loading="lazy" />
+            <div class="cap">{p.name} · {p.where}</div>
+          </a>
+        ))}
+      </div>
+      <div style="text-align:center;margin-top:38px" class="reveal">
+        <a class="btn btn-dark btn-lg" href="/portfolio/">View Full Portfolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="features">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow on-dark center">What We Build</span>
+        <h2>Full-Service Landscaping</h2>
+      </div>
+      <div class="feat-grid">
+        {services.map((s) => (
+          <a class="feat reveal" href={s.href}>
+            <h3>{s.title}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT (concise) ===================== -->
+  <section>
+    <div class="wrap split">
+      <div class="split-img reveal">
+        <img src="/img/placeholder-3.jpg" alt="Schifsky-built outdoor living space with paver patio in the Twin Cities" width="1100" height="733" />
+        <div class="badge-float"><b>37 Years</b><span>Family-Owned</span></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Schifsky Companies</span>
+        <h2>Built by One Family Since {site.foundedYear}</h2>
+        <p class="lead">
+          Founded in {site.foundedYear} in Stillwater, MN, Schifsky Companies has grown from
+          retaining walls and paver patios into a full landscape design and build company serving
+          the Twin Cities metro. We handle design, hardscape, planting, and construction with one
+          accountable team &mdash; and we&rsquo;ve stayed family-owned the whole way.
+        </p>
+        <a class="btn btn-dark" href="/about/">About Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="reviews">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow center">Reviews</span>
+        <h2>Trusted by Twin Cities Homeowners</h2>
+      </div>
+      <div class="rev-grid">
+        {featuredReviews.map((t) => (
+          <div class="rev reveal">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <p>“{t.text}”</p>
+            <div class="who">
+              <div class="av" aria-hidden="true">{t.name.charAt(0)}</div>
+              <div><b>{t.name}</b><span>{t.location}</span></div>
+            </div>
+          </div>
+        ))}
+        <div class="rev score reveal">
+          <div class="big">5.0</div>
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>Rated 5.0 across verified Google reviews.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICE AREA ===================== -->
+  <section>
+    <div class="wrap split">
+      <div class="reveal">
+        <span class="eyebrow">Where We Work</span>
+        <h2>Serving the Twin Cities Metro</h2>
+        <p class="lead">
+          Based in {site.address.city}, MN, we design and build outdoor living projects across the
+          Twin Cities and surrounding suburbs.
+        </p>
+        <div class="area-list">
+          {site.serviceArea.map((c) => (
+            <div class="city"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="#cdb700" stroke-width="2"/></svg>{c}</div>
+          ))}
+        </div>
+      </div>
+      <div class="split-img reveal">
+        <img src="/img/placeholder-10.jpg" alt="Aerial view of a Schifsky-built pool and patio at sunset" width="1100" height="824" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CLOSING CTA ===================== -->
+  <section class="final">
+    <div class="wrap">
+      <span class="eyebrow on-dark center">Start Your Project</span>
+      <h2>Let&rsquo;s Build Your Outdoor Space</h2>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary btn-lg" href="/contact/">Get a Free Quote</a>
+        <a class="btn btn-ghost btn-lg js-call" href={site.callHref}>Call {site.callPhone}</a>
+      </div>
+    </div>
+  </section>
+
+</Base>

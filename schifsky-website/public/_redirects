@@ -1,0 +1,10 @@
+# Cloudflare Pages 301 redirects (old WordPress URL -> new URL).
+# Only includes redirects whose target page is already built.
+# Add the rest as their target pages go live (see Schifsky-URL-Redirect-Map.xlsx).
+
+/projects/                                  /portfolio/   301
+/professional-full-service-landscaping/     /services/    301
+/landscaping-careers-in-the-twin-cities/    /careers/     301
+
+# Pending (uncomment when the target page is built):
+# /landscape-design-build-services-in-stillwater/  /landscape-design-build-services-in-stillwater-mn/  301

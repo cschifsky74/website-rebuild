@@ -1,0 +1,29 @@
+# Decap CMS configuration.
+# At deploy we connect this to your GitHub repo so saving a post commits a
+# Markdown file and the site rebuilds automatically. (Auth is set up at deploy;
+# nothing here touches your email or DNS.)
+backend:
+  name: github
+  repo: OWNER/REPO        # <-- set to your GitHub repo at deploy, e.g. schifsky/site
+  branch: main
+
+# Where uploaded images are stored / served from.
+media_folder: "public/img"
+public_folder: "/img"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Meta description (for Google)", name: "description", widget: "text", required: false }
+      - { label: "Publish date", name: "pubDate", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: "Cover image", name: "cover", widget: "image", required: false }
+      - { label: "Draft (hide until ready)", name: "draft", widget: "boolean", default: false, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }

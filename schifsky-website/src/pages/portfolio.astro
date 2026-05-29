@@ -1,0 +1,52 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, projects } from '../data/site.js';
+
+const title = 'Landscaping Portfolio | Twin Cities Projects | Schifsky Companies';
+const description =
+  'See landscape design & build projects by Schifsky Companies across the Twin Cities — pools, paver patios, outdoor kitchens, pergolas and full backyard transformations.';
+// Projects come from the shared list in site.js (same source as the homepage).
+---
+
+<Base title={title} description={description} path="/portfolio/">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Our Work</span>
+      <h1>Portfolio of Twin Cities Projects</h1>
+      <p>
+        A selection of landscape design and build projects completed by the Schifsky team across
+        the Twin Cities metro — pools, patios, outdoor living, and full backyard transformations.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="gallery">
+        {projects.map((p) => (
+          <a class="tile reveal" href={`/projects/${p.slug}/`}>
+            <span class="ph-flag">Photo needed</span>
+            <img src={p.img}
+                 alt={`${p.name} — landscape project in ${p.where} by Schifsky Companies`}
+                 width="1100" height="733" loading="lazy" />
+            <div class="cap">{p.name} · {p.where}</div>
+          </a>
+        ))}
+      </div>
+      <p style="text-align:center;color:var(--muted);font-size:14px;margin-top:26px;">
+        Images shown are samples. Send your real project photos and we&rsquo;ll drop them in.
+      </p>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <span class="eyebrow on-dark center">Start Your Project</span>
+      <h2>Want a Space Like These?</h2>
+      <div class="hero-cta-row">
+        <a class="btn btn-primary btn-lg" href="/contact/">Get a Free Quote</a>
+        <a class="btn btn-ghost btn-lg js-call" href={site.callHref}>Call {site.callPhone}</a>
+      </div>
+    </div>
+  </section>
+</Base>

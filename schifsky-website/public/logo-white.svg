@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 200" role="img" aria-label="Schifsky Companies">
+  <!-- White-on-dark version for footer / dark backgrounds. -->
+  <g font-family="'Arial Black','Helvetica Neue',Arial,sans-serif" font-weight="900" font-style="italic">
+    <text x="6" y="118" font-size="130" fill="#ffffff"
+          textLength="548" lengthAdjust="spacingAndGlyphs">SCHIFSKY</text>
+    <text x="150" y="188" font-size="92" fill="#ebd200"
+          textLength="404" lengthAdjust="spacingAndGlyphs">COMPANIES</text>
+  </g>
+</svg>

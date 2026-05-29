@@ -1,0 +1,40 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const title = 'Landscaping Blog | Tips & Ideas | Schifsky Companies';
+const description =
+  'Landscape design ideas, trends, and tips for Twin Cities homeowners from Schifsky Companies — patios, outdoor living, lawn care, and seasonal maintenance.';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const fmt = (d) => d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<Base title={title} description={description} path="/blog/">
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow on-dark">Blog</span>
+      <h1>Landscaping Ideas &amp; Tips</h1>
+      <p>Design inspiration and practical advice for Twin Cities outdoor spaces.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="post-grid">
+        {posts.map((post) => (
+          <article class="post-card reveal">
+            <div class="pbody">
+              <div class="date">{fmt(post.data.pubDate)}</div>
+              <h3><a href={`/${post.slug}/`}>{post.data.title}</a></h3>
+              <p>{post.data.description}</p>
+              <a class="more" href={`/${post.slug}/`}>Read more &rarr;</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>
