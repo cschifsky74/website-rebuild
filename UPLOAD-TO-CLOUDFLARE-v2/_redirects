@@ -14,6 +14,7 @@
 # Merge duplicate Stillwater page into the canonical one
 /landscape-design-build-services-in-stillwater/   /landscape-design-build-services-in-stillwater-mn/   301
 
-# Old WordPress snow/maintenance URLs still in Google's index -> new combined page
-/residential-snow-removal-services-in-lake-elmo/                                      /snow-and-ice-removal-services/   301
-/hassle-free-landscape-maintenance-in-minneapolis-for-a-beautiful-yard-year-round/   /snow-and-ice-removal-services/   301
+# Old WordPress snow URL still in Google's index -> new combined page.
+# NOTE: do NOT redirect /hassle-free-landscape-maintenance.../ — that is a live
+# blog post on this site, not a dead URL.
+/residential-snow-removal-services-in-lake-elmo/   /snow-and-ice-removal-services/   301
