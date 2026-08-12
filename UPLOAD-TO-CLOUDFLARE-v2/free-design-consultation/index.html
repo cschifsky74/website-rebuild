@@ -63,6 +63,15 @@
 </script>
 <!-- ============================================================ -->
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HG3SZ6DEMB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-HG3SZ6DEMB');
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
@@ -1147,6 +1156,13 @@
     });
   });
 
+  // GA4: track clicks on any mailto: link
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      if(typeof gtag === 'function'){ gtag('event','email_click'); }
+    });
+  });
+
   /* ===== CARSON #2: FORM ENDPOINT =====
      Paste your Formspree / CRM / webhook URL between the quotes.
      Free endpoint: https://formspree.io  (e.g. https://formspree.io/f/abcdwxyz)
@@ -1200,6 +1216,8 @@
         success.style.display = 'block';
         success.scrollIntoView({behavior:'smooth',block:'center'});
         fireLeadConversion();
+        // GA4 conversion: fire only on successful submission
+        if(typeof gtag === 'function'){ gtag('event','form_submission'); }
       }
       if(FORM_ENDPOINT){
         fetch(FORM_ENDPOINT,{
