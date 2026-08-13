@@ -18,3 +18,7 @@
 # NOTE: do NOT redirect /hassle-free-landscape-maintenance.../ — that is a live
 # blog post on this site, not a dead URL.
 /residential-snow-removal-services-in-lake-elmo/   /snow-and-ice-removal-services/   301
+
+# Retaining walls page broadened (block/stone/boulder, whole metro) + slug updated
+# to match. 301 preserves the old boulder/Lake Elmo URL's ranking + backlinks.
+/boulder-retaining-walls-lake-elmo/   /retaining-walls-twin-cities/   301

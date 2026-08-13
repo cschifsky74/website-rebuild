@@ -195,7 +195,7 @@
   .field label{display:block;font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:5px}
   .field label .req{color:var(--yellow-d)}
   .field input,.field select,.field textarea{
-    width:100%;font-family:inherit;font-size:15px;color:var(--ink);
+    width:100%;font-family:inherit;font-size:16px;color:var(--ink);
     padding:12px 13px;border:1.5px solid var(--line);border-radius:8px;
     background:var(--soft-2);transition:border-color .15s ease,box-shadow .15s ease;
   }
@@ -752,13 +752,21 @@
             <option>$50,000 - $100,000</option>
             <option>$100,000 - $200,000</option>
             <option>$200,000+</option>
-            <option>Not sure yet</option>
           </select>
           <div class="err-msg">Please select an estimated range.</div>
         </div>
 
         <input type="hidden" name="source" value="Google Ads - Design-Build Landing Page" />
         <button type="submit" class="btn btn-primary btn-block btn-lg">Request My Free Consultation</button>
+        <div class="form-trust" style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:5px 12px;margin-top:12px;font-size:12px;color:#5c5c60;font-weight:600;text-align:center">
+          <span style="color:#ebd200;letter-spacing:1px" aria-hidden="true">★★★★★</span>
+          <span><b style="color:#1a191d">5.0</b> on Google</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>Licensed &amp; Insured</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>Family-Owned 37 Yrs</span>
+        </div>
+        <p class="form-fin" style="text-align:center;margin-top:8px;font-size:12px;color:#5c5c60">Financing available &middot; low monthly payments, no equity required</p>
         <p class="legal">By submitting, you agree to be contacted about your project. No spam, ever.</p>
       </form>
 
@@ -886,32 +894,53 @@
     </div>
     <div class="gallery">
       <div class="tile reveal">
-        <img src="/img/lp/lp-04.jpg" alt="Luxury estate pool, patio and landscape design" width="1100" height="733" loading="lazy" />
-        <div class="cap">Estate pool, patio &amp; full landscape design</div>
+        <img src="/img/lp/lp-04.jpg" alt="Aerial view of a Hamptons-style pool, natural stone and gardens in Maple Plain, MN" width="1024" height="767" loading="lazy" />
+        <div class="cap">Pool &amp; landscape &middot; Maple Plain &middot; $298K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/lp-05.jpg" alt="Modern louvered pergola with pool and fire lounge" width="1100" height="733" loading="lazy" />
-        <div class="cap">Louvered pergola, pool &amp; fire lounge</div>
+        <img src="/img/lp/lp-05.jpg" alt="Luxury estate pool and outdoor living in Lake Elmo, MN" width="1400" height="933" loading="lazy" />
+        <div class="cap">Estate pool &amp; outdoor living &middot; Lake Elmo &middot; $689K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/lp-06.jpg" alt="Aerial view of pool, pergolas and paver patio" width="1100" height="824" loading="lazy" />
-        <div class="cap">Pool, pergolas &amp; patio - full backyard build</div>
+        <img src="/img/lp/lp-06.jpg" alt="Backyard pool and paver patio on a Prestwick golf course home in Woodbury, MN" width="1400" height="935" loading="lazy" />
+        <div class="cap">Pool, patio &amp; full landscape &middot; Woodbury &middot; $430K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/lp-07.jpg" alt="Backyard pool, paver patio and putting green by Schifsky Companies" width="1120" height="630" loading="lazy" />
-        <div class="cap">Pool, paver patio, putting green &amp; full landscape</div>
+        <img src="/img/lp/lp-07.jpg" alt="Terraced natural-stone retaining walls on a White Bear Lake lakefront lot" width="1400" height="933" loading="lazy" />
+        <div class="cap">Terraced lakefront &middot; White Bear Lake &middot; $400K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/lp-08.jpg" alt="Outdoor stone fireplace and spa retreat" width="1100" height="733" loading="lazy" />
-        <div class="cap">Stone outdoor fireplace &amp; spa retreat</div>
+        <img src="/img/lp/lp-08.jpg" alt="Modern fire feature, water and stone in a Woodbury, MN backyard" width="1400" height="1314" loading="lazy" />
+        <div class="cap">Fire, water &amp; stone &middot; Woodbury &middot; $235K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/lp-09.jpg" alt="Stone outdoor kitchen and paver patio at dusk" width="1100" height="733" loading="lazy" />
-        <div class="cap">Stone outdoor kitchen &amp; paver patio</div>
+        <img src="/img/lp/lp-09.jpg" alt="Custom pool and full landscape near White Bear Lake in Mahtomedi, MN" width="1400" height="1049" loading="lazy" />
+        <div class="cap">Custom pool &amp; landscape &middot; Mahtomedi &middot; $260K</div>
       </div>
     </div>
     <div style="text-align:center;margin-top:38px" class="reveal">
       <a class="btn btn-dark btn-lg" href="#consult">Start My Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINANCING ================= -->
+<section class="financing" style="background:#1a191d;color:#fff">
+  <div class="wrap">
+    <div class="reveal" style="max-width:780px;margin:0 auto;text-align:center">
+      <span class="eyebrow center" style="color:#ebd200;justify-content:center">Flexible Financing</span>
+      <h2 style="color:#fff">Build Now, Pay Over Time</h2>
+      <p style="color:#d6d6d9;font-size:16px;line-height:1.65;margin:14px 0 24px">
+        Your dream backyard does not have to wait. Through our financing partner Lyon Financial, you can
+        spread your investment over low, fixed monthly payments, with no home equity or appraisals
+        required.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 28px;margin-bottom:28px;font-weight:600;font-size:14.5px">
+        <span style="display:flex;align-items:center;gap:8px"><span style="color:#ebd200">✓</span> Low fixed monthly payments</span>
+        <span style="display:flex;align-items:center;gap:8px"><span style="color:#ebd200">✓</span> No equity or appraisals</span>
+        <span style="display:flex;align-items:center;gap:8px"><span style="color:#ebd200">✓</span> Quick, simple application</span>
+      </div>
+      <a class="btn btn-primary btn-lg" href="/financing/">Explore Financing Options</a>
     </div>
   </div>
 </section>
