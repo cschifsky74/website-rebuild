@@ -1250,6 +1250,28 @@
         fireLeadConversion();
         // GA4 conversion: fire only on successful submission
         if(typeof gtag === 'function'){ gtag('event','form_submission'); }
+        // Additional POST to internal tracker (alongside Web3Forms, not instead of it)
+        try {
+          var data = Object.fromEntries(new FormData(form));
+          var gclid = new URLSearchParams(location.search).get('gclid') || '';
+          fetch('https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+              form_source: data.source || 'Design-Build Landing Page',
+              name: data.name || '',
+              phone: data.phone || '',
+              email: data.email || '',
+              city: data.city || '',
+              project: data.project || '',
+              budget: data.budget || '',
+              zip: data.zip || '',
+              channel: (gclid ? 'Google Ads' : 'Organic Search'),
+              gclid: gclid
+            })
+          });
+        } catch (err) {}
       }
       if(FORM_ENDPOINT){
         fetch(FORM_ENDPOINT,{

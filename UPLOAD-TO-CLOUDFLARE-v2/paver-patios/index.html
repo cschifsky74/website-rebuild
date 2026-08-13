@@ -69,6 +69,27 @@
               if (typeof gtag === 'function') {
                 gtag('event', 'form_submission', { form_source: label, page_path: window.location.pathname });
               }
+              // Additional POST to internal tracker (alongside Web3Forms, not instead of it)
+              try {
+                var gclid = new URLSearchParams(location.search).get('gclid') || '';
+                fetch('https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec', {
+                  method: 'POST',
+                  mode: 'no-cors',
+                  headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                  body: JSON.stringify({
+                    form_source: label,
+                    name: elName.value,
+                    phone: elPhone.value,
+                    email: elEmail.value,
+                    city: elCity.value,
+                    project: elProject.value,
+                    budget: elBudget.value,
+                    zip: elZip.value,
+                    channel: (gclid ? 'Google Ads' : 'Organic Search'),
+                    gclid: gclid
+                  })
+                });
+              } catch (err) {}
             }
             fetch(ENDPOINT, {
               method: 'POST',
