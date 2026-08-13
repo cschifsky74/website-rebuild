@@ -59,6 +59,28 @@ const ACCESS_KEY = "fe71ba2a-53af-4c05-bc70-5639fc0b6472";
           form.style.display = 'none'; success.style.display = 'block';
           // GA4 conversion: fire only on successful submission
           if (typeof gtag === 'function') gtag('event', 'form_submission');
+          // Additional POST to internal tracker (alongside Web3Forms, not instead of it)
+          try {
+            var data = Object.fromEntries(new FormData(form));
+            var gclid = new URLSearchParams(location.search).get('gclid') || '';
+            fetch('https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec', {
+              method: 'POST',
+              mode: 'no-cors',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: JSON.stringify({
+                form_source: 'Contact Page | /contact/',
+                name: data.name || '',
+                phone: data.phone || '',
+                email: data.email || '',
+                city: '',
+                project: data.message || '',
+                budget: '',
+                zip: '',
+                channel: (gclid ? 'Google Ads' : 'Organic Search'),
+                gclid: gclid
+              })
+            });
+          } catch (err) {}
         }
         if (FORM_ENDPOINT && ACCESS_KEY) {
           var payload = Object.fromEntries(new FormData(form));
