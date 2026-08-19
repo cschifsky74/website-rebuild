@@ -75,6 +75,83 @@
 <!-- CallRail dynamic number insertion (call tracking) -->
 <script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script>
 
+<!-- Lead attribution: capture first-touch channel + gclid, persist, and expose window.scTracker() -->
+<script>
+  (function () {
+    var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec';
+    var VALID = ['Google Ads','Google LSA','Google Business Profile','Organic Search','Direct','Instagram Ads','Referral','Repeat Client','Other'];
+    var NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
+    function ss() { try { return window.sessionStorage; } catch (e) { return null; } }
+    function ls() { try { return window.localStorage; } catch (e) { return null; } }
+    function detect() {
+      var params = new URLSearchParams(location.search);
+      var get = function (k) { return (params.get(k) || '').toLowerCase(); };
+      var gclid = params.get('gclid') || params.get('gbraid') || params.get('wbraid') || '';
+      var um = get('utm_medium'), us = get('utm_source'), uc = get('utm_campaign');
+      var fbclid = params.get('fbclid') || '';
+      var hasUTM = false;
+      params.forEach(function (_, k) { if (k.indexOf('utm_') === 0) hasUTM = true; });
+      var refHost = '';
+      try { refHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : ''; } catch (e) {}
+      var host = location.hostname.toLowerCase();
+      var extRef = refHost && refHost.indexOf(host) === -1 && host.indexOf(refHost) === -1;
+      var channel;
+      if (gclid) channel = 'Google Ads';
+      else if (um === 'cpc' || um === 'ppc' || um === 'paid') channel = 'Google Ads';
+      else if (um === 'gbp' || uc === 'gmb') channel = 'Google Business Profile';
+      else if (fbclid || us.indexOf('instagram') >= 0 || us.indexOf('facebook') >= 0 || (extRef && (refHost.indexOf('instagram') >= 0 || refHost.indexOf('facebook') >= 0))) channel = 'Instagram Ads';
+      else if (/google|bing|duckduckgo|yahoo|ecosia/.test(refHost)) channel = 'Organic Search';
+      else if (!refHost && !hasUTM) channel = 'Direct';
+      else if (extRef) channel = 'Referral';
+      else channel = 'Other';
+      return { channel: channel, gclid: gclid };
+    }
+    try {
+      var s = ss();
+      var d = detect();
+      if (d.gclid) { var l = ls(); if (l) l.setItem('sc_gclid', JSON.stringify({ v: d.gclid, t: Date.now() })); }
+      if (s && !s.getItem('sc_attr')) {
+        s.setItem('sc_attr', JSON.stringify({ channel: d.channel, gclid: d.gclid, landing: location.pathname, t: Date.now() }));
+      }
+    } catch (e) {}
+    function storedGclid() {
+      try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.gclid) return a.gclid; } catch (e) {}
+      try { var m = JSON.parse(ls().getItem('sc_gclid') || 'null'); if (m && (Date.now() - m.t) < NINETY_DAYS) return m.v; } catch (e) {}
+      return '';
+    }
+    function storedChannel() {
+      try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.channel && VALID.indexOf(a.channel) >= 0) return a.channel; } catch (e) {}
+      return detect().channel || 'Other';
+    }
+    window.scTracker = function (data) {
+      try {
+        var payload = {
+          form_source: (data && data.form_source) || 'Website',
+          channel: storedChannel(),
+          name: (data && data.name) || '',
+          phone: (data && data.phone) || '',
+          email: (data && data.email) || '',
+          city: (data && data.city) || '',
+          service: (data && data.service) || '',
+          project: (data && data.project) || '',
+          zip: (data && data.zip) || '',
+          budget: (data && data.budget) || '',
+          gclid: storedGclid(),
+          page_path: location.pathname
+        };
+        var body = JSON.stringify(payload);
+        var sent = false;
+        if (navigator.sendBeacon) {
+          try { sent = navigator.sendBeacon(LEAD_ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })); } catch (e) {}
+        }
+        if (!sent) {
+          fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }).catch(function () {});
+        }
+      } catch (e) {}
+    };
+  })();
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
@@ -1250,28 +1327,22 @@
         fireLeadConversion();
         // GA4 conversion: fire only on successful submission
         if(typeof gtag === 'function'){ gtag('event','form_submission'); }
-        // Additional POST to internal tracker (alongside Web3Forms, not instead of it)
-        try {
+        // Additional POST to internal tracker (alongside Web3Forms). Channel + gclid
+        // come from first-touch attribution stored by window.scTracker.
+        if (typeof window.scTracker === 'function') {
           var data = Object.fromEntries(new FormData(form));
-          var gclid = new URLSearchParams(location.search).get('gclid') || '';
-          fetch('https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec', {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-            body: JSON.stringify({
-              form_source: data.source || 'Design-Build Landing Page',
-              name: data.name || '',
-              phone: data.phone || '',
-              email: data.email || '',
-              city: data.city || '',
-              project: data.project || '',
-              budget: data.budget || '',
-              zip: data.zip || '',
-              channel: (gclid ? 'Google Ads' : 'Organic Search'),
-              gclid: gclid
-            })
+          window.scTracker({
+            form_source: data.source || 'Design-Build Landing Page | /free-design-consultation/',
+            name: data.name || '',
+            phone: data.phone || '',
+            email: data.email || '',
+            city: data.city || '',
+            service: data.project || '',
+            project: '',
+            zip: data.zip || '',
+            budget: data.budget || ''
           });
-        } catch (err) {}
+        }
       }
       if(FORM_ENDPOINT){
         fetch(FORM_ENDPOINT,{

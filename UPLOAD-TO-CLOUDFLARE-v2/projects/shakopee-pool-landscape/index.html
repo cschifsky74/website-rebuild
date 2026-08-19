@@ -3,7 +3,87 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-HG3SZ6DEMB');
-    </script><!-- CallRail dynamic number insertion (call tracking) --><script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script><title>The Home Resort | Landscape Project in Shakopee, MN | Schifsky Companies</title><meta name="description" content="These homeowners chose to invest in their current property instead of moving, and got a true resort-style retreat with a luxurious, vacation-like feel. Landscape design &#38; buil"><link rel="canonical" href="https://www.schifskycompanies.com/projects/shakopee-pool-landscape/"><!-- Roboto (site brand font) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"><!-- Open Graph / social sharing --><meta property="og:type" content="website"><meta property="og:site_name" content="Schifsky Companies"><meta property="og:title" content="The Home Resort | Landscape Project in Shakopee, MN | Schifsky Companies"><meta property="og:description" content="These homeowners chose to invest in their current property instead of moving, and got a true resort-style retreat with a luxurious, vacation-like feel. Landscape design &#38; buil"><meta property="og:url" content="https://www.schifskycompanies.com/projects/shakopee-pool-landscape/"><meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"The Home Resort","description":"These homeowners chose to invest in their current property instead of moving, and got a true resort-style retreat with a luxurious, vacation-like feel.","about":"Landscape design and build project","locationCreated":{"@type":"Place","name":"Shakopee, MN"},"image":"/img/projects/shakopee-pool-landscape/shakopee-pool-landscape-01.jpg","creator":{"@type":"Organization","name":"Schifsky Companies"}}</script><link rel="stylesheet" href="/_astro/_slug_.B2KZ2rJr.css">
+    </script><!-- CallRail dynamic number insertion (call tracking) --><script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script><!-- Lead attribution: capture first-touch channel + gclid, persist, and expose window.scTracker() --><script>
+      (function () {
+        var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec';
+        var VALID = ['Google Ads','Google LSA','Google Business Profile','Organic Search','Direct','Instagram Ads','Referral','Repeat Client','Other'];
+        var NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
+        function ss() { try { return window.sessionStorage; } catch (e) { return null; } }
+        function ls() { try { return window.localStorage; } catch (e) { return null; } }
+
+        function detect() {
+          var params = new URLSearchParams(location.search);
+          var get = function (k) { return (params.get(k) || '').toLowerCase(); };
+          var gclid = params.get('gclid') || params.get('gbraid') || params.get('wbraid') || '';
+          var um = get('utm_medium'), us = get('utm_source'), uc = get('utm_campaign');
+          var fbclid = params.get('fbclid') || '';
+          var hasUTM = false;
+          params.forEach(function (_, k) { if (k.indexOf('utm_') === 0) hasUTM = true; });
+          var refHost = '';
+          try { refHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : ''; } catch (e) {}
+          var host = location.hostname.toLowerCase();
+          var extRef = refHost && refHost.indexOf(host) === -1 && host.indexOf(refHost) === -1;
+          var channel;
+          if (gclid) channel = 'Google Ads';
+          else if (um === 'cpc' || um === 'ppc' || um === 'paid') channel = 'Google Ads';
+          else if (um === 'gbp' || uc === 'gmb') channel = 'Google Business Profile';
+          else if (fbclid || us.indexOf('instagram') >= 0 || us.indexOf('facebook') >= 0 || (extRef && (refHost.indexOf('instagram') >= 0 || refHost.indexOf('facebook') >= 0))) channel = 'Instagram Ads';
+          else if (/google|bing|duckduckgo|yahoo|ecosia/.test(refHost)) channel = 'Organic Search';
+          else if (!refHost && !hasUTM) channel = 'Direct';
+          else if (extRef) channel = 'Referral';
+          else channel = 'Other';
+          return { channel: channel, gclid: gclid };
+        }
+
+        // Capture on first page of the session (first touch wins - never overwrite).
+        try {
+          var s = ss();
+          var d = detect();
+          if (d.gclid) { var l = ls(); if (l) l.setItem('sc_gclid', JSON.stringify({ v: d.gclid, t: Date.now() })); }
+          if (s && !s.getItem('sc_attr')) {
+            s.setItem('sc_attr', JSON.stringify({ channel: d.channel, gclid: d.gclid, landing: location.pathname, t: Date.now() }));
+          }
+        } catch (e) {}
+
+        function storedGclid() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.gclid) return a.gclid; } catch (e) {}
+          try { var m = JSON.parse(ls().getItem('sc_gclid') || 'null'); if (m && (Date.now() - m.t) < NINETY_DAYS) return m.v; } catch (e) {}
+          return '';
+        }
+        function storedChannel() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.channel && VALID.indexOf(a.channel) >= 0) return a.channel; } catch (e) {}
+          return detect().channel || 'Other';
+        }
+
+        // Fire-and-forget lead POST. form_source must always be present.
+        window.scTracker = function (data) {
+          try {
+            var payload = {
+              form_source: (data && data.form_source) || 'Website',
+              channel: storedChannel(),
+              name: (data && data.name) || '',
+              phone: (data && data.phone) || '',
+              email: (data && data.email) || '',
+              city: (data && data.city) || '',
+              service: (data && data.service) || '',
+              project: (data && data.project) || '',
+              zip: (data && data.zip) || '',
+              budget: (data && data.budget) || '',
+              gclid: storedGclid(),
+              page_path: location.pathname
+            };
+            var body = JSON.stringify(payload);
+            var sent = false;
+            if (navigator.sendBeacon) {
+              try { sent = navigator.sendBeacon(LEAD_ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })); } catch (e) {}
+            }
+            if (!sent) {
+              fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }).catch(function () {});
+            }
+          } catch (e) {}
+        };
+      })();
+    </script><title>The Home Resort | Landscape Project in Shakopee, MN | Schifsky Companies</title><meta name="description" content="These homeowners chose to invest in their current property instead of moving, and got a true resort-style retreat with a luxurious, vacation-like feel. Landscape design &#38; buil"><link rel="canonical" href="https://www.schifskycompanies.com/projects/shakopee-pool-landscape/"><!-- Roboto (site brand font) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"><!-- Open Graph / social sharing --><meta property="og:type" content="website"><meta property="og:site_name" content="Schifsky Companies"><meta property="og:title" content="The Home Resort | Landscape Project in Shakopee, MN | Schifsky Companies"><meta property="og:description" content="These homeowners chose to invest in their current property instead of moving, and got a true resort-style retreat with a luxurious, vacation-like feel. Landscape design &#38; buil"><meta property="og:url" content="https://www.schifskycompanies.com/projects/shakopee-pool-landscape/"><meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"The Home Resort","description":"These homeowners chose to invest in their current property instead of moving, and got a true resort-style retreat with a luxurious, vacation-like feel.","about":"Landscape design and build project","locationCreated":{"@type":"Place","name":"Shakopee, MN"},"image":"/img/projects/shakopee-pool-landscape/shakopee-pool-landscape-01.jpg","creator":{"@type":"Organization","name":"Schifsky Companies"}}</script><link rel="stylesheet" href="/_astro/_slug_.B2KZ2rJr.css">
 <style>.video-wrap[data-astro-cid-ovxcmftc]{position:relative;width:100%;max-width:960px;margin:0 auto;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000}.video-wrap[data-astro-cid-ovxcmftc] iframe[data-astro-cid-ovxcmftc]{position:absolute;inset:0;width:100%;height:100%;border:0}.gallery[data-astro-cid-ovxcmftc] button[data-astro-cid-ovxcmftc].tile{border:0;padding:0;margin:0;font:inherit;cursor:pointer;display:block;width:100%}.gallery[data-astro-cid-ovxcmftc] button[data-astro-cid-ovxcmftc].tile:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}.lightbox[data-astro-cid-ovxcmftc]{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;background:#0c0c0ef0;padding:24px;touch-action:none}.lightbox[data-astro-cid-ovxcmftc].open{display:flex}.lb-img[data-astro-cid-ovxcmftc]{max-width:92vw;max-height:86vh;object-fit:contain;border-radius:8px;box-shadow:0 24px 70px #0000008c;user-select:none;-webkit-user-drag:none}.lb-btn[data-astro-cid-ovxcmftc]{position:absolute;background:#0000006b;border:0;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;border-radius:50%;line-height:1;transition:background .15s ease,color .15s ease}.lb-btn[data-astro-cid-ovxcmftc]:hover{background:var(--yellow);color:var(--ink)}.lb-close[data-astro-cid-ovxcmftc]{top:18px;right:18px;width:46px;height:46px;font-size:30px}.lb-prev[data-astro-cid-ovxcmftc],.lb-next[data-astro-cid-ovxcmftc]{top:50%;transform:translateY(-50%);width:56px;height:56px;font-size:34px}.lb-prev[data-astro-cid-ovxcmftc]{left:18px}.lb-next[data-astro-cid-ovxcmftc]{right:18px}.lb-count[data-astro-cid-ovxcmftc]{position:absolute;bottom:20px;left:50%;transform:translate(-50%);color:#fff;font-size:14px;font-weight:600;letter-spacing:.04em;background:#0000006b;padding:6px 14px;border-radius:999px}@media (max-width:600px){.lb-close[data-astro-cid-ovxcmftc]{top:12px;right:12px;width:42px;height:42px;font-size:26px}.lb-prev[data-astro-cid-ovxcmftc],.lb-next[data-astro-cid-ovxcmftc]{width:46px;height:46px;font-size:28px}.lb-prev[data-astro-cid-ovxcmftc]{left:8px}.lb-next[data-astro-cid-ovxcmftc]{right:8px}}
 </style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <div class="topbar"></div> <header id="siteHeader"> <div class="wrap nav"> <a class="logo" href="/" aria-label="Schifsky Companies home"> <img src="/logo.png" alt="Schifsky Companies - landscape design and build" width="240" height="83"> </a> <nav class="nav-links" aria-label="Primary"> <div class="nav-item has-sub"> <a class="nav-top" href="/services/" aria-haspopup="true"> Services <svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </a> <div class="nav-sub" role="menu"> <a role="menuitem" href="/custom-landscape-design/">Landscape Design</a><a role="menuitem" href="/fiberglass-pools/">Swimming Pools</a><a role="menuitem" href="/paver-patios/">Paver Patios &amp; Hardscape</a><a role="menuitem" href="/retaining-walls-twin-cities/">Retaining Walls</a><a role="menuitem" href="/outdoor-living/">Outdoor Living</a><a role="menuitem" href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a role="menuitem" href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/careers/">Careers</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a> </nav> <div class="nav-right"> <a class="nav-phone js-call" href="tel:+16514390603"> <span class="ico" aria-hidden="true"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#1a191d"></path></svg> </span> <span class="txt"><small>Call us</small><span class="num">651-439-0603</span></span> </a> <a class="btn btn-primary nav-cta" href="/contact/">Free Consultation</a> <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#1a191d" stroke-width="2" stroke-linecap="round"></path></svg> </button> </div> </div> <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile"> <div class="wrap"> <div class="m-group"> <div class="m-parent"> <a href="/services/">Services</a> <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSubServices" aria-label="Show services"> <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> </div> <div class="m-sub" id="mSubServices"> <a href="/custom-landscape-design/">Landscape Design</a><a href="/fiberglass-pools/">Swimming Pools</a><a href="/paver-patios/">Paver Patios &amp; Hardscape</a><a href="/retaining-walls-twin-cities/">Retaining Walls</a><a href="/outdoor-living/">Outdoor Living</a><a href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/careers/">Careers</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a> <a class="btn btn-primary" href="/contact/">Get a Free Quote</a> </div> </nav> </header> <script>
   (function () {
