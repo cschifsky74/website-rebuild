@@ -1,0 +1,196 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-HG3SZ6DEMB"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG3SZ6DEMB');
+    </script><!-- CallRail dynamic number insertion (call tracking) --><script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script><!-- Lead attribution: capture first-touch channel + gclid, persist, and expose window.scTracker() --><script>
+      (function () {
+        var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec';
+        var VALID = ['Google Ads','Google LSA','Google Business Profile','Organic Search','Direct','Instagram Ads','Referral','Repeat Client','Other'];
+        var NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
+        function ss() { try { return window.sessionStorage; } catch (e) { return null; } }
+        function ls() { try { return window.localStorage; } catch (e) { return null; } }
+
+        function detect() {
+          var params = new URLSearchParams(location.search);
+          var get = function (k) { return (params.get(k) || '').toLowerCase(); };
+          var gclid = params.get('gclid') || params.get('gbraid') || params.get('wbraid') || '';
+          var um = get('utm_medium'), us = get('utm_source'), uc = get('utm_campaign');
+          var fbclid = params.get('fbclid') || '';
+          var hasUTM = false;
+          params.forEach(function (_, k) { if (k.indexOf('utm_') === 0) hasUTM = true; });
+          var refHost = '';
+          try { refHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : ''; } catch (e) {}
+          var host = location.hostname.toLowerCase();
+          var extRef = refHost && refHost.indexOf(host) === -1 && host.indexOf(refHost) === -1;
+          var channel;
+          if (gclid) channel = 'Google Ads';
+          else if (um === 'cpc' || um === 'ppc' || um === 'paid') channel = 'Google Ads';
+          else if (um === 'gbp' || uc === 'gmb') channel = 'Google Business Profile';
+          else if (fbclid || us.indexOf('instagram') >= 0 || us.indexOf('facebook') >= 0 || (extRef && (refHost.indexOf('instagram') >= 0 || refHost.indexOf('facebook') >= 0))) channel = 'Instagram Ads';
+          else if (/google|bing|duckduckgo|yahoo|ecosia/.test(refHost)) channel = 'Organic Search';
+          else if (!refHost && !hasUTM) channel = 'Direct';
+          else if (extRef) channel = 'Referral';
+          else channel = 'Other';
+          return { channel: channel, gclid: gclid };
+        }
+
+        // Capture on first page of the session (first touch wins - never overwrite).
+        try {
+          var s = ss();
+          var d = detect();
+          if (d.gclid) { var l = ls(); if (l) l.setItem('sc_gclid', JSON.stringify({ v: d.gclid, t: Date.now() })); }
+          if (s && !s.getItem('sc_attr')) {
+            s.setItem('sc_attr', JSON.stringify({ channel: d.channel, gclid: d.gclid, landing: location.pathname, t: Date.now() }));
+          }
+        } catch (e) {}
+
+        function storedGclid() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.gclid) return a.gclid; } catch (e) {}
+          try { var m = JSON.parse(ls().getItem('sc_gclid') || 'null'); if (m && (Date.now() - m.t) < NINETY_DAYS) return m.v; } catch (e) {}
+          return '';
+        }
+        function storedChannel() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.channel && VALID.indexOf(a.channel) >= 0) return a.channel; } catch (e) {}
+          return detect().channel || 'Other';
+        }
+
+        // Fire-and-forget lead POST. form_source must always be present.
+        window.scTracker = function (data) {
+          try {
+            var payload = {
+              form_source: (data && data.form_source) || 'Website',
+              channel: storedChannel(),
+              name: (data && data.name) || '',
+              phone: (data && data.phone) || '',
+              email: (data && data.email) || '',
+              city: (data && data.city) || '',
+              service: (data && data.service) || '',
+              project: (data && data.project) || '',
+              zip: (data && data.zip) || '',
+              budget: (data && data.budget) || '',
+              gclid: storedGclid(),
+              page_path: location.pathname
+            };
+            var body = JSON.stringify(payload);
+            var sent = false;
+            if (navigator.sendBeacon) {
+              try { sent = navigator.sendBeacon(LEAD_ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })); } catch (e) {}
+            }
+            if (!sent) {
+              fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }).catch(function () {});
+            }
+          } catch (e) {}
+        };
+      })();
+    </script><title>Visit Our Showroom in Lake Elmo, MN | Schifsky Companies</title><meta name="description" content="See and feel the pavers, natural stone, porcelain, and Latham pool models before you invest. Visit the Schifsky Companies design showroom at 3520 Lavern Ave N, Lake Elmo, MN, or book a visit with a designer."><link rel="canonical" href="https://www.schifskycompanies.com/showroom/"><!-- Roboto (site brand font) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"><!-- Open Graph / social sharing --><meta property="og:type" content="website"><meta property="og:site_name" content="Schifsky Companies"><meta property="og:title" content="Visit Our Showroom in Lake Elmo, MN | Schifsky Companies"><meta property="og:description" content="See and feel the pavers, natural stone, porcelain, and Latham pool models before you invest. Visit the Schifsky Companies design showroom at 3520 Lavern Ave N, Lake Elmo, MN, or book a visit with a designer."><meta property="og:url" content="https://www.schifskycompanies.com/showroom/"><meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"LandscapingBusiness","name":"Schifsky Companies Design Showroom","url":"https://www.schifskycompanies.com/showroom/","telephone":"651-439-0603","image":"https://www.schifskycompanies.com/img/showroom/showroom-01.jpg","address":{"@type":"PostalAddress","streetAddress":"3520 Lavern Ave N","addressLocality":"Lake Elmo","addressRegion":"MN","postalCode":"55042","addressCountry":"US"}}</script><link rel="stylesheet" href="/_astro/_slug_.B2KZ2rJr.css">
+<style>.visit-grid[data-astro-cid-d63majfk]{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}.visit-info[data-astro-cid-d63majfk]{margin-top:22px;display:flex;flex-direction:column;gap:16px}.visit-info[data-astro-cid-d63majfk]>div[data-astro-cid-d63majfk]{display:flex;flex-direction:column}.visit-info[data-astro-cid-d63majfk] b[data-astro-cid-d63majfk]{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}.visit-info[data-astro-cid-d63majfk] a[data-astro-cid-d63majfk]{font-size:17px;font-weight:700;color:var(--ink);text-decoration:none}.visit-info[data-astro-cid-d63majfk] a[data-astro-cid-d63majfk]:hover{color:var(--yellow-d)}@media (max-width:860px){.visit-grid[data-astro-cid-d63majfk]{grid-template-columns:1fr;gap:32px}}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <div class="topbar"></div> <header id="siteHeader"> <div class="wrap nav"> <a class="logo" href="/" aria-label="Schifsky Companies home"> <img src="/logo.png" alt="Schifsky Companies - landscape design and build" width="240" height="83"> </a> <nav class="nav-links" aria-label="Primary"> <div class="nav-item has-sub"> <a class="nav-top" href="/services/" aria-haspopup="true"> Services <svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </a> <div class="nav-sub" role="menu"> <a role="menuitem" href="/custom-landscape-design/">Landscape Design</a><a role="menuitem" href="/fiberglass-pools/">Swimming Pools</a><a role="menuitem" href="/paver-patios/">Paver Patios &amp; Hardscape</a><a role="menuitem" href="/retaining-walls-twin-cities/">Retaining Walls</a><a role="menuitem" href="/outdoor-living/">Outdoor Living</a><a role="menuitem" href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a role="menuitem" href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/careers/">Careers</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a> </nav> <div class="nav-right"> <a class="nav-phone js-call" href="tel:+16514390603"> <span class="ico" aria-hidden="true"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#1a191d"></path></svg> </span> <span class="txt"><small>Call us</small><span class="num">651-439-0603</span></span> </a> <a class="btn btn-primary nav-cta" href="/contact/">Free Consultation</a> <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#1a191d" stroke-width="2" stroke-linecap="round"></path></svg> </button> </div> </div> <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile"> <div class="wrap"> <div class="m-group"> <div class="m-parent"> <a href="/services/">Services</a> <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSubServices" aria-label="Show services"> <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> </div> <div class="m-sub" id="mSubServices"> <a href="/custom-landscape-design/">Landscape Design</a><a href="/fiberglass-pools/">Swimming Pools</a><a href="/paver-patios/">Paver Patios &amp; Hardscape</a><a href="/retaining-walls-twin-cities/">Retaining Walls</a><a href="/outdoor-living/">Outdoor Living</a><a href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/careers/">Careers</a><a href="/blog/">Blog</a><a href="/contact/">Contact</a> <a class="btn btn-primary" href="/contact/">Get a Free Quote</a> </div> </nav> </header> <script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('menuToggle');
+    if (!header || !toggle) return;
+    function close() { header.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Mobile "Services" accordion
+    document.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var sub = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        if (sub) sub.classList.toggle('open', !open);
+      });
+    });
+    // Close the whole menu when a real link (not the accordion toggle) is tapped
+    document.querySelectorAll('#mobileMenu a').forEach(function (a) { a.addEventListener('click', close); });
+  })();
+</script> <main id="main">  <section class="page-hero" data-astro-cid-d63majfk> <div class="wrap" data-astro-cid-d63majfk> <span class="eyebrow on-dark" data-astro-cid-d63majfk>Our Showroom · Lake Elmo, MN · By Appointment</span> <h1 data-astro-cid-d63majfk>See It. Feel It. Invest With Confidence.</h1> <p data-astro-cid-d63majfk>
+A backyard is a serious investment, and it should last for decades. Before you make the leap,
+        come experience the materials in person at our Lake Elmo design showroom, open year-round by
+        appointment. Winter is the perfect time to plan, so you are ready to build the moment spring arrives.
+</p> <p style="margin-top:22px;" data-astro-cid-d63majfk> <a class="btn btn-primary btn-lg" href="#visit" data-astro-cid-d63majfk>Book a Showroom Visit</a> </p> </div> </section> <section data-astro-cid-d63majfk> <div class="wrap split" data-astro-cid-d63majfk> <div class="split-img reveal" data-astro-cid-d63majfk> <img src="/img/showroom/showroom-01.jpg" alt="Inside the Schifsky Companies design showroom in Lake Elmo, with paver, stone, and porcelain samples on the wall" width="1600" height="1200" data-astro-cid-d63majfk> </div> <div class="reveal prose" style="margin:0;" data-astro-cid-d63majfk> <span class="eyebrow" data-astro-cid-d63majfk>Open Year-Round</span> <h2 data-astro-cid-d63majfk>Don&rsquo;t Wait for Spring to Start Dreaming</h2> <p data-astro-cid-d63majfk>
+Our showroom is open all year by appointment, and winter is actually the smartest time to
+          visit. A photo on a screen cannot tell you how a paver reads in the light, how natural stone
+          feels underfoot, or how porcelain holds its color through a Minnesota winter. Here you can
+          see and feel the real thing, browse the full lineup of pool models, and work through your
+          design with a designer, all in a warm room while your yard sits under snow.
+</p> <p data-astro-cid-d63majfk>
+Planning over the winter pays off: the homeowners who design in the off-season are the ones
+          who break ground first when the ground thaws, instead of waiting in the spring rush. Come get
+          inspired now, and be ready to build the moment the season opens.
+</p> </div> </div> </section> <section class="process" data-astro-cid-d63majfk> <div class="wrap" data-astro-cid-d63majfk> <div class="sec-head reveal" data-astro-cid-d63majfk> <span class="eyebrow center" data-astro-cid-d63majfk>The Experience</span> <h2 data-astro-cid-d63majfk>What You'll Do When You Visit</h2> </div> <div class="values" data-astro-cid-d63majfk> <div class="value reveal" data-astro-cid-d63majfk> <h3 data-astro-cid-d63majfk>Touch the Materials</h3> <p data-astro-cid-d63majfk>Run your hand across real pavers, natural stone, and porcelain samples. Photos flatten texture and color; in person you feel the difference before you commit.</p> </div><div class="value reveal" data-astro-cid-d63majfk> <h3 data-astro-cid-d63majfk>See 50+ Latham Pool Models</h3> <p data-astro-cid-d63majfk>Browse the full Latham fiberglass pool lineup on our display board, so you can picture the exact shape and finish in your backyard.</p> </div><div class="value reveal" data-astro-cid-d63majfk> <h3 data-astro-cid-d63majfk>Meet a Designer</h3> <p data-astro-cid-d63majfk>Sit down with the person who will actually design your project, talk through your goals, and see how our 3D design process brings it to life.</p> </div><div class="value reveal" data-astro-cid-d63majfk> <h3 data-astro-cid-d63majfk>Compare in One Place</h3> <p data-astro-cid-d63majfk>Pavers, natural stone, porcelain, turf, and lighting side by side, under one roof, so the big decisions get easier instead of overwhelming.</p> </div> </div> </div> </section> <section style="padding-top:0;" data-astro-cid-d63majfk> <div class="wrap" data-astro-cid-d63majfk> <div class="gallery" style="grid-template-columns:repeat(2,1fr);" data-astro-cid-d63majfk> <div class="tile reveal" data-astro-cid-d63majfk><img src="/img/showroom/showroom-01.jpg" alt="Material samples wall and lounge inside the Schifsky Companies showroom" width="1600" height="1200" loading="lazy" data-astro-cid-d63majfk></div> <div class="tile reveal" data-astro-cid-d63majfk><img src="/img/showroom/showroom-02.jpg" alt="Latham fiberglass pool models display board in the Schifsky Companies showroom" width="1200" height="1600" loading="lazy" data-astro-cid-d63majfk></div> <div class="tile reveal" data-astro-cid-d63majfk><img src="/img/projects/the-45th-patio-showroom/the-45th-patio-showroom-01.jpg" alt="Exterior of the Schifsky Companies showroom and patio in downtown Lake Elmo" width="1400" height="1048" loading="lazy" data-astro-cid-d63majfk></div> <div class="tile reveal" data-astro-cid-d63majfk><img src="/img/projects/the-45th-patio-showroom/the-45th-patio-showroom-04.jpg" alt="The 45th patio and outdoor living space at the Schifsky Companies showroom" width="1400" height="1048" loading="lazy" data-astro-cid-d63majfk></div> </div> <p style="text-align:center;margin-top:20px;" data-astro-cid-d63majfk>
+Our showroom is part of <a href="/projects/the-45th-patio-showroom/" data-astro-cid-d63majfk>The 45th</a>, our downtown Lake Elmo home base.
+</p> </div> </section> <section id="visit" class="process" data-astro-cid-d63majfk> <div class="wrap" data-astro-cid-d63majfk> <div class="visit-grid" data-astro-cid-d63majfk> <div class="reveal" data-astro-cid-d63majfk> <span class="eyebrow" data-astro-cid-d63majfk>Plan Your Visit</span> <h2 data-astro-cid-d63majfk>Come See Us in Lake Elmo</h2> <p style="color:var(--muted);font-size:16px;line-height:1.65;" data-astro-cid-d63majfk>
+We are out on job sites most days, so the showroom is <strong data-astro-cid-d63majfk>by appointment only</strong>.
+            Book a time below and we will have a designer ready to walk you through everything. You will
+            leave with a much clearer picture of the materials, the options, and what your project can become.
+</p> <div class="visit-info" data-astro-cid-d63majfk> <div data-astro-cid-d63majfk> <b data-astro-cid-d63majfk>Showroom Address · By Appointment</b> <a href="https://maps.google.com/?q=Schifsky%20Companies%203520%20Lavern%20Ave%20N%20Lake%20Elmo%20MN%2055042" target="_blank" rel="noopener" data-astro-cid-d63majfk>3520 Lavern Ave N, Lake Elmo, MN 55042</a> </div> <div data-astro-cid-d63majfk> <b data-astro-cid-d63majfk>Call or Text</b> <a class="js-call" href="tel:+16514390603" data-astro-cid-d63majfk>651-439-0603</a> </div> <div data-astro-cid-d63majfk> <b data-astro-cid-d63majfk>Email</b> <a href="mailto:support@schifskycompanies.com" data-astro-cid-d63majfk>support@schifskycompanies.com</a> </div> </div> <p style="margin-top:20px;" data-astro-cid-d63majfk> <a class="btn btn-dark" href="https://maps.google.com/?q=Schifsky%20Companies%203520%20Lavern%20Ave%20N%20Lake%20Elmo%20MN%2055042" target="_blank" rel="noopener" data-astro-cid-d63majfk>Get Directions →</a> </p> </div> <div class="lead-cap reveal" data-astro-cid-d63majfk> <div class="form-card" style="box-shadow:var(--shadow);" data-astro-cid-d63majfk> <form id="showroomForm" novalidate data-astro-cid-d63majfk> <input type="hidden" name="access_key" value="fe71ba2a-53af-4c05-bc70-5639fc0b6472" data-astro-cid-d63majfk> <input type="hidden" name="subject" value="New Showroom Visit Request - Schifsky Companies" data-astro-cid-d63majfk> <input type="hidden" name="source" value="Showroom Visit | /showroom/" data-astro-cid-d63majfk> <span class="tag" data-astro-cid-d63majfk>Free · No Pressure</span> <h2 data-astro-cid-d63majfk>Book a Showroom Visit</h2> <p class="lede" data-astro-cid-d63majfk>Tell us when works and what you'd like to see. We'll confirm a time with a designer.</p> <div class="field" data-astro-cid-d63majfk> <label for="sr-name" data-astro-cid-d63majfk>Full Name <span class="req" data-astro-cid-d63majfk>*</span></label> <input type="text" id="sr-name" name="name" autocomplete="name" placeholder="Jane Smith" data-astro-cid-d63majfk> <div class="err-msg" data-astro-cid-d63majfk>Please enter your name.</div> </div> <div class="field row2" data-astro-cid-d63majfk> <div data-astro-cid-d63majfk> <label for="sr-phone" data-astro-cid-d63majfk>Phone <span class="req" data-astro-cid-d63majfk>*</span></label> <input type="tel" id="sr-phone" name="phone" autocomplete="tel" placeholder="(651) 555-0123" data-astro-cid-d63majfk> <div class="err-msg" data-astro-cid-d63majfk>Enter a valid phone number.</div> </div> <div data-astro-cid-d63majfk> <label for="sr-email" data-astro-cid-d63majfk>Email <span class="req" data-astro-cid-d63majfk>*</span></label> <input type="email" id="sr-email" name="email" autocomplete="email" placeholder="jane@email.com" data-astro-cid-d63majfk> <div class="err-msg" data-astro-cid-d63majfk>Enter a valid email.</div> </div> </div> <div class="field" data-astro-cid-d63majfk> <label for="sr-interest" data-astro-cid-d63majfk>What Would You Like to See? <span class="req" data-astro-cid-d63majfk>*</span></label> <select id="sr-interest" name="interest" data-astro-cid-d63majfk> <option value="" data-astro-cid-d63majfk>Select…</option> <option data-astro-cid-d63majfk>Swimming Pools (Latham models)</option> <option data-astro-cid-d63majfk>Paver, Stone &amp; Porcelain samples</option> <option data-astro-cid-d63majfk>Outdoor Living (kitchens, fire, pergolas)</option> <option data-astro-cid-d63majfk>Full Landscape Design</option> <option data-astro-cid-d63majfk>Just Browsing / Not Sure Yet</option> </select> <div class="err-msg" data-astro-cid-d63majfk>Please choose an option.</div> </div> <div class="field" data-astro-cid-d63majfk> <label for="sr-time" data-astro-cid-d63majfk>Preferred Day &amp; Time to Visit</label> <input type="text" id="sr-time" name="preferred_time" placeholder="e.g. Weekday afternoons, or Saturday morning" data-astro-cid-d63majfk> </div> <div class="field" data-astro-cid-d63majfk> <label for="sr-message" data-astro-cid-d63majfk>Anything Else? (optional)</label> <textarea id="sr-message" name="message" rows="3" placeholder="Tell us a little about your project or what you'd like to see." data-astro-cid-d63majfk></textarea> </div> <button type="submit" class="btn btn-primary btn-block btn-lg" data-astro-cid-d63majfk>Request My Visit</button> <div class="form-trust" data-astro-cid-d63majfk> <span class="stars" aria-hidden="true" data-astro-cid-d63majfk>★★★★★</span> <span data-astro-cid-d63majfk><b data-astro-cid-d63majfk>5.0</b> on Google</span> <span aria-hidden="true" data-astro-cid-d63majfk>·</span> <span data-astro-cid-d63majfk>Licensed &amp; Insured</span> <span aria-hidden="true" data-astro-cid-d63majfk>·</span> <span data-astro-cid-d63majfk>Family-Owned 37 Yrs</span> </div> <p class="legal" data-astro-cid-d63majfk>By submitting, you agree to be contacted about your visit. No spam, ever.</p> </form> <div class="form-success" id="showroomSuccess" data-astro-cid-d63majfk> <div class="check" aria-hidden="true" data-astro-cid-d63majfk> <svg width="32" height="32" viewBox="0 0 24 24" fill="none" data-astro-cid-d63majfk><path d="M5 12.5l4.5 4.5L19 7" stroke="#2f9e44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-d63majfk></path></svg> </div> <h3 data-astro-cid-d63majfk>Thank you - we'll be in touch!</h3> <p data-astro-cid-d63majfk>A member of our design team will reach out to confirm your showroom visit.</p> <a class="btn btn-dark cta-call js-call" href="tel:+16514390603" data-astro-cid-d63majfk>Prefer to talk now? Call 651-439-0603</a> </div> </div> </div> </div> </div> </section>  <script>(function(){const FORM_ENDPOINT = "https://api.web3forms.com/submit";
+const ACCESS_KEY = "fe71ba2a-53af-4c05-bc70-5639fc0b6472";
+
+    (function () {
+      var form = document.getElementById('showroomForm');
+      var success = document.getElementById('showroomSuccess');
+      if (!form) return;
+      function fld(n) { return form.querySelector('[name="' + n + '"]'); }
+      function showErr(el, on) {
+        if (!el) return;
+        el.classList.toggle('err', on);
+        var m = el.parentElement.querySelector('.err-msg');
+        if (m) m.style.display = on ? 'block' : 'none';
+      }
+      var emailOk = function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); };
+      var phoneOk = function (v) { return v.replace(/\D/g, '').length >= 10; };
+      form.querySelectorAll('input,select,textarea').forEach(function (el) {
+        el.addEventListener('input', function () { showErr(el, false); });
+        el.addEventListener('change', function () { showErr(el, false); });
+      });
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var ok = true;
+        var elName = fld('name'), elPhone = fld('phone'), elEmail = fld('email'), elInt = fld('interest');
+        if (!elName.value.trim()) { showErr(elName, true); ok = false; }
+        if (!phoneOk(elPhone.value)) { showErr(elPhone, true); ok = false; }
+        if (!emailOk(elEmail.value)) { showErr(elEmail, true); ok = false; }
+        if (!elInt.value) { showErr(elInt, true); ok = false; }
+        if (!ok) { var fe = form.querySelector('.err'); if (fe) fe.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+        var btn = form.querySelector('button[type=submit]');
+        btn.disabled = true; btn.textContent = 'Sending…';
+        function done() {
+          form.style.display = 'none'; success.style.display = 'block'; success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          // Real lead: fire GA4 conversion + post to lead tracker with a distinct source
+          if (typeof gtag === 'function') { gtag('event', 'form_submission', { form_source: 'Showroom Visit | /showroom/', page_path: window.location.pathname }); }
+          if (typeof window.scTracker === 'function') {
+            var d = Object.fromEntries(new FormData(form));
+            window.scTracker({ form_source: 'Showroom Visit | /showroom/', name: d.name || '', phone: d.phone || '', email: d.email || '', city: '', service: d.interest || '', project: d.message || '', zip: '' });
+          }
+        }
+        if (FORM_ENDPOINT && ACCESS_KEY) {
+          fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(new FormData(form))) }).then(done).catch(done);
+        } else { setTimeout(done, 500); }
+      });
+    })();
+  })();</script>  </main> <footer> <div class="wrap"> <div class="foot-top"> <div class="foot-brand"> <div class="foot-logo"> <img src="/logo.png" alt="Schifsky Companies" width="200" height="69"> </div> <p>
+Family-owned Twin Cities landscape design &amp; build for 37+ years-
+          outdoor living, pools, patios, pergolas, retaining walls, and drainage.
+</p> </div> <div class="foot-contact"> <a class="js-call" href="tel:+16514390603"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#ebd200"></path></svg> 651-439-0603 </a> <a href="mailto:support@schifskycompanies.com"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#ebd200" stroke-width="2"></path><path d="M3 7l9 6 9-6" stroke="#ebd200" stroke-width="2"></path></svg> support@schifskycompanies.com </a> <a href="https://maps.google.com/?q=Schifsky%20Companies%203520%20Lavern%20Ave%20N%20Lake%20Elmo%20MN%2055042" target="_blank" rel="noopener"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="#ebd200" stroke-width="2"></path><circle cx="12" cy="11" r="2.4" stroke="#ebd200" stroke-width="2"></circle></svg> 3520 Lavern Ave N, Lake Elmo, MN 55042 </a> </div> <nav class="foot-links" aria-label="Footer"> <a href="/services/">Services</a> <a href="/portfolio/">Portfolio</a> <a href="/about/">About</a> <a href="/reviews/">Reviews</a> <a href="/faq/">FAQ</a> <a href="/blog/">Blog</a> <a href="/contact/">Contact</a> </nav> </div> <div class="foot-bottom"> <span>© 2026 Schifsky Companies. All rights reserved. Licensed &amp; Insured.</span> <span>Landscape Design &amp; Build · Serving the Twin Cities Metro</span> </div> </div> </footer> <script>
+      document.documentElement.classList.add('js');
+      // Scroll-reveal animation
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold: .12 });
+        els.forEach(function (e) { io.observe(e); });
+      })();
+
+      // GA4: track clicks on any mailto: link (sitewide)
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (typeof gtag === 'function') gtag('event', 'email_click');
+        });
+      });
+    </script> </body> </html>
