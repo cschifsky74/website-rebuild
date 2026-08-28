@@ -52,14 +52,14 @@
 <!-- <meta name="robots" content="noindex, follow" /> -->
 
 <!-- ===== CARSON #1: GOOGLE ADS / GA4 CONVERSION TRACKING =====
-     Replace AW-XXXXXXXXX with your Google Ads ID, and
+     Replace AW-791054221 with your Google Ads ID, and
      replace CONVERSION_LABEL (further down, in the script) too. -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-XXXXXXXXX"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-791054221"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-XXXXXXXXX');
+  gtag('config', 'AW-791054221');
 </script>
 <!-- ============================================================ -->
 
@@ -1282,8 +1282,8 @@
   function fireLeadConversion(){
     if(typeof gtag === 'function'){
       /* CARSON #1: replace CONVERSION_LABEL with the label from your
-         Google Ads conversion action (e.g. AW-XXXXXXXXX/AbC-d_efG) */
-      gtag('event','conversion',{'send_to':'AW-XXXXXXXXX/CONVERSION_LABEL'});
+         Google Ads conversion action (e.g. AW-791054221/AbC-d_efG) */
+      gtag('event','conversion',{'send_to':'AW-791054221/CONVERSION_LABEL'});
       gtag('event','generate_lead',{event_category:'lead',event_label:'design_consult_form'});
     }
     if(window.dataLayer){ window.dataLayer.push({event:'lead_form_submit'}); }
