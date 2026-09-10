@@ -1,0 +1,218 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-HG3SZ6DEMB"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG3SZ6DEMB');
+      gtag('config', 'AW-791054221');
+    </script><!-- CallRail dynamic number insertion (call tracking) --><script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script><!-- Lead attribution: capture first-touch channel + gclid, persist, and expose window.scTracker() --><script>
+      (function () {
+        var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec';
+        var VALID = ['Google Ads','Google LSA','Google Business Profile','Organic Search','Direct','Instagram Ads','Referral','Repeat Client','Other'];
+        var NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
+        function ss() { try { return window.sessionStorage; } catch (e) { return null; } }
+        function ls() { try { return window.localStorage; } catch (e) { return null; } }
+
+        function detect() {
+          var params = new URLSearchParams(location.search);
+          var get = function (k) { return (params.get(k) || '').toLowerCase(); };
+          var gclid = params.get('gclid') || params.get('gbraid') || params.get('wbraid') || '';
+          var um = get('utm_medium'), us = get('utm_source'), uc = get('utm_campaign');
+          var fbclid = params.get('fbclid') || '';
+          var hasUTM = false;
+          params.forEach(function (_, k) { if (k.indexOf('utm_') === 0) hasUTM = true; });
+          var refHost = '';
+          try { refHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : ''; } catch (e) {}
+          var host = location.hostname.toLowerCase();
+          var extRef = refHost && refHost.indexOf(host) === -1 && host.indexOf(refHost) === -1;
+          var channel;
+          if (gclid) channel = 'Google Ads';
+          else if (um === 'cpc' || um === 'ppc' || um === 'paid') channel = 'Google Ads';
+          else if (um === 'gbp' || uc === 'gmb') channel = 'Google Business Profile';
+          else if (fbclid || us.indexOf('instagram') >= 0 || us.indexOf('facebook') >= 0 || (extRef && (refHost.indexOf('instagram') >= 0 || refHost.indexOf('facebook') >= 0))) channel = 'Instagram Ads';
+          else if (/google|bing|duckduckgo|yahoo|ecosia/.test(refHost)) channel = 'Organic Search';
+          else if (!refHost && !hasUTM) channel = 'Direct';
+          else if (extRef) channel = 'Referral';
+          else channel = 'Other';
+          return { channel: channel, gclid: gclid };
+        }
+
+        // Capture on first page of the session (first touch wins - never overwrite).
+        try {
+          var s = ss();
+          var d = detect();
+          if (d.gclid) { var l = ls(); if (l) l.setItem('sc_gclid', JSON.stringify({ v: d.gclid, t: Date.now() })); }
+          if (s && !s.getItem('sc_attr')) {
+            s.setItem('sc_attr', JSON.stringify({ channel: d.channel, gclid: d.gclid, landing: location.pathname, t: Date.now() }));
+          }
+        } catch (e) {}
+
+        function storedGclid() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.gclid) return a.gclid; } catch (e) {}
+          try { var m = JSON.parse(ls().getItem('sc_gclid') || 'null'); if (m && (Date.now() - m.t) < NINETY_DAYS) return m.v; } catch (e) {}
+          return '';
+        }
+        function storedChannel() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.channel && VALID.indexOf(a.channel) >= 0) return a.channel; } catch (e) {}
+          return detect().channel || 'Other';
+        }
+
+        // Fire-and-forget lead POST. form_source must always be present.
+        window.scTracker = function (data) {
+          try {
+            var payload = {
+              form_source: (data && data.form_source) || 'Website',
+              channel: storedChannel(),
+              name: (data && data.name) || '',
+              phone: (data && data.phone) || '',
+              email: (data && data.email) || '',
+              city: (data && data.city) || '',
+              service: (data && data.service) || '',
+              project: (data && data.project) || '',
+              zip: (data && data.zip) || '',
+              budget: (data && data.budget) || '',
+              gclid: storedGclid(),
+              page_path: location.pathname
+            };
+            var body = JSON.stringify(payload);
+            var sent = false;
+            if (navigator.sendBeacon) {
+              try { sent = navigator.sendBeacon(LEAD_ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })); } catch (e) {}
+            }
+            if (!sent) {
+              fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }).catch(function () {});
+            }
+          } catch (e) {}
+        };
+      })();
+    </script><title>How Much Does a Retaining Wall Cost in the Twin Cities? [2026 Data] | Schifsky Companies</title><meta name="description" content="A professionally built retaining wall in the Twin Cities runs $65 to $85 per square foot for boulders, $85 to $120 for block, and $120+ for stacked natural stone. Here is the full 2026 breakdown from a licensed Minnesota contractor, with real project numbers and the freeze-thaw factors that drive the price."><link rel="canonical" href="https://www.schifskycompanies.com/how-much-does-a-retaining-wall-cost-in-the-twin-cities/"><!-- Roboto (site brand font) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"><!-- Open Graph / social sharing --><meta property="og:type" content="website"><meta property="og:site_name" content="Schifsky Companies"><meta property="og:title" content="How Much Does a Retaining Wall Cost in the Twin Cities? [2026 Data] | Schifsky Companies"><meta property="og:description" content="A professionally built retaining wall in the Twin Cities runs $65 to $85 per square foot for boulders, $85 to $120 for block, and $120+ for stacked natural stone. Here is the full 2026 breakdown from a licensed Minnesota contractor, with real project numbers and the freeze-thaw factors that drive the price."><meta property="og:url" content="https://www.schifskycompanies.com/how-much-does-a-retaining-wall-cost-in-the-twin-cities/"><meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><script type="application/ld+json">[{"@context":"https://schema.org","@type":"BlogPosting","headline":"How Much Does a Retaining Wall Cost in the Twin Cities? [2026 Data]","description":"A professionally built retaining wall in the Twin Cities runs $65 to $85 per square foot for boulders, $85 to $120 for block, and $120+ for stacked natural stone. Here is the full 2026 breakdown from a licensed Minnesota contractor, with real project numbers and the freeze-thaw factors that drive the price.","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@type":"Person","name":"Carson Schifsky","jobTitle":"Owner, Schifsky Companies","url":"https://www.schifskycompanies.com/about/","worksFor":{"@type":"Organization","name":"Schifsky Companies"}},"publisher":{"@type":"Organization","name":"Schifsky Companies","url":"https://www.schifskycompanies.com"},"mainEntityOfPage":"https://www.schifskycompanies.com/how-much-does-a-retaining-wall-cost-in-the-twin-cities/"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a retaining wall cost in the Twin Cities?","acceptedAnswer":{"@type":"Answer","text":"A professionally built retaining wall in the Twin Cities runs $65 to $85 per square foot of wall face for boulder walls, $85 to $120 per square foot for segmental block, and $120 and up for stacked natural stone. Most residential wall projects land between $15,000 and $60,000, with large tiered lakefront walls running well beyond that."}},{"@type":"Question","name":"What is the cheapest type of retaining wall in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Boulder walls are usually the most affordable option at $65 to $85 per square foot, because the material is local and there is no cutting or precise coursing. Block walls cost more per square foot but deliver clean lines, tighter geometry, and integrated steps, caps, and lighting."}},{"@type":"Question","name":"Do I need a permit or an engineer for a retaining wall in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"In most Twin Cities cities, a retaining wall over 4 feet tall measured from the bottom of the footing needs a building permit and a stamped engineering design. Walls near property lines, shorelines, or easements can require review at any height. We confirm the rules with your city and handle the permit as part of the project."}},{"@type":"Question","name":"Why do retaining walls fail in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Almost always because of water and frost, not the block. A wall built without a compacted base, clean drainage stone, a perforated drain pipe, and proper geogrid reinforcement will heave and bulge after a few freeze-thaw winters. The parts you never see are what keep the wall straight."}},{"@type":"Question","name":"How long does a retaining wall last?","acceptedAnswer":{"@type":"Answer","text":"A properly engineered and drained segmental block or natural stone wall should last 50 years or more in Minnesota. Boulder walls are essentially permanent when set correctly. A wall built without drainage or reinforcement can start to lean in as little as three to five winters."}},{"@type":"Question","name":"When is the best time to build a retaining wall in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Late April through October, once the ground is thawed and dry enough for excavation. Spring books up fastest, so homeowners who finalize design over the winter and lock in a contractor by February get their preferred schedule."}}]}]</script><link rel="stylesheet" href="/_astro/_slug_.P2DE_Wrx.css"></head> <body> <a class="skip-link" href="#main">Skip to content</a> <div class="topbar"></div> <header id="siteHeader"> <div class="wrap nav"> <a class="logo" href="/" aria-label="Schifsky Companies home"> <img src="/logo.png" alt="Schifsky Companies - landscape design and build" width="240" height="83"> </a> <nav class="nav-links" aria-label="Primary"> <div class="nav-item has-sub"> <a class="nav-top" href="/services/" aria-haspopup="true"> Services <svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </a> <div class="nav-sub" role="menu"> <a role="menuitem" href="/custom-landscape-design/">Landscape Design</a><a role="menuitem" href="/fiberglass-pools/">Swimming Pools</a><a role="menuitem" href="/paver-patios/">Paver Patios &amp; Hardscape</a><a role="menuitem" href="/retaining-walls-twin-cities/">Retaining Walls</a><a role="menuitem" href="/outdoor-living/">Outdoor Living</a><a role="menuitem" href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a role="menuitem" href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/careers/">Careers</a><a href="/blog/">Guides</a> </nav> <div class="nav-right"> <a class="nav-phone js-call" href="tel:+16514390603"> <span class="ico" aria-hidden="true"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#1a191d"></path></svg> </span> <span class="txt"><small>Call us</small><span class="num">651-439-0603</span></span> </a> <a class="btn btn-primary nav-cta" href="/contact/">Free Consultation</a> <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#1a191d" stroke-width="2" stroke-linecap="round"></path></svg> </button> </div> </div> <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile"> <div class="wrap"> <div class="m-group"> <div class="m-parent"> <a href="/services/">Services</a> <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSubServices" aria-label="Show services"> <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> </div> <div class="m-sub" id="mSubServices"> <a href="/custom-landscape-design/">Landscape Design</a><a href="/fiberglass-pools/">Swimming Pools</a><a href="/paver-patios/">Paver Patios &amp; Hardscape</a><a href="/retaining-walls-twin-cities/">Retaining Walls</a><a href="/outdoor-living/">Outdoor Living</a><a href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/careers/">Careers</a><a href="/blog/">Guides</a> <a class="btn btn-primary" href="/contact/">Get a Free Quote</a> </div> </nav> </header> <script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('menuToggle');
+    if (!header || !toggle) return;
+    function close() { header.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Mobile "Services" accordion
+    document.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var sub = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        if (sub) sub.classList.toggle('open', !open);
+      });
+    });
+    // Close the whole menu when a real link (not the accordion toggle) is tapped
+    document.querySelectorAll('#mobileMenu a').forEach(function (a) { a.addEventListener('click', close); });
+  })();
+</script> <main id="main">  <section class="page-hero"> <div class="wrap" style="max-width:820px;"> <span class="eyebrow on-dark">September 10, 2026</span> <h1>How Much Does a Retaining Wall Cost in the Twin Cities? [2026 Data]</h1> <p class="byline">By <a href="/about/">Carson Schifsky</a>, Owner, Schifsky Companies</p> </div> </section> <section style="padding-bottom:0;"> <div class="wrap" style="max-width:900px;"> <img src="/img/projects/dellwood-retreat/dellwood-retreat-01.jpg" alt="How Much Does a Retaining Wall Cost in the Twin Cities? [2026 Data]" width="1100" height="619" style="width:100%;border-radius:14px;border:1px solid var(--line);"> </div> </section><section> <article class="wrap prose"> <p>A professionally built retaining wall in the Twin Cities costs <strong>$65 to $85 per square foot of wall face for boulder walls</strong>, <strong>$85 to $120 per square foot for segmental block</strong>, and <strong>$120 and up for stacked natural stone</strong>. Most residential wall projects land <strong>between $15,000 and $60,000</strong>, and large tiered lakefront walls can run into the hundreds of thousands. The two things that move the number most are the wall system you choose and what has to happen underground to keep it standing through Minnesota winters.</p>
+<p>Below is the full 2026 breakdown from a licensed Minnesota contractor that has been building walls since 1989, when retaining walls were the first thing this company did.</p>
+<h2 id="retaining-wall-cost-at-a-glance">Retaining wall cost at a glance</h2>
+<ul>
+<li>Boulder walls run <strong>$65 to $85 per square foot</strong> of wall face, installed.</li>
+<li>Segmental block walls run <strong>$85 to $120 per square foot</strong>, installed.</li>
+<li>Stacked natural stone runs <strong>$120+ per square foot</strong>, installed.</li>
+<li>Most residential wall projects land <strong>$15,000 to $60,000</strong>.</li>
+<li>Walls over <strong>4 feet</strong> need engineering and a permit in most Twin Cities cities, typically adding <strong>$2,500 to $5,000</strong>.</li>
+<li>Drainage and reinforcement you never see are the <strong>biggest</strong> driver of whether the wall lasts.</li>
+<li>Best value window: design over winter and book by <strong>February</strong> for a spring build.</li>
+</ul>
+<h2 id="retaining-wall-cost-by-material">Retaining wall cost by material</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Wall type</th><th>Installed cost (per sq ft of face)</th><th>Best for</th></tr></thead><tbody><tr><td>Boulder wall</td><td>$65 – $85</td><td>Natural, rugged look; slopes, lakeshores, large grade changes on a budget</td></tr><tr><td>Segmental block wall</td><td>$85 – $120</td><td>Clean lines, integrated steps and caps, seat walls, tight spaces near patios</td></tr><tr><td>Stacked natural stone</td><td>$120+</td><td>Premium, timeless finish; high-visibility walls near the home and pool</td></tr></tbody></table>
+<p>“Square foot of wall face” means the height times the length of the visible wall. A wall 4 feet tall and 50 feet long is 200 square feet of face, so a block version lands roughly <strong>$17,000 to $24,000</strong> before steps, lighting, or engineering.</p>
+<h2 id="retaining-wall-cost-by-project-size">Retaining wall cost by project size</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Project</th><th>Typical scope</th><th>Approximate installed cost</th></tr></thead><tbody><tr><td>Small garden or landscape wall</td><td>2 ft tall, 30 to 50 ft long</td><td>$6,000 – $15,000</td></tr><tr><td>Standard backyard grade wall</td><td>3 to 4 ft tall, 50 to 80 ft long</td><td>$15,000 – $35,000</td></tr><tr><td>Engineered wall with steps</td><td>4 to 6 ft tall, 60 to 100 ft long, geogrid, permit</td><td>$35,000 – $60,000</td></tr><tr><td>Tiered lakefront or estate walls</td><td>Multiple terraces, stairs, railings</td><td>$60,000 – $250,000+</td></tr></tbody></table>
+<p>At the top of that range is our <a href="/projects/birchwood-village-lakefront/">Terraced on White Bear Lake project in Birchwood Village</a>, a <strong>$400,000</strong> full property transformation where a series of tiered natural stone walls turned a steep, unusable shoreline lot into level lawn and garden terraces with stairs down to the water. At the other end, <a href="/projects/dellwood-retreat/">Carved in Stone in Dellwood</a> came in around <strong>$85,000</strong> for a wall that blends block precision with natural stone texture, plus the landscape around it.</p>
+<h2 id="what-actually-drives-the-price">What actually drives the price</h2>
+<p><strong>Height</strong> is the first lever. A wall’s cost does not rise in a straight line with height, because once you pass about 4 feet the wall needs geogrid reinforcement layered back into the soil, a deeper base, and an engineer’s stamp. A 5-foot wall can easily cost twice what a 3-foot wall of the same length does.</p>
+<p><strong>Material</strong> is the second. Boulders are the most economical because the material is local and set with an excavator. Block costs more per square foot but gives you tight geometry, built-in steps, matching caps, and pillars. Natural stone is the premium finish and takes the most skilled labor to fit.</p>
+<p><strong>Drainage and base</strong> are where cheap walls cut corners. Every wall we build sits on a compacted aggregate base with clean drainage stone behind it and a perforated drain pipe at the footing. That system is part of our price, and it is the reason our walls stay straight.</p>
+<p><strong>Site access and what you are holding back</strong> round it out. A wall holding a driveway, a pool deck, or a slope with a house above it carries more load and more engineering than a wall edging a garden bed. Tight backyards where material has to be moved by hand add labor.</p>
+<h2 id="why-walls-fail-in-minnesota">Why walls fail in Minnesota</h2>
+<p>Retaining walls in the Twin Cities rarely fail because of the block. They fail because of <strong>water and frost</strong>. Clay soil, which is common across the east metro, holds water. When that water freezes it expands, and a wall without drainage stone and a drain pipe behind it gets pushed outward a little more every winter until it bulges or leans. Skipping geogrid on a taller wall does the same thing from the weight of the soil alone.</p>
+<p>That is why the most important parts of a wall are the parts you never see. Building them right costs more up front and is the difference between a wall you rebuild in five years and one your kids inherit.</p>
+<h2 id="do-you-need-a-permit-for-a-retaining-wall">Do you need a permit for a retaining wall?</h2>
+<p>In most Twin Cities cities, a retaining wall <strong>over 4 feet tall</strong>, measured from the bottom of the footing to the top of the wall, requires a building permit and a stamped engineering design. Walls of any height near property lines, easements, shorelines, or steep slopes may also need review, and lakefront properties often involve watershed district approval. We confirm the rules with your city and handle the permitting as part of the project.</p>
+<h2 id="retaining-walls-and-the-rest-of-the-backyard">Retaining walls and the rest of the backyard</h2>
+<p>Most of the walls we build are not standalone. They hold a grade so a <a href="/paver-patios/">paver patio</a> can be level, they wrap a pool deck, or they become seat walls around a fire feature. Designing the wall together with the patio and landscape, rather than adding it later, almost always saves money, because the excavation, base, and drainage happen once. Our <a href="/what-does-a-full-backyard-landscape-project-cost-in-the-twin-cities/">full backyard cost guide</a> shows how walls fit into complete project budgets.</p>
+<h2 id="how-we-source-these-numbers">How we source these numbers</h2>
+<p>Every figure on this page comes from a <strong>licensed, insured, family-owned Twin Cities landscape contractor</strong> that has been building retaining walls since 1989, not from a national survey. The ranges reflect real walls we have designed and built across the east metro, priced for the base, drainage, and reinforcement that actually hold up in Minnesota. Your exact number depends on your grade and soil, so we give you an honest range up front at a free consultation, then a firm, itemized quote once the design is set.</p>
+<h2 id="ready-to-price-your-wall">Ready to price your wall?</h2>
+<p>Every slope is different, so the honest answer to “what will mine cost” comes from a quick look at your yard. We build <a href="/retaining-walls-twin-cities/">retaining walls across the Twin Cities</a>, from <a href="/landscape-design-build-services-in-white-bear-lake-mn/">White Bear Lake</a> and <a href="/landscape-design-build-services-in-stillwater-mn/">Stillwater</a> to <a href="/landscape-design-build-services-in-woodbury-mn/">Woodbury</a> and the surrounding metro. <a href="/contact/">Get a free quote</a> and we will give you a real range, then a firm number once the design is set.</p> <div style="margin-top:40px;"> <h2>Frequently Asked Questions</h2> <div class="faq-wrap" style="margin-top:18px;"> <details class="faq"> <summary>How much does a retaining wall cost in the Twin Cities? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">A professionally built retaining wall in the Twin Cities runs $65 to $85 per square foot of wall face for boulder walls, $85 to $120 per square foot for segmental block, and $120 and up for stacked natural stone. Most residential wall projects land between $15,000 and $60,000, with large tiered lakefront walls running well beyond that.</div> </details><details class="faq"> <summary>What is the cheapest type of retaining wall in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Boulder walls are usually the most affordable option at $65 to $85 per square foot, because the material is local and there is no cutting or precise coursing. Block walls cost more per square foot but deliver clean lines, tighter geometry, and integrated steps, caps, and lighting.</div> </details><details class="faq"> <summary>Do I need a permit or an engineer for a retaining wall in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">In most Twin Cities cities, a retaining wall over 4 feet tall measured from the bottom of the footing needs a building permit and a stamped engineering design. Walls near property lines, shorelines, or easements can require review at any height. We confirm the rules with your city and handle the permit as part of the project.</div> </details><details class="faq"> <summary>Why do retaining walls fail in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Almost always because of water and frost, not the block. A wall built without a compacted base, clean drainage stone, a perforated drain pipe, and proper geogrid reinforcement will heave and bulge after a few freeze-thaw winters. The parts you never see are what keep the wall straight.</div> </details><details class="faq"> <summary>How long does a retaining wall last? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">A properly engineered and drained segmental block or natural stone wall should last 50 years or more in Minnesota. Boulder walls are essentially permanent when set correctly. A wall built without drainage or reinforcement can start to lean in as little as three to five winters.</div> </details><details class="faq"> <summary>When is the best time to build a retaining wall in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Late April through October, once the ground is thawed and dry enough for excavation. Spring books up fastest, so homeowners who finalize design over the winter and lock in a contractor by February get their preferred schedule.</div> </details> </div> </div> <aside class="author-box"> <img src="/img/team-showroom.jpg" alt="Carson Schifsky and the Schifsky Companies team" width="120" height="120" loading="lazy"> <div> <span class="eyebrow">About the Author</span> <b>Carson Schifsky</b> <span class="role">Owner, Schifsky Companies</span> <p>Carson Schifsky is the owner of Schifsky Companies, the family-owned landscape design-build firm founded in Stillwater in 1989 and based in Lake Elmo, MN. He leads clients through the design-build process on patios, pools, and outdoor living projects across the Twin Cities, and every price on this site comes from projects his team has actually built.</p> </div> </aside> <p style="margin-top:34px;border-top:1px solid var(--line);padding-top:24px;"> <a class="btn btn-dark" href="/blog/">&larr; All guides</a> <a class="btn btn-primary" href="/contact/" style="margin-left:10px;">Get a Free Quote</a> </p> </article> </section>  </main> <footer> <div class="wrap"> <div class="foot-top"> <div class="foot-brand"> <div class="foot-logo"> <img src="/logo.png" alt="Schifsky Companies" width="200" height="69"> </div> <p>
+Family-owned Twin Cities landscape design &amp; build for 37+ years-
+          outdoor living, pools, patios, pergolas, retaining walls, and drainage.
+</p> </div> <div class="foot-contact"> <a class="js-call" href="tel:+16514390603"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#ebd200"></path></svg> 651-439-0603 </a> <a href="mailto:support@schifskycompanies.com"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#ebd200" stroke-width="2"></path><path d="M3 7l9 6 9-6" stroke="#ebd200" stroke-width="2"></path></svg> support@schifskycompanies.com </a> <a href="https://maps.google.com/?q=Schifsky%20Companies%203520%20Lavern%20Ave%20N%20Lake%20Elmo%20MN%2055042" target="_blank" rel="noopener"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="#ebd200" stroke-width="2"></path><circle cx="12" cy="11" r="2.4" stroke="#ebd200" stroke-width="2"></circle></svg> 3520 Lavern Ave N, Lake Elmo, MN 55042 </a> </div> <nav class="foot-links" aria-label="Footer"> <a href="/services/">Services</a> <a href="/portfolio/">Portfolio</a> <a href="/about/">About</a> <a href="/reviews/">Reviews</a> <a href="/faq/">FAQ</a> <a href="/blog/">Guides</a> <a href="/contact/">Contact</a> </nav> </div> <div class="foot-bottom"> <span>© 2026 Schifsky Companies. All rights reserved. Licensed &amp; Insured.</span> <span>Landscape Design &amp; Build · Serving the Twin Cities Metro</span> </div> </div> </footer> <script>
+      document.documentElement.classList.add('js');
+      // Scroll-reveal animation
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold: .12 });
+        els.forEach(function (e) { io.observe(e); });
+      })();
+
+      // GA4: track clicks on any mailto: link (sitewide)
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (typeof gtag === 'function') gtag('event', 'email_click');
+        });
+      });
+    </script> </body> </html>

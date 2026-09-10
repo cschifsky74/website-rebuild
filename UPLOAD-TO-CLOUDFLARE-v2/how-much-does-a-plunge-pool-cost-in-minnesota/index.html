@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-HG3SZ6DEMB"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG3SZ6DEMB');
+      gtag('config', 'AW-791054221');
+    </script><!-- CallRail dynamic number insertion (call tracking) --><script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script><!-- Lead attribution: capture first-touch channel + gclid, persist, and expose window.scTracker() --><script>
+      (function () {
+        var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec';
+        var VALID = ['Google Ads','Google LSA','Google Business Profile','Organic Search','Direct','Instagram Ads','Referral','Repeat Client','Other'];
+        var NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
+        function ss() { try { return window.sessionStorage; } catch (e) { return null; } }
+        function ls() { try { return window.localStorage; } catch (e) { return null; } }
+
+        function detect() {
+          var params = new URLSearchParams(location.search);
+          var get = function (k) { return (params.get(k) || '').toLowerCase(); };
+          var gclid = params.get('gclid') || params.get('gbraid') || params.get('wbraid') || '';
+          var um = get('utm_medium'), us = get('utm_source'), uc = get('utm_campaign');
+          var fbclid = params.get('fbclid') || '';
+          var hasUTM = false;
+          params.forEach(function (_, k) { if (k.indexOf('utm_') === 0) hasUTM = true; });
+          var refHost = '';
+          try { refHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : ''; } catch (e) {}
+          var host = location.hostname.toLowerCase();
+          var extRef = refHost && refHost.indexOf(host) === -1 && host.indexOf(refHost) === -1;
+          var channel;
+          if (gclid) channel = 'Google Ads';
+          else if (um === 'cpc' || um === 'ppc' || um === 'paid') channel = 'Google Ads';
+          else if (um === 'gbp' || uc === 'gmb') channel = 'Google Business Profile';
+          else if (fbclid || us.indexOf('instagram') >= 0 || us.indexOf('facebook') >= 0 || (extRef && (refHost.indexOf('instagram') >= 0 || refHost.indexOf('facebook') >= 0))) channel = 'Instagram Ads';
+          else if (/google|bing|duckduckgo|yahoo|ecosia/.test(refHost)) channel = 'Organic Search';
+          else if (!refHost && !hasUTM) channel = 'Direct';
+          else if (extRef) channel = 'Referral';
+          else channel = 'Other';
+          return { channel: channel, gclid: gclid };
+        }
+
+        // Capture on first page of the session (first touch wins - never overwrite).
+        try {
+          var s = ss();
+          var d = detect();
+          if (d.gclid) { var l = ls(); if (l) l.setItem('sc_gclid', JSON.stringify({ v: d.gclid, t: Date.now() })); }
+          if (s && !s.getItem('sc_attr')) {
+            s.setItem('sc_attr', JSON.stringify({ channel: d.channel, gclid: d.gclid, landing: location.pathname, t: Date.now() }));
+          }
+        } catch (e) {}
+
+        function storedGclid() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.gclid) return a.gclid; } catch (e) {}
+          try { var m = JSON.parse(ls().getItem('sc_gclid') || 'null'); if (m && (Date.now() - m.t) < NINETY_DAYS) return m.v; } catch (e) {}
+          return '';
+        }
+        function storedChannel() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.channel && VALID.indexOf(a.channel) >= 0) return a.channel; } catch (e) {}
+          return detect().channel || 'Other';
+        }
+
+        // Fire-and-forget lead POST. form_source must always be present.
+        window.scTracker = function (data) {
+          try {
+            var payload = {
+              form_source: (data && data.form_source) || 'Website',
+              channel: storedChannel(),
+              name: (data && data.name) || '',
+              phone: (data && data.phone) || '',
+              email: (data && data.email) || '',
+              city: (data && data.city) || '',
+              service: (data && data.service) || '',
+              project: (data && data.project) || '',
+              zip: (data && data.zip) || '',
+              budget: (data && data.budget) || '',
+              gclid: storedGclid(),
+              page_path: location.pathname
+            };
+            var body = JSON.stringify(payload);
+            var sent = false;
+            if (navigator.sendBeacon) {
+              try { sent = navigator.sendBeacon(LEAD_ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })); } catch (e) {}
+            }
+            if (!sent) {
+              fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }).catch(function () {});
+            }
+          } catch (e) {}
+        };
+      })();
+    </script><title>How Much Does a Plunge Pool Cost in Minnesota? [2026 Data] | Schifsky Companies</title><meta name="description" content="A plunge pool in Minnesota runs $85,000 to $130,000 for the pool itself, and $150,000 to $260,000 for a complete plunge pool, patio and landscape project. Here is the 2026 breakdown, what a plunge pool is, and when it beats a full-size pool, from a licensed Twin Cities pool and landscape builder."><link rel="canonical" href="https://www.schifskycompanies.com/how-much-does-a-plunge-pool-cost-in-minnesota/"><!-- Roboto (site brand font) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"><!-- Open Graph / social sharing --><meta property="og:type" content="website"><meta property="og:site_name" content="Schifsky Companies"><meta property="og:title" content="How Much Does a Plunge Pool Cost in Minnesota? [2026 Data] | Schifsky Companies"><meta property="og:description" content="A plunge pool in Minnesota runs $85,000 to $130,000 for the pool itself, and $150,000 to $260,000 for a complete plunge pool, patio and landscape project. Here is the 2026 breakdown, what a plunge pool is, and when it beats a full-size pool, from a licensed Twin Cities pool and landscape builder."><meta property="og:url" content="https://www.schifskycompanies.com/how-much-does-a-plunge-pool-cost-in-minnesota/"><meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><script type="application/ld+json">[{"@context":"https://schema.org","@type":"BlogPosting","headline":"How Much Does a Plunge Pool Cost in Minnesota? [2026 Data]","description":"A plunge pool in Minnesota runs $85,000 to $130,000 for the pool itself, and $150,000 to $260,000 for a complete plunge pool, patio and landscape project. Here is the 2026 breakdown, what a plunge pool is, and when it beats a full-size pool, from a licensed Twin Cities pool and landscape builder.","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@type":"Person","name":"Carson Schifsky","jobTitle":"Owner, Schifsky Companies","url":"https://www.schifskycompanies.com/about/","worksFor":{"@type":"Organization","name":"Schifsky Companies"}},"publisher":{"@type":"Organization","name":"Schifsky Companies","url":"https://www.schifskycompanies.com"},"mainEntityOfPage":"https://www.schifskycompanies.com/how-much-does-a-plunge-pool-cost-in-minnesota/"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does a plunge pool cost in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"A plunge pool in Minnesota runs $85,000 to $130,000 for the pool itself, installed. Because a pool is only as good as the space around it, a complete plunge pool project with patio, landscape and outdoor living usually lands between $150,000 and $260,000."}},{"@type":"Question","name":"What is a plunge pool?","acceptedAnswer":{"@type":"Answer","text":"A plunge pool is a compact, usually deeper pool built for cooling off, lounging and soaking rather than swimming laps. Most run 10 to 20 feet long and 8 to 12 feet wide, and many are heated so they double as a spa in spring and fall."}},{"@type":"Question","name":"Is a plunge pool cheaper than a regular pool?","acceptedAnswer":{"@type":"Answer","text":"Somewhat. A plunge pool saves on the shell, excavation and the amount of patio around it, so the pool itself runs $85,000 to $130,000 versus around $130,000 for a full-size pool. The savings are real but smaller than people expect, because the equipment, plumbing, electrical and permits cost about the same regardless of size."}},{"@type":"Question","name":"Can you heat a plunge pool in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Yes, and most of our clients do. A heater lets a plunge pool run warm enough to use as a spa in April, May, September and October, which is the main reason to choose one in our climate. Its smaller volume also heats faster and costs less to keep warm than a full-size pool."}},{"@type":"Question","name":"Do plunge pools work in small Twin Cities backyards?","acceptedAnswer":{"@type":"Answer","text":"That is exactly where they shine. A plunge pool fits on lots where a full-size pool would eat the whole yard, and it leaves room for a patio, fire feature and plantings so the backyard still feels like a backyard."}},{"@type":"Question","name":"Do I need a permit for a plunge pool in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every inground pool in Minnesota requires a building permit, an electrical permit and, in most cities, a fence or barrier that meets code. Lakeshore properties may also need watershed review. We handle the permits and inspections as part of the project."}}]}]</script><link rel="stylesheet" href="/_astro/_slug_.P2DE_Wrx.css"></head> <body> <a class="skip-link" href="#main">Skip to content</a> <div class="topbar"></div> <header id="siteHeader"> <div class="wrap nav"> <a class="logo" href="/" aria-label="Schifsky Companies home"> <img src="/logo.png" alt="Schifsky Companies - landscape design and build" width="240" height="83"> </a> <nav class="nav-links" aria-label="Primary"> <div class="nav-item has-sub"> <a class="nav-top" href="/services/" aria-haspopup="true"> Services <svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </a> <div class="nav-sub" role="menu"> <a role="menuitem" href="/custom-landscape-design/">Landscape Design</a><a role="menuitem" href="/fiberglass-pools/">Swimming Pools</a><a role="menuitem" href="/paver-patios/">Paver Patios &amp; Hardscape</a><a role="menuitem" href="/retaining-walls-twin-cities/">Retaining Walls</a><a role="menuitem" href="/outdoor-living/">Outdoor Living</a><a role="menuitem" href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a role="menuitem" href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/careers/">Careers</a><a href="/blog/">Guides</a> </nav> <div class="nav-right"> <a class="nav-phone js-call" href="tel:+16514390603"> <span class="ico" aria-hidden="true"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#1a191d"></path></svg> </span> <span class="txt"><small>Call us</small><span class="num">651-439-0603</span></span> </a> <a class="btn btn-primary nav-cta" href="/contact/">Free Consultation</a> <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#1a191d" stroke-width="2" stroke-linecap="round"></path></svg> </button> </div> </div> <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile"> <div class="wrap"> <div class="m-group"> <div class="m-parent"> <a href="/services/">Services</a> <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSubServices" aria-label="Show services"> <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> </div> <div class="m-sub" id="mSubServices"> <a href="/custom-landscape-design/">Landscape Design</a><a href="/fiberglass-pools/">Swimming Pools</a><a href="/paver-patios/">Paver Patios &amp; Hardscape</a><a href="/retaining-walls-twin-cities/">Retaining Walls</a><a href="/outdoor-living/">Outdoor Living</a><a href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/careers/">Careers</a><a href="/blog/">Guides</a> <a class="btn btn-primary" href="/contact/">Get a Free Quote</a> </div> </nav> </header> <script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('menuToggle');
+    if (!header || !toggle) return;
+    function close() { header.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Mobile "Services" accordion
+    document.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var sub = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        if (sub) sub.classList.toggle('open', !open);
+      });
+    });
+    // Close the whole menu when a real link (not the accordion toggle) is tapped
+    document.querySelectorAll('#mobileMenu a').forEach(function (a) { a.addEventListener('click', close); });
+  })();
+</script> <main id="main">  <section class="page-hero"> <div class="wrap" style="max-width:820px;"> <span class="eyebrow on-dark">September 10, 2026</span> <h1>How Much Does a Plunge Pool Cost in Minnesota? [2026 Data]</h1> <p class="byline">By <a href="/about/">Carson Schifsky</a>, Owner, Schifsky Companies</p> </div> </section> <section style="padding-bottom:0;"> <div class="wrap" style="max-width:900px;"> <img src="/img/projects/mahtomedi-pool-landscape/mahtomedi-pool-landscape-01.jpg" alt="How Much Does a Plunge Pool Cost in Minnesota? [2026 Data]" width="1100" height="619" style="width:100%;border-radius:14px;border:1px solid var(--line);"> </div> </section><section> <article class="wrap prose"> <p>A plunge pool in Minnesota costs <strong>$85,000 to $130,000 for the pool itself</strong>, installed. Because a pool is only as good as the space around it, a complete plunge pool project with patio, landscape and outdoor living usually lands <strong>between $150,000 and $260,000</strong>. A plunge pool costs less than a full-size pool, but the savings are smaller than most people expect, and the real reason to choose one is fit, not price.</p>
+<p>Below is the 2026 breakdown from a licensed Twin Cities pool and landscape builder, with a real project number and an honest look at when a plunge pool is the right call.</p>
+<h2 id="plunge-pool-cost-at-a-glance">Plunge pool cost at a glance</h2>
+<ul>
+<li>The plunge pool itself runs <strong>$85,000 to $130,000</strong>, installed.</li>
+<li>A complete plunge pool and backyard project runs <strong>$150,000 to $260,000</strong>.</li>
+<li>A full-size pool for comparison runs <strong>around $130,000</strong> for the pool alone.</li>
+<li>Heating adds roughly <strong>$5,000 to $10,000</strong> and is what makes a plunge pool worth it in Minnesota.</li>
+<li>Equipment, electrical, permits and fencing cost about the <strong>same</strong> as a full-size pool.</li>
+<li>Our <a href="/projects/mahtomedi-pool-landscape/">Still Waters project in Mahtomedi</a>, a compact fiberglass pool with full landscape, came in at <strong>$260,000</strong>.</li>
+<li>Best value window: design over winter and book by <strong>February</strong> for a summer swim.</li>
+</ul>
+<h2 id="what-is-a-plunge-pool">What is a plunge pool?</h2>
+<p>A plunge pool is a compact pool, typically <strong>10 to 20 feet long and 8 to 12 feet wide</strong>, built for cooling off, lounging on a ledge, and soaking rather than swimming laps. Most are 4 to 6 feet deep. The best ones are heated, which turns them into a large spa in the shoulder seasons and is the single biggest reason plunge pools make sense in Minnesota.</p>
+<p>Plunge pools come in fiberglass shells and vinyl-liner builds, the same two systems we use for full-size pools. Our guide to <a href="/fiberglass-vs-vinyl-pools-in-minnesota/">fiberglass vs. vinyl pools in Minnesota</a> covers that decision.</p>
+<h2 id="plunge-pool-vs-full-size-pool-cost">Plunge pool vs. full-size pool cost</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th></th><th>Plunge pool</th><th>Full-size pool</th></tr></thead><tbody><tr><td>Pool itself, installed</td><td>$85,000 – $130,000</td><td>~$130,000</td></tr><tr><td>Typical size</td><td>10 to 20 ft long</td><td>30 to 40 ft long</td></tr><tr><td>Patio and landscape needed</td><td>Less; fits a smaller yard</td><td>More; needs a wide deck</td></tr><tr><td>Complete project</td><td>$150,000 – $260,000</td><td>$200,000 – $430,000+</td></tr><tr><td>Heating cost to run</td><td>Lower; small volume heats fast</td><td>Higher</td></tr><tr><td>Best for</td><td>Cooling off, soaking, small lots, spa use spring and fall</td><td>Swimming, kids, large gatherings</td></tr></tbody></table>
+<p>For the full-size numbers, see our <a href="/how-much-does-an-inground-pool-cost-in-minnesota/">inground pool cost guide</a>.</p>
+<h2 id="why-a-plunge-pool-is-not-half-the-price">Why a plunge pool is not half the price</h2>
+<p>People assume a pool half the size costs half as much. It does not. The shell is smaller and the hole is smaller, which saves real money, but the pump, filter, heater, automation, electrical service, gas line, permits, inspections and code-required fencing cost about the same whether the pool is 12 feet long or 36. Those fixed costs are why the pool itself still starts around <strong>$85,000</strong>.</p>
+<p>Where a plunge pool truly saves is <strong>around</strong> the pool. A smaller pool needs less deck, less grading and less of the yard, so the complete project can land well under a full-size pool project on the same lot.</p>
+<h2 id="what-actually-drives-the-price">What actually drives the price</h2>
+<p><strong>Heating and automation</strong> are the first lever. A heater, a cover and app-based automation make a plunge pool usable from April to October and are worth every dollar in our climate. <strong>Features</strong> are the second: a tanning ledge, bench seating, jets, LED lighting and a spillover spa each add to the number. <strong>The surround</strong> is the third and the biggest: the patio, walls, plantings, lighting, and any fire feature or pergola that turns a pool into a backyard. <strong>Site conditions</strong> round it out: access for the excavator and crane, soil, grade and how far utilities have to run.</p>
+<h2 id="a-real-minnesota-plunge-style-pool">A real Minnesota plunge-style pool</h2>
+<p>Our <a href="/projects/mahtomedi-pool-landscape/">Still Waters project in Mahtomedi</a> is a compact fiberglass pool set into a complete landscape near White Bear Lake, with hardscape, plantings and outdoor living designed around it. The full project came in at <strong>$260,000</strong>, and it shows what the top of the plunge pool range buys: not just a pool, but a finished backyard the day the water goes in.</p>
+<h2 id="permits-fencing-and-the-build-season">Permits, fencing and the build season</h2>
+<p>Every inground pool in Minnesota needs a building permit, an electrical permit and a code-compliant barrier, and lakeshore lots may need watershed review. We handle all of it. The build season runs roughly <strong>late April through October</strong>, and pool shells and equipment have lead times, so homeowners who design over the winter and book by February are the ones swimming by July.</p>
+<h2 id="how-we-source-these-numbers">How we source these numbers</h2>
+<p>Every figure on this page comes from a <strong>licensed, insured, family-owned Twin Cities pool and landscape contractor</strong> with 37+ years of local project experience, not from a national survey. The ranges reflect real pools we have designed and built across the east metro, priced for the equipment, base systems and surrounds that hold up in Minnesota. Your exact number depends on your yard and features, so we give you an honest range up front at a free consultation, then a firm, itemized quote once the design is set.</p>
+<h2 id="ready-to-price-your-plunge-pool">Ready to price your plunge pool?</h2>
+<p>We design and build <a href="/fiberglass-pools/">swimming pools</a> and the backyards around them across the Twin Cities, from <a href="/landscape-design-build-services-in-mahtomedi/">Mahtomedi</a> and <a href="/landscape-design-build-services-in-white-bear-lake-mn/">White Bear Lake</a> to <a href="/landscape-design-build-services-in-woodbury-mn/">Woodbury</a> and the surrounding metro. <a href="/contact/">Get a free quote</a> and we will give you a real range, then a firm number once the design is set.</p> <div style="margin-top:40px;"> <h2>Frequently Asked Questions</h2> <div class="faq-wrap" style="margin-top:18px;"> <details class="faq"> <summary>How much does a plunge pool cost in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">A plunge pool in Minnesota runs $85,000 to $130,000 for the pool itself, installed. Because a pool is only as good as the space around it, a complete plunge pool project with patio, landscape and outdoor living usually lands between $150,000 and $260,000.</div> </details><details class="faq"> <summary>What is a plunge pool? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">A plunge pool is a compact, usually deeper pool built for cooling off, lounging and soaking rather than swimming laps. Most run 10 to 20 feet long and 8 to 12 feet wide, and many are heated so they double as a spa in spring and fall.</div> </details><details class="faq"> <summary>Is a plunge pool cheaper than a regular pool? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Somewhat. A plunge pool saves on the shell, excavation and the amount of patio around it, so the pool itself runs $85,000 to $130,000 versus around $130,000 for a full-size pool. The savings are real but smaller than people expect, because the equipment, plumbing, electrical and permits cost about the same regardless of size.</div> </details><details class="faq"> <summary>Can you heat a plunge pool in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Yes, and most of our clients do. A heater lets a plunge pool run warm enough to use as a spa in April, May, September and October, which is the main reason to choose one in our climate. Its smaller volume also heats faster and costs less to keep warm than a full-size pool.</div> </details><details class="faq"> <summary>Do plunge pools work in small Twin Cities backyards? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">That is exactly where they shine. A plunge pool fits on lots where a full-size pool would eat the whole yard, and it leaves room for a patio, fire feature and plantings so the backyard still feels like a backyard.</div> </details><details class="faq"> <summary>Do I need a permit for a plunge pool in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Yes. Every inground pool in Minnesota requires a building permit, an electrical permit and, in most cities, a fence or barrier that meets code. Lakeshore properties may also need watershed review. We handle the permits and inspections as part of the project.</div> </details> </div> </div> <aside class="author-box"> <img src="/img/team-showroom.jpg" alt="Carson Schifsky and the Schifsky Companies team" width="120" height="120" loading="lazy"> <div> <span class="eyebrow">About the Author</span> <b>Carson Schifsky</b> <span class="role">Owner, Schifsky Companies</span> <p>Carson Schifsky is the owner of Schifsky Companies, the family-owned landscape design-build firm founded in Stillwater in 1989 and based in Lake Elmo, MN. He leads clients through the design-build process on patios, pools, and outdoor living projects across the Twin Cities, and every price on this site comes from projects his team has actually built.</p> </div> </aside> <p style="margin-top:34px;border-top:1px solid var(--line);padding-top:24px;"> <a class="btn btn-dark" href="/blog/">&larr; All guides</a> <a class="btn btn-primary" href="/contact/" style="margin-left:10px;">Get a Free Quote</a> </p> </article> </section>  </main> <footer> <div class="wrap"> <div class="foot-top"> <div class="foot-brand"> <div class="foot-logo"> <img src="/logo.png" alt="Schifsky Companies" width="200" height="69"> </div> <p>
+Family-owned Twin Cities landscape design &amp; build for 37+ years-
+          outdoor living, pools, patios, pergolas, retaining walls, and drainage.
+</p> </div> <div class="foot-contact"> <a class="js-call" href="tel:+16514390603"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#ebd200"></path></svg> 651-439-0603 </a> <a href="mailto:support@schifskycompanies.com"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#ebd200" stroke-width="2"></path><path d="M3 7l9 6 9-6" stroke="#ebd200" stroke-width="2"></path></svg> support@schifskycompanies.com </a> <a href="https://maps.google.com/?q=Schifsky%20Companies%203520%20Lavern%20Ave%20N%20Lake%20Elmo%20MN%2055042" target="_blank" rel="noopener"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="#ebd200" stroke-width="2"></path><circle cx="12" cy="11" r="2.4" stroke="#ebd200" stroke-width="2"></circle></svg> 3520 Lavern Ave N, Lake Elmo, MN 55042 </a> </div> <nav class="foot-links" aria-label="Footer"> <a href="/services/">Services</a> <a href="/portfolio/">Portfolio</a> <a href="/about/">About</a> <a href="/reviews/">Reviews</a> <a href="/faq/">FAQ</a> <a href="/blog/">Guides</a> <a href="/contact/">Contact</a> </nav> </div> <div class="foot-bottom"> <span>© 2026 Schifsky Companies. All rights reserved. Licensed &amp; Insured.</span> <span>Landscape Design &amp; Build · Serving the Twin Cities Metro</span> </div> </div> </footer> <script>
+      document.documentElement.classList.add('js');
+      // Scroll-reveal animation
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold: .12 });
+        els.forEach(function (e) { io.observe(e); });
+      })();
+
+      // GA4: track clicks on any mailto: link (sitewide)
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (typeof gtag === 'function') gtag('event', 'email_click');
+        });
+      });
+    </script> </body> </html>

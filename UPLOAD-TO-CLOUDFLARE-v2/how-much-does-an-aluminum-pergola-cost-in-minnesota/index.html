@@ -1,0 +1,189 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-HG3SZ6DEMB"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG3SZ6DEMB');
+      gtag('config', 'AW-791054221');
+    </script><!-- CallRail dynamic number insertion (call tracking) --><script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script><!-- Lead attribution: capture first-touch channel + gclid, persist, and expose window.scTracker() --><script>
+      (function () {
+        var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec';
+        var VALID = ['Google Ads','Google LSA','Google Business Profile','Organic Search','Direct','Instagram Ads','Referral','Repeat Client','Other'];
+        var NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
+        function ss() { try { return window.sessionStorage; } catch (e) { return null; } }
+        function ls() { try { return window.localStorage; } catch (e) { return null; } }
+
+        function detect() {
+          var params = new URLSearchParams(location.search);
+          var get = function (k) { return (params.get(k) || '').toLowerCase(); };
+          var gclid = params.get('gclid') || params.get('gbraid') || params.get('wbraid') || '';
+          var um = get('utm_medium'), us = get('utm_source'), uc = get('utm_campaign');
+          var fbclid = params.get('fbclid') || '';
+          var hasUTM = false;
+          params.forEach(function (_, k) { if (k.indexOf('utm_') === 0) hasUTM = true; });
+          var refHost = '';
+          try { refHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : ''; } catch (e) {}
+          var host = location.hostname.toLowerCase();
+          var extRef = refHost && refHost.indexOf(host) === -1 && host.indexOf(refHost) === -1;
+          var channel;
+          if (gclid) channel = 'Google Ads';
+          else if (um === 'cpc' || um === 'ppc' || um === 'paid') channel = 'Google Ads';
+          else if (um === 'gbp' || uc === 'gmb') channel = 'Google Business Profile';
+          else if (fbclid || us.indexOf('instagram') >= 0 || us.indexOf('facebook') >= 0 || (extRef && (refHost.indexOf('instagram') >= 0 || refHost.indexOf('facebook') >= 0))) channel = 'Instagram Ads';
+          else if (/google|bing|duckduckgo|yahoo|ecosia/.test(refHost)) channel = 'Organic Search';
+          else if (!refHost && !hasUTM) channel = 'Direct';
+          else if (extRef) channel = 'Referral';
+          else channel = 'Other';
+          return { channel: channel, gclid: gclid };
+        }
+
+        // Capture on first page of the session (first touch wins - never overwrite).
+        try {
+          var s = ss();
+          var d = detect();
+          if (d.gclid) { var l = ls(); if (l) l.setItem('sc_gclid', JSON.stringify({ v: d.gclid, t: Date.now() })); }
+          if (s && !s.getItem('sc_attr')) {
+            s.setItem('sc_attr', JSON.stringify({ channel: d.channel, gclid: d.gclid, landing: location.pathname, t: Date.now() }));
+          }
+        } catch (e) {}
+
+        function storedGclid() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.gclid) return a.gclid; } catch (e) {}
+          try { var m = JSON.parse(ls().getItem('sc_gclid') || 'null'); if (m && (Date.now() - m.t) < NINETY_DAYS) return m.v; } catch (e) {}
+          return '';
+        }
+        function storedChannel() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.channel && VALID.indexOf(a.channel) >= 0) return a.channel; } catch (e) {}
+          return detect().channel || 'Other';
+        }
+
+        // Fire-and-forget lead POST. form_source must always be present.
+        window.scTracker = function (data) {
+          try {
+            var payload = {
+              form_source: (data && data.form_source) || 'Website',
+              channel: storedChannel(),
+              name: (data && data.name) || '',
+              phone: (data && data.phone) || '',
+              email: (data && data.email) || '',
+              city: (data && data.city) || '',
+              service: (data && data.service) || '',
+              project: (data && data.project) || '',
+              zip: (data && data.zip) || '',
+              budget: (data && data.budget) || '',
+              gclid: storedGclid(),
+              page_path: location.pathname
+            };
+            var body = JSON.stringify(payload);
+            var sent = false;
+            if (navigator.sendBeacon) {
+              try { sent = navigator.sendBeacon(LEAD_ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })); } catch (e) {}
+            }
+            if (!sent) {
+              fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }).catch(function () {});
+            }
+          } catch (e) {}
+        };
+      })();
+    </script><title>How Much Does an Aluminum Pergola Cost in Minnesota? [2026 Data] | Schifsky Companies</title><meta name="description" content="A motorized louvered aluminum pergola in Minnesota runs $25,000 to $60,000 installed, a fixed aluminum pergola $15,000 to $30,000, and a cedar pergola $12,000 to $30,000. Here is the 2026 breakdown and an honest aluminum vs. wood comparison from a licensed Twin Cities design-build contractor."><link rel="canonical" href="https://www.schifskycompanies.com/how-much-does-an-aluminum-pergola-cost-in-minnesota/"><!-- Roboto (site brand font) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"><!-- Open Graph / social sharing --><meta property="og:type" content="website"><meta property="og:site_name" content="Schifsky Companies"><meta property="og:title" content="How Much Does an Aluminum Pergola Cost in Minnesota? [2026 Data] | Schifsky Companies"><meta property="og:description" content="A motorized louvered aluminum pergola in Minnesota runs $25,000 to $60,000 installed, a fixed aluminum pergola $15,000 to $30,000, and a cedar pergola $12,000 to $30,000. Here is the 2026 breakdown and an honest aluminum vs. wood comparison from a licensed Twin Cities design-build contractor."><meta property="og:url" content="https://www.schifskycompanies.com/how-much-does-an-aluminum-pergola-cost-in-minnesota/"><meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><script type="application/ld+json">[{"@context":"https://schema.org","@type":"BlogPosting","headline":"How Much Does an Aluminum Pergola Cost in Minnesota? [2026 Data]","description":"A motorized louvered aluminum pergola in Minnesota runs $25,000 to $60,000 installed, a fixed aluminum pergola $15,000 to $30,000, and a cedar pergola $12,000 to $30,000. Here is the 2026 breakdown and an honest aluminum vs. wood comparison from a licensed Twin Cities design-build contractor.","datePublished":"2026-09-10","dateModified":"2026-09-10","author":{"@type":"Person","name":"Carson Schifsky","jobTitle":"Owner, Schifsky Companies","url":"https://www.schifskycompanies.com/about/","worksFor":{"@type":"Organization","name":"Schifsky Companies"}},"publisher":{"@type":"Organization","name":"Schifsky Companies","url":"https://www.schifskycompanies.com"},"mainEntityOfPage":"https://www.schifskycompanies.com/how-much-does-an-aluminum-pergola-cost-in-minnesota/"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does an aluminum pergola cost in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"A motorized louvered aluminum pergola in Minnesota runs $25,000 to $60,000 installed, depending on size, whether it is attached or freestanding, and options like lighting, screens and heaters. A fixed-roof aluminum pergola runs $15,000 to $30,000."}},{"@type":"Question","name":"Is an aluminum pergola worth it compared to wood?","acceptedAnswer":{"@type":"Answer","text":"For most Twin Cities homeowners, yes. A cedar pergola costs less up front, at $12,000 to $30,000, but needs staining every two to three years and will eventually check, warp and gray. Aluminum never rots, never needs stain, and a louvered roof turns the pergola into a covered room in rain or full sun."}},{"@type":"Question","name":"Can an aluminum pergola handle Minnesota snow?","acceptedAnswer":{"@type":"Answer","text":"Yes. The louvered systems we install are engineered for snow load and open the louvers to shed snow. The structure is set on frost footings so it does not heave, and the aluminum is powder coated so it does not corrode from salt or moisture."}},{"@type":"Question","name":"Do I need a permit for a pergola in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Usually. Most Twin Cities cities require a building permit for a pergola over a certain footprint or any pergola attached to the house, and electrical for lighting, heaters or motors requires a permit from a licensed electrician. We handle the permits as part of the project."}},{"@type":"Question","name":"What can you add to an aluminum pergola?","acceptedAnswer":{"@type":"Answer","text":"Motorized louvers, integrated LED lighting, zip screens for bugs and shade, privacy walls, ceiling fans, infrared heaters and rain sensors that close the roof automatically. Screens and heaters are the two additions that most extend the season in Minnesota."}},{"@type":"Question","name":"How long does it take to install an aluminum pergola?","acceptedAnswer":{"@type":"Answer","text":"Installation itself takes a few days to a week once the footings and patio are in. Lead time on the pergola system is usually four to eight weeks, so we order it early in the project timeline so it arrives when the patio is ready."}}]}]</script><link rel="stylesheet" href="/_astro/_slug_.P2DE_Wrx.css"></head> <body> <a class="skip-link" href="#main">Skip to content</a> <div class="topbar"></div> <header id="siteHeader"> <div class="wrap nav"> <a class="logo" href="/" aria-label="Schifsky Companies home"> <img src="/logo.png" alt="Schifsky Companies - landscape design and build" width="240" height="83"> </a> <nav class="nav-links" aria-label="Primary"> <div class="nav-item has-sub"> <a class="nav-top" href="/services/" aria-haspopup="true"> Services <svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </a> <div class="nav-sub" role="menu"> <a role="menuitem" href="/custom-landscape-design/">Landscape Design</a><a role="menuitem" href="/fiberglass-pools/">Swimming Pools</a><a role="menuitem" href="/paver-patios/">Paver Patios &amp; Hardscape</a><a role="menuitem" href="/retaining-walls-twin-cities/">Retaining Walls</a><a role="menuitem" href="/outdoor-living/">Outdoor Living</a><a role="menuitem" href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a role="menuitem" href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/careers/">Careers</a><a href="/blog/">Guides</a> </nav> <div class="nav-right"> <a class="nav-phone js-call" href="tel:+16514390603"> <span class="ico" aria-hidden="true"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#1a191d"></path></svg> </span> <span class="txt"><small>Call us</small><span class="num">651-439-0603</span></span> </a> <a class="btn btn-primary nav-cta" href="/contact/">Free Consultation</a> <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#1a191d" stroke-width="2" stroke-linecap="round"></path></svg> </button> </div> </div> <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile"> <div class="wrap"> <div class="m-group"> <div class="m-parent"> <a href="/services/">Services</a> <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSubServices" aria-label="Show services"> <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> </div> <div class="m-sub" id="mSubServices"> <a href="/custom-landscape-design/">Landscape Design</a><a href="/fiberglass-pools/">Swimming Pools</a><a href="/paver-patios/">Paver Patios &amp; Hardscape</a><a href="/retaining-walls-twin-cities/">Retaining Walls</a><a href="/outdoor-living/">Outdoor Living</a><a href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/careers/">Careers</a><a href="/blog/">Guides</a> <a class="btn btn-primary" href="/contact/">Get a Free Quote</a> </div> </nav> </header> <script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('menuToggle');
+    if (!header || !toggle) return;
+    function close() { header.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Mobile "Services" accordion
+    document.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var sub = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        if (sub) sub.classList.toggle('open', !open);
+      });
+    });
+    // Close the whole menu when a real link (not the accordion toggle) is tapped
+    document.querySelectorAll('#mobileMenu a').forEach(function (a) { a.addEventListener('click', close); });
+  })();
+</script> <main id="main">  <section class="page-hero"> <div class="wrap" style="max-width:820px;"> <span class="eyebrow on-dark">September 10, 2026</span> <h1>How Much Does an Aluminum Pergola Cost in Minnesota? [2026 Data]</h1> <p class="byline">By <a href="/about/">Carson Schifsky</a>, Owner, Schifsky Companies</p> </div> </section> <section style="padding-bottom:0;"> <div class="wrap" style="max-width:900px;"> <img src="/img/projects/prestwick-pool-landscape/prestwick-pool-landscape-11.jpg" alt="How Much Does an Aluminum Pergola Cost in Minnesota? [2026 Data]" width="1100" height="619" style="width:100%;border-radius:14px;border:1px solid var(--line);"> </div> </section><section> <article class="wrap prose"> <p>A <strong>motorized louvered aluminum pergola</strong> in Minnesota costs <strong>$25,000 to $60,000</strong> installed. A <strong>fixed-roof aluminum pergola</strong> runs <strong>$15,000 to $30,000</strong>, and a <strong>cedar pergola</strong>, for comparison, runs <strong>$12,000 to $30,000</strong>. The right choice comes down to how much you want the structure to do: a cedar pergola gives you shade and a look, while a louvered aluminum pergola gives you a roof that opens and closes, lighting, screens and heat, and no maintenance for decades.</p>
+<p>Below is the 2026 breakdown from a licensed Twin Cities design-build contractor, with real project examples and an honest aluminum vs. wood comparison.</p>
+<h2 id="aluminum-pergola-cost-at-a-glance">Aluminum pergola cost at a glance</h2>
+<ul>
+<li>Motorized louvered aluminum pergola: <strong>$25,000 to $60,000</strong> installed.</li>
+<li>Fixed-roof aluminum pergola: <strong>$15,000 to $30,000</strong> installed.</li>
+<li>Cedar or wood pergola for comparison: <strong>$12,000 to $30,000</strong> installed, plus staining every 2 to 3 years.</li>
+<li>Integrated LED lighting adds roughly <strong>$1,500 to $4,000</strong>; zip screens <strong>$2,500 to $8,000</strong>; heaters <strong>$1,500 to $5,000</strong>.</li>
+<li>A louvered roof turns a pergola into a covered outdoor room usable in rain and full sun.</li>
+<li>Frost footings and a proper patio base are part of the price and part of why it lasts.</li>
+<li>Lead time is <strong>4 to 8 weeks</strong>, so we order early for a summer install.</li>
+</ul>
+<h2 id="pergola-cost-by-type">Pergola cost by type</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Pergola type</th><th>Installed cost</th><th>Maintenance</th><th>Best for</th></tr></thead><tbody><tr><td>Motorized louvered aluminum</td><td>$25,000 – $60,000</td><td>None</td><td>Outdoor kitchens, dining, poolside lounges; sun and rain control at the touch of a button</td></tr><tr><td>Fixed-roof aluminum</td><td>$15,000 – $30,000</td><td>None</td><td>Permanent shade or full cover with a clean modern look</td></tr><tr><td>Cedar or wood</td><td>$12,000 – $30,000</td><td>Stain every 2 to 3 years</td><td>A traditional look where partial shade is enough</td></tr></tbody></table>
+<p>These are full installed prices including footings, the structure and standard electrical for a motorized roof, not just the kit.</p>
+<h2 id="what-actually-drives-the-price">What actually drives the price</h2>
+<p><strong>Size</strong> is the first lever. A 12-by-14 foot pergola over a dining table is the low end of the range. A 16-by-24 that covers a kitchen and lounge is the high end, and very large or multi-bay structures go beyond it.</p>
+<p><strong>Attached or freestanding</strong> is the second. Attaching to the house saves a pair of posts but needs a ledger detail that ties into the structure properly. Freestanding pergolas need four or more footings but can go anywhere in the yard, including out by a pool.</p>
+<p><strong>Options</strong> are the third and where budgets climb. Motorized louvers are the big one. Integrated LED lighting, zip screens on one to four sides, privacy walls, ceiling fans, infrared heaters and rain sensors each add to the number, and each one adds evenings you can spend outside.</p>
+<p><strong>Footings and the patio</strong> round it out. A pergola sits on frost footings below the frost line so it does not heave, and it almost always lands on a new or existing <a href="/paver-patios/">paver patio</a>, so the two are designed together.</p>
+<h2 id="aluminum-vs-wood-in-minnesota">Aluminum vs. wood in Minnesota</h2>
+<p>Cedar is beautiful the day it goes up. Then Minnesota gets to work on it. Sun grays it, freeze-thaw checks and twists it, and it needs stain every two or three years to hold its color, which most homeowners stop doing by year five. A cedar pergola is a fine choice if you want a rustic look and partial shade at the lowest cost.</p>
+<p>Powder-coated aluminum does not rot, warp, split or need stain, and the louvered systems we install are engineered for Minnesota snow load. More importantly, a louvered roof does something wood cannot: it closes in rain, opens to the sky at night, and tilts to block low afternoon sun. Add screens and a heater and the pergola becomes a room you use from April to November. Over the life of the structure, aluminum is usually the better value, and it is the only choice we recommend over an outdoor kitchen or as part of a pool project.</p>
+<h2 id="real-twin-cities-pergolas">Real Twin Cities pergolas</h2>
+<p>Our <a href="/projects/woodbury-poolside/">Woodbury Poolside project</a>, a <strong>$425,000</strong> full backyard, frames a new pool and paver patio with a louvered aluminum pergola over a covered outdoor living space, so the family has shade at the pool and cover for dinner. <a href="/projects/prestwick-pool-landscape/">Life on the Fairway in Woodbury</a>, at <strong>$430,000</strong>, uses a pergola to anchor the outdoor living side of a full pool and landscape build. In both, the pergola is what turns the patio into a room.</p>
+<h2 id="permits-and-the-build-season">Permits and the build season</h2>
+<p>Most Twin Cities cities require a building permit for a pergola over a certain footprint or for any pergola attached to the house, and the electrical for motors, lighting and heaters needs a permit pulled by a licensed electrician. We handle the permits as part of the project. Because pergola systems have a <strong>four to eight week</strong> lead time, the smartest move is to finalize the design over winter so the structure arrives the week the patio is ready.</p>
+<h2 id="how-we-source-these-numbers">How we source these numbers</h2>
+<p>Every figure on this page comes from a <strong>licensed, insured, family-owned Twin Cities landscape contractor</strong> with 37+ years of local project experience, not from a national survey. The ranges reflect real pergolas we have designed and installed across the east metro, priced for the footings, electrical and options that make them work in Minnesota. Your exact number depends on size and options, so we give you an honest range up front at a free consultation, then a firm, itemized quote once the design is set.</p>
+<h2 id="ready-to-price-your-pergola">Ready to price your pergola?</h2>
+<p>We design and install <a href="/aluminum-pergola-builder-minnesota/">aluminum pergolas across Minnesota</a>, from <a href="/landscape-design-build-services-in-woodbury-mn/">Woodbury</a> and <a href="/landscape-design-build-services-in-lake-elmo/">Lake Elmo</a> to <a href="/landscape-design-build-services-in-stillwater-mn/">Stillwater</a> and the surrounding metro. <a href="/contact/">Get a free quote</a> and we will give you a real range, then a firm number once the design is set.</p> <div style="margin-top:40px;"> <h2>Frequently Asked Questions</h2> <div class="faq-wrap" style="margin-top:18px;"> <details class="faq"> <summary>How much does an aluminum pergola cost in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">A motorized louvered aluminum pergola in Minnesota runs $25,000 to $60,000 installed, depending on size, whether it is attached or freestanding, and options like lighting, screens and heaters. A fixed-roof aluminum pergola runs $15,000 to $30,000.</div> </details><details class="faq"> <summary>Is an aluminum pergola worth it compared to wood? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">For most Twin Cities homeowners, yes. A cedar pergola costs less up front, at $12,000 to $30,000, but needs staining every two to three years and will eventually check, warp and gray. Aluminum never rots, never needs stain, and a louvered roof turns the pergola into a covered room in rain or full sun.</div> </details><details class="faq"> <summary>Can an aluminum pergola handle Minnesota snow? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Yes. The louvered systems we install are engineered for snow load and open the louvers to shed snow. The structure is set on frost footings so it does not heave, and the aluminum is powder coated so it does not corrode from salt or moisture.</div> </details><details class="faq"> <summary>Do I need a permit for a pergola in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Usually. Most Twin Cities cities require a building permit for a pergola over a certain footprint or any pergola attached to the house, and electrical for lighting, heaters or motors requires a permit from a licensed electrician. We handle the permits as part of the project.</div> </details><details class="faq"> <summary>What can you add to an aluminum pergola? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Motorized louvers, integrated LED lighting, zip screens for bugs and shade, privacy walls, ceiling fans, infrared heaters and rain sensors that close the roof automatically. Screens and heaters are the two additions that most extend the season in Minnesota.</div> </details><details class="faq"> <summary>How long does it take to install an aluminum pergola? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Installation itself takes a few days to a week once the footings and patio are in. Lead time on the pergola system is usually four to eight weeks, so we order it early in the project timeline so it arrives when the patio is ready.</div> </details> </div> </div> <aside class="author-box"> <img src="/img/team-showroom.jpg" alt="Carson Schifsky and the Schifsky Companies team" width="120" height="120" loading="lazy"> <div> <span class="eyebrow">About the Author</span> <b>Carson Schifsky</b> <span class="role">Owner, Schifsky Companies</span> <p>Carson Schifsky is the owner of Schifsky Companies, the family-owned landscape design-build firm founded in Stillwater in 1989 and based in Lake Elmo, MN. He leads clients through the design-build process on patios, pools, and outdoor living projects across the Twin Cities, and every price on this site comes from projects his team has actually built.</p> </div> </aside> <p style="margin-top:34px;border-top:1px solid var(--line);padding-top:24px;"> <a class="btn btn-dark" href="/blog/">&larr; All guides</a> <a class="btn btn-primary" href="/contact/" style="margin-left:10px;">Get a Free Quote</a> </p> </article> </section>  </main> <footer> <div class="wrap"> <div class="foot-top"> <div class="foot-brand"> <div class="foot-logo"> <img src="/logo.png" alt="Schifsky Companies" width="200" height="69"> </div> <p>
+Family-owned Twin Cities landscape design &amp; build for 37+ years-
+          outdoor living, pools, patios, pergolas, retaining walls, and drainage.
+</p> </div> <div class="foot-contact"> <a class="js-call" href="tel:+16514390603"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#ebd200"></path></svg> 651-439-0603 </a> <a href="mailto:support@schifskycompanies.com"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#ebd200" stroke-width="2"></path><path d="M3 7l9 6 9-6" stroke="#ebd200" stroke-width="2"></path></svg> support@schifskycompanies.com </a> <a href="https://maps.google.com/?q=Schifsky%20Companies%203520%20Lavern%20Ave%20N%20Lake%20Elmo%20MN%2055042" target="_blank" rel="noopener"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="#ebd200" stroke-width="2"></path><circle cx="12" cy="11" r="2.4" stroke="#ebd200" stroke-width="2"></circle></svg> 3520 Lavern Ave N, Lake Elmo, MN 55042 </a> </div> <nav class="foot-links" aria-label="Footer"> <a href="/services/">Services</a> <a href="/portfolio/">Portfolio</a> <a href="/about/">About</a> <a href="/reviews/">Reviews</a> <a href="/faq/">FAQ</a> <a href="/blog/">Guides</a> <a href="/contact/">Contact</a> </nav> </div> <div class="foot-bottom"> <span>© 2026 Schifsky Companies. All rights reserved. Licensed &amp; Insured.</span> <span>Landscape Design &amp; Build · Serving the Twin Cities Metro</span> </div> </div> </footer> <script>
+      document.documentElement.classList.add('js');
+      // Scroll-reveal animation
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold: .12 });
+        els.forEach(function (e) { io.observe(e); });
+      })();
+
+      // GA4: track clicks on any mailto: link (sitewide)
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (typeof gtag === 'function') gtag('event', 'email_click');
+        });
+      });
+    </script> </body> </html>
