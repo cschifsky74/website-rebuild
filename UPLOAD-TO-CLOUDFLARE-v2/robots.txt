@@ -1,3 +1,11 @@
+# Google Ads landing-page crawlers. Named explicitly so there is no ambiguity:
+# AdsBot ignores "User-agent: *" rules but obeys rules that name it.
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
 User-agent: *
 Allow: /
 
