@@ -36,7 +36,7 @@ For each project, anything you can confirm from job records. Leave blank where u
 
 ## D. Accounts and external tasks
 
-10. GoDaddy DNS: forward the bare domain `schifskycompanies.com` to `https://www.schifskycompanies.com` (301). The apex currently points at the old DigitalOcean server and returns 503, which is what Google Ads reports as "website unavailable." Then shut down the old droplet if it is still billed.
+10. GoDaddy DNS: done 2026-10-21. The bare domain now 301s to `https://www.schifskycompanies.com` (root only). Decide how to preserve paths on the bare domain (options in `apex-domain-redirect-2026-10-21.md`) and shut down the old DigitalOcean droplet if it is still billed.
 11. Google Search Console: add me as a user (or export Performance and Pages reports for the last 3 and 12 months). Needed to decide the guide consolidations in `content-map.md`.
 12. Google Business Profile: confirm categories, hours (site says Mon-Fri 7am-5pm), service list, and that the website link is `https://www.schifskycompanies.com/`.
 13. Web3Forms dashboard: confirm the destination address for the access key is `support@schifskycompanies.com`; check the submissions log if any lead emails are still missing.

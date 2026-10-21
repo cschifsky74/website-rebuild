@@ -44,7 +44,7 @@ Findings from the audit prompt, re-checked against source:
 | P1-8 | LCP: hero images not lazy-loaded; galleries, videos lazy | confirmed |
 | P1-9 | Remove stale legacy stub folders from the deploy directory (redirects already cover them) | done |
 | P1-10 | robots.txt explicit AdsBot allow (already staged earlier) | done |
-| P1-11 | Apex domain 503 (old server) | blocked, owner: GoDaddy forwarding |
+| P1-11 | Apex domain 503 (old server) | done for root (GoDaddy 301 forwarding, HTTP + HTTPS); path/query preservation open, see `apex-domain-redirect-2026-10-21.md` |
 | P1-12 | Search Console live inspection | blocked, no access |
 | P1-13 | Duplicate business identity in LP schema (GeneralContractor vs site LandscapingBusiness) | done, aligned |
 
