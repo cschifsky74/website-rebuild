@@ -1,3 +1,55 @@
+# Change log: cleanup batch 2 (2026-10-21, afternoon)
+
+Status: built and staged in `website-rebuild/UPLOAD-TO-CLOUDFLARE-v2/`. Not published until the owner commits and pushes. Responds to the external review of Batch 1 (sections 3, 5 and 9 of that document). No URLs, redirects, analytics IDs or forms changed.
+
+## Copy corrections (overclaims)
+
+| Page | Before | After |
+| --- | --- | --- |
+| /paver-patios/ | "finish the edges so nothing shifts... still looks new after a decade" | edge restraint keeps the field tight; holds up well through many winters; settled pavers can be reset |
+| /paver-patios/ | "the difference between a patio you repair in a few years and one you simply enjoy" | soil, grade and drainage play a part; movable pavers can be reset without replacing the patio |
+| /paver-patios/ FAQ | "Will it heave or crack? Not when it's built right." | designed to tolerate freeze-thaw; no Minnesota surface is immune to ground movement; pavers can be lifted and reset (visible text and FAQ JSON-LD share the same data) |
+| /paver-patios/ | permeable pavers "ideal for low spots" | good where water must be managed on site and the soil below drains well enough |
+| /aluminum-pergola-builder-minnesota/ | "Zero Maintenance", "maintenance-free" (5 places), "virtually no upkeep" | "low maintenance"; occasional wash, keep gutters clear, follow the manufacturer's care guide |
+| /aluminum-pergola-builder-minnesota/ FAQ | snow loads: "Yes... rated to handle our winters" | ratings vary by brand, model, span and configuration; we show the published rating for the model before purchase |
+| /aluminum-pergola-builder-minnesota/ FAQ | louvers in winter: "They do. The louvers operate year-round" | motors are year-round, but ice can lock louvers; do not force frozen louvers; model-specific winter guidance at handoff |
+| /custom-landscape-design/ | "getting it exactly right while changes are still free" | changes are a few clicks on screen instead of a change order in the ground |
+| /custom-landscape-design/ FAQ | design fee "credited 100% toward your installation" | consultation free; design fee explained with what it covers, revision rounds and how it is credited, before commitment (the "100%" figure is an owner-input item) |
+| /free-design-consultation/, both fall-offer LPs | "credited 100%" | "credited toward your installation" (same reason) |
+| /fiberglass-pools/ | "finished, cohesive space from day one", "finished and beautiful the day the water goes in" | landscape planned and scheduled with the pool rather than left for later |
+| /fiberglass-pools/ Monaco | "deep end built for a diving board" | 8 ft deep end; diving-board use depends on shell, board and local code, confirmed per configuration (tag "Diving pool" kept per owner) |
+| /fiberglass-pools/ | "Every shell comes with a lifetime structural warranty" | Latham's limited lifetime structural warranty; written terms provided with the proposal |
+| /retaining-walls-twin-cities/ FAQ | "walls over roughly four feet typically need engineering and a permit" | depends on the city; code height usually measured from the bottom of the footing, not the priced face; surcharge loads can trigger engineering lower |
+| /landscape-drainage-in-lake-elmo/ | "one of the highest-return projects... can prevent a flooded basement and protect the single biggest investment you own" | modest project compared with repairing water damage; protects lawn, plantings, patios and walls |
+| /landscape-drainage-in-lake-elmo/ | "verify the system carries water away cleanly - even in a heavy rain" | check that water moves as designed at the next good rain |
+| Pool cost guide, plunge pool guide | "the day the water goes in, the whole backyard is finished" | planned and scheduled with the pool instead of left for a later year |
+
+## Consistency fixes
+
+- Hugo (Gather Round the Fire): "plunge spa" on /outdoor-living/, the outdoor kitchen guide and both fall-offer LPs changed to "plunge pool" to match the homepage and the project video note. Which term is correct is an owner question (see owner-input B). Project tags unchanged pending that answer.
+- Birchwood Village (Terraced on White Bear Lake): type label now "Retaining walls, stairs, driveway & landscape design" and badge "Retaining walls & driveway" instead of the tag-derived "Patio & retaining walls". The hardscape service link stays (driveway). Implemented as optional `typeLabel` / `shortType` overrides on the project record.
+- Related content: projects accept explicit `related` and `guides` overrides (used on Birchwood: Dellwood, Sustainable Modern, Modern Revival; and Hugo: outdoor-living-led projects plus the kitchen and fire-feature guides). The automatic fallback now ranks by the project's principal service, then shared tags, then city, instead of returning the first three category matches.
+- Drainage page: the retaining-wall cost guide card is removed (no drainage guide exists; the section is omitted rather than filled with a weak match). "From the Ground Up" stays as the related project because its story documents grading work.
+- City pages without a local project (Edina and others): the "We have not published a project in X yet" sentence replaced with a neutral introduction; mileage is kept and labeled "straight-line from city center to city center".
+
+## Reviews
+
+- The Featurable widget renders only a rating badge (4.9, 78 reviews on 2026-10-21) and a hidden JSON block; no review text was visible on the homepage or /reviews/. Added `src/data/reviews.js` (10 Google reviews, verbatim, captured from the widget feed) and `ReviewCards.astro`. Homepage shows three excerpted cards (pool backyard, patio and fire pit, retaining walls); /reviews/ shows all ten in full. The live badge remains under the cards. One em dash in a customer's review was rendered as a comma to keep the site's no-em-dash rule; wording untouched.
+- No review or rating schema added by the site; the widget keeps its own.
+- The "Leave a Google Review" button on /reviews/ pointed at `placeid=REPLACE_WITH_PLACE_ID` (a dead link, live). Fixed with the verified place ID `ChIJJzmb29O3slIRGJKwUg-CdSI` (confirmed on Google Maps as Schifsky Companies, 3520 Lavern Ave N).
+
+## Verification (2026-10-21 build)
+
+- 82 pages, no errors; 0 em dashes; 0 broken internal links; 150 JSON-LD blocks parse.
+- Stale phrases ("credited 100%", "plunge spa", "Zero Maintenance", "looks new after a decade", "highest-return", "day the water goes in"): 0 in built HTML.
+- Pergola FAQ wording identical in visible HTML and FAQ JSON-LD.
+
+## Rollback
+
+All changes are in source. Check out the previous commit of `UPLOAD-TO-CLOUDFLARE-v2/` and push.
+
+---
+
 # Change log: SEO implementation batch 1 (2026-10-21)
 
 Status: built and staged in `website-rebuild/UPLOAD-TO-CLOUDFLARE-v2/`. Not published; goes live when the owner commits and pushes. No URLs removed, no redirects changed, no analytics IDs changed, all forms unchanged.

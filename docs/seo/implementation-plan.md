@@ -69,7 +69,7 @@ Findings from the audit prompt, re-checked against source:
 | P3-4 | Pergolas: link to cost guide; product claims limited to existing approved copy | done |
 | P3-5 | Drainage: symptom-led intro added; solution list limited to existing approved copy | done |
 | P3-6 | Pools: scope-boundary note (pool proposal vs. landscape scope) | done |
-| P3-7 | Landscape design: design fee / credit language | blocked, owner confirms policy |
+| P3-7 | Landscape design: design fee / credit language | softened 2026-10-21 (consultation free, fee explained before commitment); exact fee/credit/revision terms still owner input |
 | P4-1 | All 18 projects: descriptive subtitle, fact panel (city, type, investment, scope), services performed, city link | done |
 | P4-2 | Priority case studies (Stillwater, Hugo, Birchwood, Fairway): narrative expansion | blocked, owner facts (see owner-input) |
 
@@ -83,6 +83,17 @@ Findings from the audit prompt, re-checked against source:
 | P5-4 | New city/service pages | none created (gate not met) |
 | P6-1 | Guide price reconciliation against approved figures | confirmed consistent |
 | P6-2 | Guides link to service pages and real examples | confirmed |
+
+## Cleanup batch 2 (2026-10-21, from external review)
+
+| ID | Task | Status |
+| --- | --- | --- |
+| R-A02 | Overclaim cleanup on patio, pergola, design, pools, walls, drainage, two pool guides, three LPs | done, see change-log |
+| R-A02 | Hugo pool/spa terminology unified; Birchwood label corrected | done (owner confirms Hugo) |
+| R-A03 | Explicit related/guide overrides; principal-service fallback; drainage guide card removed | done |
+| R-A03 | Drainage form option | blocked, owner decision |
+| R-9 | Reviews: static review text on homepage and /reviews/; dead write-review link fixed with verified place ID | done |
+| R-5 | Edina and other no-local-project pages: neutral intro, labeled mileage | done |
 
 ## Phase 7: measurement
 

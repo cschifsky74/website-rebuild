@@ -4,11 +4,13 @@ Facts that would unlock the next content batch. Nothing below has been guessed o
 
 ## A. Business policies (affects /custom-landscape-design/, all service FAQs, landing pages)
 
-1. Design fee: amount or range, and is it credited 100% to the install? Current copy on the landing page says "credited 100% toward your installation" and the main site says consultation is free. Confirm both.
+1. Design fee: amount or range, how many revision rounds it includes, and whether it is credited 100% to the install. The site and landing pages now say "credited toward your installation" (the "100%" was removed 2026-10-21 pending your confirmation; one word restores it).
 2. Minimum project size you want to quote (if any).
 3. Workmanship warranty: length and what it covers. Several pages say "workmanship warranty" with no term.
 4. Typical lead time from signed design agreement to construction start, by season.
 5. Who is the day-to-day point of contact once a job starts (title), so the "dedicated project leader" language is accurate.
+5a. Pergola: which brand and model do you install (the page now defers to "the manufacturer's care guide" and "published load rating"; naming the product lets us cite the real numbers).
+5b. Drainage-only jobs: do you want those leads? If yes, we add "Drainage / grading" to the project-type dropdown on the forms and route it through the lead sheet.
 6. Financing: confirm Lyon Financial is still the partner and whether "no equity or appraisals required" is still their offer.
 
 ## B. Project facts for case studies (affects /projects/... pages)
@@ -18,7 +20,7 @@ For each project, anything you can confirm from job records. Leave blank where u
 | Project | Need |
 | --- | --- |
 | Room to Gather (Stillwater) | patio square footage, paver product/pattern, stoop scope, what the $45K included, build duration, year |
-| Gather Round the Fire (Hugo) | confirm features: stone fireplace, outdoor kitchen (grill + kamado), plunge spa, pergola, water sphere; year; any homeowner quote we may publish |
+| Gather Round the Fire (Hugo) | is the water feature a plunge pool or a spa/hot tub? (site now says "plunge pool" everywhere; if it is a pool, the project should also be tagged as a pool project); confirm stone fireplace, outdoor kitchen (grill + kamado), pergola, water sphere; year; any homeowner quote we may publish |
 | Terraced on White Bear Lake (Birchwood Village) | was the wall engineered / permitted; wall heights; stone type; driveway material; year |
 | Life on the Fairway (Woodbury) | pool type (fiberglass/vinyl), pergola product, putting green scope, year |
 | Woodbury Poolside | pool type, pergola product, cabana scope |
