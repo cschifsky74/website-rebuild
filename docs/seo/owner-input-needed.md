@@ -1,0 +1,50 @@
+# Owner input needed
+
+Facts that would unlock the next content batch. Nothing below has been guessed or rendered on the site. Each item names the page it affects. Answer in any format; a few words per line is enough.
+
+## A. Business policies (affects /custom-landscape-design/, all service FAQs, landing pages)
+
+1. Design fee: amount or range, and is it credited 100% to the install? Current copy on the landing page says "credited 100% toward your installation" and the main site says consultation is free. Confirm both.
+2. Minimum project size you want to quote (if any).
+3. Workmanship warranty: length and what it covers. Several pages say "workmanship warranty" with no term.
+4. Typical lead time from signed design agreement to construction start, by season.
+5. Who is the day-to-day point of contact once a job starts (title), so the "dedicated project leader" language is accurate.
+6. Financing: confirm Lyon Financial is still the partner and whether "no equity or appraisals required" is still their offer.
+
+## B. Project facts for case studies (affects /projects/... pages)
+
+For each project, anything you can confirm from job records. Leave blank where unknown; blanks stay off the site.
+
+| Project | Need |
+| --- | --- |
+| Room to Gather (Stillwater) | patio square footage, paver product/pattern, stoop scope, what the $45K included, build duration, year |
+| Gather Round the Fire (Hugo) | confirm features: stone fireplace, outdoor kitchen (grill + kamado), plunge spa, pergola, water sphere; year; any homeowner quote we may publish |
+| Terraced on White Bear Lake (Birchwood Village) | was the wall engineered / permitted; wall heights; stone type; driveway material; year |
+| Life on the Fairway (Woodbury) | pool type (fiberglass/vinyl), pergola product, putting green scope, year |
+| Woodbury Poolside | pool type, pergola product, cabana scope |
+| The Sustainable Modern (Shakopee) | pool type, paver product (porcelain?), wall system, year completed |
+| Still Waters (Mahtomedi) | pool size (the plunge pool guide calls it compact; confirm), year |
+| Carved in Stone (Dellwood) | wall system (block, boulder, both), length/height, year |
+| From the Ground Up (Lake Elmo) | does this project include drainage/grading work? It is currently cited on the drainage page because of the new-construction grading shown in photos |
+| All projects | one line per gallery photo describing what is shown (we currently use "view N of M" alt text) |
+
+## C. City pages (affects 23 /landscape-design-build-services-in-... pages)
+
+7. For Lake Elmo, Woodbury, Stillwater, White Bear Lake, Mahtomedi, Hugo, Grant, Dellwood: one or two genuine site considerations you run into there (soils, lakeshore review, HOA review, access), with no regulatory specifics unless you can point to the city source.
+8. Any approved local testimonials by city.
+9. Which west-metro and Wisconsin cities you actively want to sell in next season. Pages you do not want to pursue can be de-emphasized.
+
+## D. Accounts and external tasks
+
+10. GoDaddy DNS: forward the bare domain `schifskycompanies.com` to `https://www.schifskycompanies.com` (301). The apex currently points at the old DigitalOcean server and returns 503, which is what Google Ads reports as "website unavailable." Then shut down the old droplet if it is still billed.
+11. Google Search Console: add me as a user (or export Performance and Pages reports for the last 3 and 12 months). Needed to decide the guide consolidations in `content-map.md`.
+12. Google Business Profile: confirm categories, hours (site says Mon-Fri 7am-5pm), service list, and that the website link is `https://www.schifskycompanies.com/`.
+13. Web3Forms dashboard: confirm the destination address for the access key is `support@schifskycompanies.com`; check the submissions log if any lead emails are still missing.
+14. Zapier: turn off the old "Contact Form Submission" Zap (errored daily since Sept 27; no longer used).
+15. Review process: who asks for Google reviews and when; we will not fabricate or incentivize.
+
+## E. Decisions
+
+16. Years in business now computes from the 1989 founding year at build time (currently 37). Confirm 1989 is the founding year you want cited.
+17. Keep or retire the five 2025 "Minneapolis" guides (lawn care, maintenance, full-service, trends, contractor)? They describe services the site no longer sells.
+18. Should the drainage page move from `/landscape-drainage-in-lake-elmo/` to a metro-wide slug? Not recommended until Search Console shows what it ranks for.
