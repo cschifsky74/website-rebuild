@@ -1,3 +1,30 @@
+# Change log: city hubs, unique content pass (2026-10-22)
+
+Problem measured before this pass: on the 22 auto-generated city hubs only 13 to 19% of the words were unique to the page (Woodbury: 80%).
+
+- Shared service copy trimmed to one sentence per service (photos carry the sections); one review instead of two on generated pages.
+- New `src/data/cityLocal.js`: two hand-written "Working in {City}" paragraphs for each of the 22 cities, built from checkable geography (named lakes, neighborhoods, terrain, lot types) and what that means for grading, walls, pools, access and review. No claims of past work in a city; those come only from project records. Rendered under the hero with the city's existing intro paragraphs.
+- Computed sentences and FAQs that are true by construction: straight-line distance from the Lake Elmo office, the city's published projects (linked) or the three nearest with miles. Two new FAQs per city ("How far is Schifsky from X?", "Have you built projects in or near X?") added to the visible FAQ and the FAQPage schema (5 questions per city).
+- Grammar: "What a Backyard Costs in {City}" avoids "a Edina"; "a project in {City}" wording throughout.
+- Fix: The Home Resort story said "Blazer"; now "Blaiser Pools". Video iframe titles name the project's real city.
+- Result: unique words per generated page now 31 to 41% (340 to 730 words), Sunfish Lake 55%, Woodbury 83%. The remaining shared text is real site content (project stories that repeat where the same nearest projects apply, cost ranges, promise band, lead form), not filler.
+- Build: 84 pages, 0 broken links, JSON-LD parses, 0 em dashes.
+
+---
+
+# Change log: all 23 city pages on the hub format (2026-10-22)
+
+- `src/data/hubs/generic.js` builds a hub for every city that has no hand-written one (Woodbury keeps its own). Same URLs, titles, descriptions and FAQ schema as before.
+- Hero: 3-photo crossfade slideshow (local project hero first when the city has one; otherwise Crown Jewel, Woodbury Poolside, Hugo). Only Woodbury has a drone video so far; Hugo, Lake Elmo (Lavern showroom) and Birchwood footage exists in the owner's folders if more video heroes are wanted.
+- Intro block under the hero carries each city's unique paragraphs from cities.js (unchanged text), so the per-city content that existed before is still on the page.
+- Mosaic: shared highlight reel. Featured: the city's own projects (Lake Elmo 3, Stillwater 2, Woodbury 4, Dellwood/Grant/Hugo/Hudson/Mahtomedi 1 each) or, for the 14 cities without a published project, the three nearest completed projects labeled with their real city and straight-line miles, under a note that says so. Grant's `projectMatch` now includes its published project (Where Lawn Meets Prairie).
+- Services: five short location-neutral sections (3D design first) with the portfolio photos; investment: approved ranges with local projects linked as examples when they exist, otherwise the guides; two Google reviews; six nearest city pages as chips; each city's FAQ (unique first question + shared) and the promise band unchanged.
+- Lead form now on every city page (`CITY_LEADFORM_ALL = true`); the hero CTA scrolls to it. Source label is "{City} City Page", same tracker/email routing.
+- Lightbox on all photos; project/city captions only in the lightbox.
+- Build: 84 pages, 0 broken links, JSON-LD parses, 0 em dashes. Duplicate-content note: the shared modules are the same across cities by design (like a site-wide footer); the unique copy per city is the intro, the featured projects and the first FAQ. Priority cities (Lake Elmo, Stillwater, Mahtomedi, Hugo) can get hand-written service sections and local FAQs on the same component when the owner facts arrive.
+
+---
+
 # Change log: two new projects (2026-10-22)
 
 - `/projects/woodbury-poolside-on-the-hill/` "Poolside on the Hill", Woodbury, MN, $120K (owner-supplied; fact panel notes the figure is landscape and hardscape around a pool installed by Blaiser Pools). 9 photos from the Shuck folder (4 drone, 5 ground). Tags: pools, patios, retaining, landscape. Related projects set explicitly.

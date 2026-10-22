@@ -95,7 +95,7 @@ Findings from the audit prompt, re-checked against source:
 | R-9 | Reviews: static review text on homepage and /reviews/; dead write-review link fixed with verified place ID | done |
 | R-5 | Edina and other no-local-project pages: neutral intro, labeled mileage | done |
 | R-B02 | Woodbury hub: video hero, photo mosaic, 3 project features with video, 5 service sections, investment, local FAQ | done 2026-10-22 (CityHub.astro, hubs/woodbury.js) |
-| R-B03 | Lake Elmo and Stillwater hubs on the same component | next |
+| R-B03 | All 23 city pages converted to the hub component (generic builder); Lake Elmo and Stillwater hand-written sections still to come | done 2026-10-22 (generic), hand-written next |
 
 ## Phase 7: measurement
 
