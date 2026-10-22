@@ -1,3 +1,25 @@
+# Change log: Woodbury hub (2026-10-22)
+
+Target: `/landscape-design-build-services-in-woodbury-mn/` (URL, title and canonical unchanged). Staged, not live until pushed.
+
+- New picture-first city hub rendered by `src/components/CityHub.astro` when a city record carries `hub` (data in `src/data/hubs/woodbury.js`). Other 22 city pages unchanged.
+- Hero: full-bleed drone video of Woodbury Poolside cut from the owner's DJI clips (Aug 26, 2026), three shots with crossfades, 19 s loop. Files: `/video/woodbury-hero-1080.mp4` (10.5 MB), `-720.mp4` (4.2 MB), `-540.mp4` (2.3 MB, Save-Data / slow connections), poster `/img/woodbury-hero-poster.jpg`. Reduced-motion users get the poster.
+- Photo mosaic: 12 tiles from the three Woodbury galleries, each linking to its project; descriptive alt text.
+- Three project features: Life on the Fairway (YouTube PCdiVuy38Tk), The Modern Revival (YouTube 9SEenS3GOIQ), Woodbury Poolside (photos). Copy limited to the published project stories and what the galleries show; investment labeled as complete-project totals.
+- Five service sections with Woodbury photos: patios/hardscape, pools, outdoor living + pergolas, walls + grading, 3D design; each links to its service page and a guide. Retaining walls in Woodbury are evidenced by The Modern Revival gallery (block walls, photos 06 to 09).
+- Investment block (approved ranges, three Woodbury totals, consultation/design fee/quote steps, four guide links), two Google reviews, nearby-area chips, Woodbury-specific FAQ (7, in FAQPage JSON-LD).
+- Removed the earlier claim of work "across Prestwick, Stonemill Farms, Dancing Waters and Eagle Valley"; only Prestwick is documented.
+- Page: about 2,200 words, 39 images, 2 embedded videos plus the hero video; 0 broken links; JSON-LD parses; sitemap lastmod 2026-10-22; og:image is the hero poster.
+- Mobile: layout verified by CSS review only (the sandbox cannot run a headless browser and the preview panel cannot emulate 390 px). Check the live page on a phone after pushing; the hero crops the 16:9 drone video to the centre on portrait screens.
+
+---
+
+# Change log: nav tweak (2026-10-22)
+
+- Careers removed from the header navigation. A "Join Our Team" band (both open roles plus a "See Open Positions & Apply" button) added to the bottom of /contact/ with anchor `#careers`. The /careers/ page, its URL, form and sitemap entry are unchanged; it is still linked from /contact/ so it is not orphaned. Open roles now live in `src/data/careers.js` and feed both pages.
+
+---
+
 # Change log: cleanup batch 2 (2026-10-21, afternoon)
 
 Status: built and staged in `website-rebuild/UPLOAD-TO-CLOUDFLARE-v2/`. Not published until the owner commits and pushes. Responds to the external review of Batch 1 (sections 3, 5 and 9 of that document). No URLs, redirects, analytics IDs or forms changed.
