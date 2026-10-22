@@ -1,3 +1,14 @@
+# Change log: Woodbury hub, round 2 (2026-10-22, after owner's mobile review)
+
+- Mobile hero text overflowed the screen (the hero section is a flex container and its `.wrap` sized to content). Fixed with `width:100%` on the wrap; buttons go full-width under 600 px. Hero eyebrow and lead shortened.
+- Opening mosaic is now a shared highlight reel (`src/data/highlights.js`, 12 best photos across 10 projects) instead of Woodbury-only tiles, so the same layout works for cities with few or no local photos. Every tile is captioned with its real project and city, and alt text names the city, so no photo is implied to be in Woodbury.
+- Featured project stories: the two paragraphs moved into a collapsed "About this project" panel (HTML `<details>`, still in the page source for search engines) under a one-line tagline. "Drone footage in the header" removed from the Woodbury Poolside kicker.
+- Lightbox: every photo on the page (38) opens full size with caption, "View project" link, prev/next, swipe, Esc and tap-outside to close. Cmd/Ctrl-click still goes to the project page.
+- Service sections now use the strongest photos across cities (Stillwater, Maple Plain, Lake Elmo, Shakopee, Hugo, Birchwood Village, Dellwood plus the Woodbury ones), each with a project · city caption on hover (always visible on touch screens). Copy adjusted so the text matches the photos.
+- SEO note for the owner: the local text that matters (H1, intro, three Woodbury project stories, service sections, investment, FAQs) is unchanged in the HTML; the reel swap trades 12 Woodbury alt texts for 12 captioned portfolio photos, a small effect, and the collapsed paragraphs are still indexed.
+
+---
+
 # Change log: Woodbury hub (2026-10-22)
 
 Target: `/landscape-design-build-services-in-woodbury-mn/` (URL, title and canonical unchanged). Staged, not live until pushed.
