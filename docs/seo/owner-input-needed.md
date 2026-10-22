@@ -28,6 +28,8 @@ For each project, anything you can confirm from job records. Leave blank where u
 | Still Waters (Mahtomedi) | pool size (the plunge pool guide calls it compact; confirm), year |
 | Carved in Stone (Dellwood) | wall system (block, boulder, both), length/height, year |
 | From the Ground Up (Lake Elmo) | does this project include drainage/grading work? It is currently cited on the drainage page because of the new-construction grading shown in photos |
+| Poolside on the Hill (Woodbury, Shuck) | confirm $120K is the landscape/hardscape scope (pool by Blaiser excluded), year, auto-cover yes/no, lighting included |
+| The Backyard Barn (Stillwater, Stensland) | confirm what the $40K covered (deck? turf? plantings?), who built the pool deck, year |
 | All projects | one line per gallery photo describing what is shown (we currently use "view N of M" alt text) |
 
 ## C. City pages (affects 23 /landscape-design-build-services-in-... pages)

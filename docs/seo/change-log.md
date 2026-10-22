@@ -1,3 +1,13 @@
+# Change log: two new projects (2026-10-22)
+
+- `/projects/woodbury-poolside-on-the-hill/` "Poolside on the Hill", Woodbury, MN, $120K (owner-supplied; fact panel notes the figure is landscape and hardscape around a pool installed by Blaiser Pools). 9 photos from the Shuck folder (4 drone, 5 ground). Tags: pools, patios, retaining, landscape. Related projects set explicitly.
+- `/projects/stillwater-backyard-barn/` "The Backyard Barn", Stillwater, MN, $40K (owner-supplied; fact panel notes "landscape scope around the pool as built"). 11 photos from the Stensland folder. Tags: pools, landscape. Story describes only what the photos show (turf strip, boulder and rock beds, plantings, lawn); deck material and pool installer not stated.
+- Project fact panel accepts an optional `scopeNote` that replaces the default "complete project as built" line.
+- Woodbury hub: fourth featured project (Poolside on the Hill), pools copy updated, a "landscape around a new pool: from about $75,000" row with the $120K example (figure matches the pools page), FAQ answer updated. Stillwater city page and portfolio pick the new projects up automatically; sitemap includes both.
+- Build: 84 pages, 0 broken links, JSON-LD parses, 0 em dashes.
+
+---
+
 # Change log: Woodbury hub, round 5 (2026-10-22)
 
 - Service sections reordered: Landscape Design in 3D (with the Sustainable Modern renderings) now leads, followed by patios, pools, outdoor living, walls.
