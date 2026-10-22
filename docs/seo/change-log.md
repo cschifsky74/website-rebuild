@@ -1,3 +1,20 @@
+# Change log: Woodbury hub, round 4 (2026-10-22)
+
+- Investment block simplified: three range rows (patio, complete backyard, pool plus backyard) with the per-square-foot line removed; the Woodbury examples are now links to their project pages inside each row (Modern Revival $235K, Woodbury Poolside $425K, Life on the Fairway $430K) and the patio row links the Woodbury patio cost guide. The separate row of guide links at the bottom is gone; a one-line financing note remains. Rows stack cleanly on mobile.
+- Top mosaic: project/city overlays removed (caption still appears in the lightbox).
+- 3D design section now shows two renderings from the owner's design package for The Sustainable Modern (Shakopee) next to the finished pool photo, so visitors see render-to-reality. Files: `/img/projects/shakopee-sustainable-modern/shakopee-sustainable-modern-render-02.jpg` and `-render-03.jpg` (plus `-800` variants), exported from "Bukacek Slideshow v3.pdf". Lightbox captions label them as 3D design renderings.
+
+---
+
+# Change log: Woodbury hub, round 3 (2026-10-22)
+
+- Mobile hero kicker ("Pools · Paver Patios · ...") was clipped on the right because the global mobile rule sets it to `white-space:nowrap`; the hub now lets it wrap.
+- Service sections lead with the photos on every screen size: one large 16:9 photo, two smaller below, then the heading and copy (desktop: photos left, text right). The first-photo span rule now targets the link wrapper, which is why the live round-2 build showed three equal tiles.
+- Project/city caption overlays removed from service photos; the caption still appears in the lightbox.
+- Services intro no longer says the photos are Woodbury lots.
+
+---
+
 # Change log: Woodbury hub, round 2 (2026-10-22, after owner's mobile review)
 
 - Mobile hero text overflowed the screen (the hero section is a flex container and its `.wrap` sized to content). Fixed with `width:100%` on the wrap; buttons go full-width under 600 px. Hero eyebrow and lead shortened.
