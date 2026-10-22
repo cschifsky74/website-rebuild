@@ -1,3 +1,10 @@
+# Change log: Woodbury hub, round 5 (2026-10-22)
+
+- Service sections reordered: Landscape Design in 3D (with the Sustainable Modern renderings) now leads, followed by patios, pools, outdoor living, walls.
+- Hero lead sentence and the mosaic intro sentence removed (both fields are optional in the component now).
+
+---
+
 # Change log: Woodbury hub, round 4 (2026-10-22)
 
 - Investment block simplified: three range rows (patio, complete backyard, pool plus backyard) with the per-square-foot line removed; the Woodbury examples are now links to their project pages inside each row (Modern Revival $235K, Woodbury Poolside $425K, Life on the Fairway $430K) and the patio row links the Woodbury patio cost guide. The separate row of guide links at the bottom is gone; a one-line financing note remains. Rows stack cleanly on mobile.
