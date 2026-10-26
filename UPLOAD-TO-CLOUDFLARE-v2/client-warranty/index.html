@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="facebook-domain-verification" content="xif1gwrfne310pqsgkop3laat7s085"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-HG3SZ6DEMB"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG3SZ6DEMB');
+      gtag('config', 'AW-791054221');
+    </script><!-- CallRail dynamic number insertion (call tracking) --><script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script><!-- Meta Pixel (Fall 2026 Pixel) --><script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1096242636418717');
+      fbq('track', 'PageView');
+    </script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1096242636418717&ev=PageView&noscript=1"></noscript><!-- Lead attribution: capture first-touch channel + gclid, persist, and expose window.scTracker() --><script>
+      (function () {
+        var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec';
+        var VALID = ['Google Ads','Google LSA','Google Business Profile','Organic Search','Direct','Instagram Ads','Referral','Repeat Client','Other'];
+        var NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
+        function ss() { try { return window.sessionStorage; } catch (e) { return null; } }
+        function ls() { try { return window.localStorage; } catch (e) { return null; } }
+
+        function detect() {
+          var params = new URLSearchParams(location.search);
+          var get = function (k) { return (params.get(k) || '').toLowerCase(); };
+          var gclid = params.get('gclid') || params.get('gbraid') || params.get('wbraid') || '';
+          var um = get('utm_medium'), us = get('utm_source'), uc = get('utm_campaign');
+          var fbclid = params.get('fbclid') || '';
+          var hasUTM = false;
+          params.forEach(function (_, k) { if (k.indexOf('utm_') === 0) hasUTM = true; });
+          var refHost = '';
+          try { refHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : ''; } catch (e) {}
+          var host = location.hostname.toLowerCase();
+          var extRef = refHost && refHost.indexOf(host) === -1 && host.indexOf(refHost) === -1;
+          var channel;
+          if (gclid) channel = 'Google Ads';
+          else if (um === 'cpc' || um === 'ppc' || um === 'paid') channel = 'Google Ads';
+          else if (um === 'gbp' || uc === 'gmb') channel = 'Google Business Profile';
+          else if (fbclid || us.indexOf('instagram') >= 0 || us.indexOf('facebook') >= 0 || (extRef && (refHost.indexOf('instagram') >= 0 || refHost.indexOf('facebook') >= 0))) channel = 'Instagram Ads';
+          else if (/google|bing|duckduckgo|yahoo|ecosia/.test(refHost)) channel = 'Organic Search';
+          else if (!refHost && !hasUTM) channel = 'Direct';
+          else if (extRef) channel = 'Referral';
+          else channel = 'Other';
+          return { channel: channel, gclid: gclid };
+        }
+
+        // Capture on first page of the session (first touch wins - never overwrite).
+        try {
+          var s = ss();
+          var d = detect();
+          if (d.gclid) { var l = ls(); if (l) l.setItem('sc_gclid', JSON.stringify({ v: d.gclid, t: Date.now() })); }
+          if (s && !s.getItem('sc_attr')) {
+            s.setItem('sc_attr', JSON.stringify({ channel: d.channel, gclid: d.gclid, landing: location.pathname, t: Date.now() }));
+          }
+        } catch (e) {}
+
+        function storedGclid() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.gclid) return a.gclid; } catch (e) {}
+          try { var m = JSON.parse(ls().getItem('sc_gclid') || 'null'); if (m && (Date.now() - m.t) < NINETY_DAYS) return m.v; } catch (e) {}
+          return '';
+        }
+        function storedChannel() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.channel && VALID.indexOf(a.channel) >= 0) return a.channel; } catch (e) {}
+          return detect().channel || 'Other';
+        }
+
+        // Fire-and-forget lead POST. form_source must always be present.
+        window.scTracker = function (data) {
+          try {
+            var payload = {
+              form_source: (data && data.form_source) || 'Website',
+              channel: storedChannel(),
+              name: (data && data.name) || '',
+              phone: (data && data.phone) || '',
+              email: (data && data.email) || '',
+              city: (data && data.city) || '',
+              service: (data && data.service) || '',
+              project: (data && data.project) || '',
+              zip: (data && data.zip) || '',
+              budget: (data && data.budget) || '',
+              gclid: storedGclid(),
+              page_path: location.pathname
+            };
+            var body = JSON.stringify(payload);
+            var sent = false;
+            if (navigator.sendBeacon) {
+              try { sent = navigator.sendBeacon(LEAD_ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })); } catch (e) {}
+            }
+            if (!sent) {
+              fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }).catch(function () {});
+            }
+          } catch (e) {}
+        };
+      })();
+    </script><title>Material &amp; Craftsmanship Warranty | Schifsky Companies</title><meta name="description" content="Schifsky Companies material and craftsmanship warranty for hardscape, carpentry, landscape lighting, plants, electrical and plumbing work."><link rel="canonical" href="https://www.schifskycompanies.com/client-warranty/"><!-- Roboto (site brand font) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"><!-- Open Graph / social sharing --><meta property="og:type" content="website"><meta property="og:site_name" content="Schifsky Companies"><meta property="og:title" content="Material &#38; Craftsmanship Warranty | Schifsky Companies"><meta property="og:description" content="Schifsky Companies material and craftsmanship warranty for hardscape, carpentry, landscape lighting, plants, electrical and plumbing work."><meta property="og:url" content="https://www.schifskycompanies.com/client-warranty/"><meta property="og:image" content="https://www.schifskycompanies.com/img/og-default.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://www.schifskycompanies.com/img/og-default.jpg"><meta name="robots" content="noindex, nofollow"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="stylesheet" href="/_astro/_slug_.kK_S8eLM.css">
+<style>.warranty-lede[data-astro-cid-edq7vxds]{font-size:17px;line-height:1.65;background:var(--soft);border-left:5px solid var(--yellow);padding:16px 20px;border-radius:10px}.warranty-sec[data-astro-cid-edq7vxds]{margin-top:40px}.warranty-sec[data-astro-cid-edq7vxds] h2[data-astro-cid-edq7vxds]{font-size:clamp(22px,2.6vw,30px);margin:0 0 6px}.warranty-coverage[data-astro-cid-edq7vxds]{font-weight:700;color:var(--ink);margin:0 0 4px}.warranty-note[data-astro-cid-edq7vxds]{color:var(--muted);font-size:14.5px;margin:0 0 10px}.warranty-sec[data-astro-cid-edq7vxds] ul[data-astro-cid-edq7vxds]{padding-left:22px;margin:8px 0 12px}.warranty-sec[data-astro-cid-edq7vxds] li[data-astro-cid-edq7vxds]{margin:0 0 10px;line-height:1.6}.warranty-excl[data-astro-cid-edq7vxds]{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:15px;line-height:1.6}.warranty-foot[data-astro-cid-edq7vxds]{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);text-align:center}
+</style></head> <body> <a class="skip-link" href="#main">Skip to content</a> <div class="topbar"></div> <header id="siteHeader"> <div class="wrap nav"> <a class="logo" href="/" aria-label="Schifsky Companies home"> <img src="/logo.png" alt="Schifsky Companies - landscape design and build" width="240" height="83"> </a> <nav class="nav-links" aria-label="Primary"> <div class="nav-item has-sub"> <a class="nav-top" href="/services/" aria-haspopup="true"> Services <svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </a> <div class="nav-sub" role="menu"> <a role="menuitem" href="/custom-landscape-design/">Landscape Design</a><a role="menuitem" href="/fiberglass-pools/">Swimming Pools</a><a role="menuitem" href="/paver-patios/">Paver Patios &amp; Hardscape</a><a role="menuitem" href="/retaining-walls-twin-cities/">Retaining Walls</a><a role="menuitem" href="/outdoor-living/">Outdoor Living</a><a role="menuitem" href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a role="menuitem" href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/blog/">Guides</a> </nav> <div class="nav-right"> <a class="nav-phone js-call" href="tel:+16514390603"> <span class="ico" aria-hidden="true"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#1a191d"></path></svg> </span> <span class="txt"><small>Call us</small><span class="num">651-439-0603</span></span> </a> <a class="btn btn-primary nav-cta" href="/contact/">Free Consultation</a> <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#1a191d" stroke-width="2" stroke-linecap="round"></path></svg> </button> </div> </div> <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile"> <div class="wrap"> <div class="m-group"> <div class="m-parent"> <a href="/services/">Services</a> <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSubServices" aria-label="Show services"> <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> </div> <div class="m-sub" id="mSubServices"> <a href="/custom-landscape-design/">Landscape Design</a><a href="/fiberglass-pools/">Swimming Pools</a><a href="/paver-patios/">Paver Patios &amp; Hardscape</a><a href="/retaining-walls-twin-cities/">Retaining Walls</a><a href="/outdoor-living/">Outdoor Living</a><a href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/blog/">Guides</a> <a class="btn btn-primary" href="/contact/">Get a Free Quote</a> </div> </nav> </header> <script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('menuToggle');
+    if (!header || !toggle) return;
+    function close() { header.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Mobile "Services" accordion
+    document.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var sub = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        if (sub) sub.classList.toggle('open', !open);
+      });
+    });
+    // Close the whole menu when a real link (not the accordion toggle) is tapped
+    document.querySelectorAll('#mobileMenu a').forEach(function (a) { a.addEventListener('click', close); });
+  })();
+</script> <main id="main">  <section class="page-hero" data-astro-cid-edq7vxds> <div class="wrap" data-astro-cid-edq7vxds> <span class="eyebrow on-dark" data-astro-cid-edq7vxds>For Our Clients</span> <h1 data-astro-cid-edq7vxds>Material &amp; Craftsmanship Warranty</h1> <p data-astro-cid-edq7vxds>What we stand behind after your project is complete, and how to reach us if something needs attention.</p> <div class="hero-cta-row" style="margin-top:22px;" data-astro-cid-edq7vxds> <a class="btn btn-primary btn-lg" href="/client-warranty/Schifsky-Warranty.pdf" download="Schifsky-Warranty.pdf" data-astro-cid-edq7vxds>Download the Warranty (PDF)</a> <a class="btn btn-ghost btn-lg js-call" href="tel:+16514390603" data-astro-cid-edq7vxds>Call 651-439-0603</a> </div> </div> </section> <section data-astro-cid-edq7vxds> <div class="wrap prose warranty" data-astro-cid-edq7vxds> <p class="warranty-lede" data-astro-cid-edq7vxds>If you notice a problem covered below, contact the office first at <a class="js-call" href="tel:+16514390603" data-astro-cid-edq7vxds>651-439-0603</a> or <a href="mailto:support@schifskycompanies.com" data-astro-cid-edq7vxds>support@schifskycompanies.com</a>. The PDF above is the document of record; this page reproduces it for easy reading.</p> <div class="warranty-sec" data-astro-cid-edq7vxds> <h2 data-astro-cid-edq7vxds>Hardscape Craftsmanship</h2> <p class="warranty-coverage" data-astro-cid-edq7vxds>Coverage up to 3 years for problems that arise as noted below</p> <p class="warranty-note" data-astro-cid-edq7vxds>All material warranties will be provided by the material manufacturer.</p> <ul data-astro-cid-edq7vxds> <li data-astro-cid-edq7vxds>If any pavers sink or settle to more than 3/8 of an inch compared to adjacent pavers, walls, or stair treads within 3 years after we install them, we will come back and repair them at no charge.</li><li data-astro-cid-edq7vxds>If you have any hardscape caps that are secured to a concrete block that come loose, we will come back to re-secure them at no charge.</li><li data-astro-cid-edq7vxds>If any stone veneer that was installed on various features of the project becomes loose, we will come back and repair it at no cost to you.</li><li data-astro-cid-edq7vxds>If any wall block becomes loose or is showing signs of settling, we will come back and repair it.</li> </ul> <p data-astro-cid-edq7vxds>Please do not hesitate to contact us if you see any signs of distress in a retaining wall.</p> <p class="warranty-excl" data-astro-cid-edq7vxds><b data-astro-cid-edq7vxds>Not covered:</b> This warranty does not cover any repairs in regards to fading or discoloration, algae or mold growth, scratched, chipped, or cracked concrete, and raised areas caused by tree roots.</p> </div><div class="warranty-sec" data-astro-cid-edq7vxds> <h2 data-astro-cid-edq7vxds>Carpentry Craftsmanship</h2> <p class="warranty-coverage" data-astro-cid-edq7vxds>Coverage up to 1 year for problems that arise as noted below</p> <p class="warranty-note" data-astro-cid-edq7vxds>All material warranties will be provided by the material manufacturer.</p> <ul data-astro-cid-edq7vxds> <li data-astro-cid-edq7vxds>If any deck boards, fence posts, ceiling boards, fascia boards, trim, and other similar finishing lumber become loose, we will come back to secure them.</li> </ul>  <p class="warranty-excl" data-astro-cid-edq7vxds><b data-astro-cid-edq7vxds>Not covered:</b> This warranty does not cover any repairs in regards to fading or discoloration, rotting or termite damage, shrinking or warping boards, cracking, and general lumber wear and tear. Any mold that may appear on composite is also not warrantied; keeping it clean is solely up to the homeowner.</p> </div><div class="warranty-sec" data-astro-cid-edq7vxds> <h2 data-astro-cid-edq7vxds>Landscape Lighting Craftsmanship</h2> <p class="warranty-coverage" data-astro-cid-edq7vxds>Coverage up to 3 years for problems that arise as noted below</p> <p class="warranty-note" data-astro-cid-edq7vxds>All material warranties will be provided by the material manufacturer.</p> <ul data-astro-cid-edq7vxds> <li data-astro-cid-edq7vxds>If any light fixture is showing signs of dimness or loses light completely, we will come back and repair it for free.</li><li data-astro-cid-edq7vxds>If the power supply or transformer is not working for whatever reason, please contact the office first and we will troubleshoot the problem. Most of the time these items are warrantied by the supplier.</li> </ul>  <p class="warranty-excl" data-astro-cid-edq7vxds><b data-astro-cid-edq7vxds>Not covered:</b> This warranty does not cover any cut wires or damaged fixtures caused by others.</p> </div><div class="warranty-sec" data-astro-cid-edq7vxds> <h2 data-astro-cid-edq7vxds>Sand &amp; Sealer</h2> <p class="warranty-coverage" data-astro-cid-edq7vxds>Coverage is contingent</p> <p class="warranty-note" data-astro-cid-edq7vxds>All material warranties will be provided by the material manufacturer.</p> <ul data-astro-cid-edq7vxds> <li data-astro-cid-edq7vxds>Any joint sand or sealer that was used in the project is not warrantied. If any areas were noticeably missed during the install, please contact the office and we will return to address this.</li> </ul>   </div><div class="warranty-sec" data-astro-cid-edq7vxds> <h2 data-astro-cid-edq7vxds>Plants</h2> <p class="warranty-coverage" data-astro-cid-edq7vxds>One (1) year replacement warranty, conditions apply</p>  <ul data-astro-cid-edq7vxds> <li data-astro-cid-edq7vxds>Schifsky Companies provides a one (1) year replacement warranty on installed plant material only when a drip irrigation system is installed by Schifsky Companies at the time of plant installation.</li><li data-astro-cid-edq7vxds>This warranty covers plant material only and does not include labor costs associated with removal, replacement installation, service calls, or additional materials.</li><li data-astro-cid-edq7vxds>Warranty coverage is contingent upon the irrigation system remaining fully operational during spring, summer and fall and being properly used and maintained by the property owner.</li><li data-astro-cid-edq7vxds>All evergreens must be burlapped, with proof of burlapping per industry standards.</li><li data-astro-cid-edq7vxds>Boxwood and arborvitae are not warrantied against winter burn or dying from season to season due to winter.</li> </ul>   </div><div class="warranty-sec" data-astro-cid-edq7vxds> <h2 data-astro-cid-edq7vxds>Electrical, Plumbing &amp; Sub-Contractors</h2> <p class="warranty-coverage" data-astro-cid-edq7vxds>Coverage up to 3 years for problems that arise as noted below</p>  <ul data-astro-cid-edq7vxds> <li data-astro-cid-edq7vxds>All electrical and plumbing work that was performed and documented by a certified contractor will be held responsible for any repairs or issues that may arise. Any electrical or plumbing work performed by Schifsky Co will be assessed and repaired at no cost to the client.</li><li data-astro-cid-edq7vxds>Any work that was performed by a sub-contractor and needs attention will be taken care of by the sub-contractor. Please always contact the office first on the matter, before any actions are made.</li> </ul>   </div> <div class="warranty-sec" data-astro-cid-edq7vxds> <h2 data-astro-cid-edq7vxds>Warranty Notes</h2> <ul data-astro-cid-edq7vxds> <li data-astro-cid-edq7vxds>Warranty will be voided if alterations or changes are made to any part of the contracted scope of installation by anyone other than Schifsky Co or an approved sub-contractor.</li><li data-astro-cid-edq7vxds>It is the customer’s responsibility to locate, clearly identify, and notify Schifsky Companies of all private underground conduits, wiring, pipes, septic systems, etc. Any damage to such underground conduits, wiring, pipes, septic systems, etc. shall not be the responsibility of Schifsky Co to repair. When the project is completed, Schifsky Companies will provide a site schematic markup of roughly where the utilities for the project were installed.</li><li data-astro-cid-edq7vxds>Schifsky Companies does not warranty naturally occurring efflorescence of pavers, stains, or any damage due to uncontrollable circumstances. This is why we highly recommend sealing your pavers. Protect your investment!</li><li data-astro-cid-edq7vxds>Concrete cracking will not be warrantied.</li><li data-astro-cid-edq7vxds>Seamless turf installation seams are not warrantied.</li><li data-astro-cid-edq7vxds>Warranty will be voided if high-pressure water is used to clean the surface or joint lines of the pavers. Please use a low-PSI pressure washer, preferably electric.</li><li data-astro-cid-edq7vxds>Warranty will be voided if new excavation, digging, or soil removal occurs within 4 feet of any finished hardscape system.</li><li data-astro-cid-edq7vxds>Tree roots from existing trees can damage the interlocking paver system. We do not offer a warranty to protect the paver system from damage or lifting caused by existing tree roots.</li><li data-astro-cid-edq7vxds>Natural occurrences or disasters are not covered by the warranty.</li><li data-astro-cid-edq7vxds>Shifted or sunken pavers due to improper use, such as vehicles or lawn mowers driving on or off the edges, are not covered under the warranty.</li><li data-astro-cid-edq7vxds>Edge restraints can be altered during deep freezes. If requested, we will repair and reset the affected edge restraints one time during the warranty period.</li><li data-astro-cid-edq7vxds>If a warranty claim is made, it must be submitted within the noted warranty period.</li><li data-astro-cid-edq7vxds>Requested repairs are made by the Schifsky Companies team, or one of our approved sub-contractors, and the costs for the repairs are covered by us. If you wish to have another company complete the repairs, we do not compensate you for the repair, and the warranty will be voided.</li><li data-astro-cid-edq7vxds>All construction shall, unless otherwise specified herein, carry a 36-month warranty from the date on the invoice on materials and workmanship, excluding neglected maintenance, misuse, vandalism, or damage from natural occurrences or disasters.</li><li data-astro-cid-edq7vxds>All material is warranted to be as specified.</li><li data-astro-cid-edq7vxds>Late payment: all final payments are due upon completion of work. Late payments for projects will result in the termination of the warranty.</li><li data-astro-cid-edq7vxds>Warranty period begins from the date of completed construction.</li> </ul> </div> <p class="warranty-foot" data-astro-cid-edq7vxds>Schifsky Companies · 3520 Lavern Ave N, Lake Elmo, MN 55042 · 651-439-0603 · www.schifskycompanies.com</p> </div> </section>   </main> <footer> <div class="wrap"> <div class="foot-top"> <div class="foot-brand"> <div class="foot-logo"> <img src="/logo.png" alt="Schifsky Companies" width="200" height="69"> </div> <p>
+Family-owned Twin Cities landscape design &amp; build for 37+ years-
+          outdoor living, pools, patios, pergolas, retaining walls, and drainage.
+</p> </div> <div class="foot-contact"> <a class="js-call" href="tel:+16514390603"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#ebd200"></path></svg> 651-439-0603 </a> <a href="mailto:support@schifskycompanies.com"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#ebd200" stroke-width="2"></path><path d="M3 7l9 6 9-6" stroke="#ebd200" stroke-width="2"></path></svg> support@schifskycompanies.com </a> <a href="https://maps.google.com/?q=Schifsky%20Companies%203520%20Lavern%20Ave%20N%20Lake%20Elmo%20MN%2055042" target="_blank" rel="noopener"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="#ebd200" stroke-width="2"></path><circle cx="12" cy="11" r="2.4" stroke="#ebd200" stroke-width="2"></circle></svg> 3520 Lavern Ave N, Lake Elmo, MN 55042 </a> </div> <nav class="foot-links" aria-label="Footer"> <a href="/services/">Services</a> <a href="/portfolio/">Portfolio</a> <a href="/about/">About</a> <a href="/reviews/">Reviews</a> <a href="/faq/">FAQ</a> <a href="/blog/">Guides</a> <a href="/contact/">Contact</a> </nav> </div> <div class="foot-bottom"> <span>© 2026 Schifsky Companies. All rights reserved. Licensed &amp; Insured.</span> <span>Landscape Design &amp; Build · Serving the Twin Cities Metro</span> </div> </div> </footer> <script>
+      document.documentElement.classList.add('js');
+      // Scroll-reveal animation
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold: .12 });
+        els.forEach(function (e) { io.observe(e); });
+      })();
+
+      // GA4: track clicks on any mailto: link (sitewide)
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (typeof gtag === 'function') gtag('event', 'email_click');
+          if (typeof fbq === 'function') fbq('track', 'Contact');
+        });
+      });
+    </script> </body> </html>

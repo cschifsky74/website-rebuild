@@ -1,0 +1,5 @@
+# Cloudflare Pages headers. Unlisted client documents: keep out of search engines.
+/client-warranty/*
+  X-Robots-Tag: noindex, nofollow
+/client-warranty
+  X-Robots-Tag: noindex, nofollow

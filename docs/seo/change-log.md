@@ -1,3 +1,11 @@
+# Change log: unlisted warranty page (2026-10-26)
+
+- `/client-warranty/` : the Schifsky material and craftsmanship warranty, transcribed from the owner's PDF (3 pages) with a download button for the PDF itself (`/client-warranty/Schifsky-Warranty.pdf`).
+- Unlisted: not in the header, footer, sitemap or any internal link; `<meta name="robots" content="noindex, nofollow">` on the page, and `public/_headers` sends `X-Robots-Tag: noindex, nofollow` for the page and the PDF on Cloudflare Pages. `Base.astro` gained a `noindex` prop for pages like this.
+- Transcription is faithful to the PDF; only typos and punctuation were tidied (e.g. "scratch" to "scratched"). The PDF footer reads "3520 Laverne Ave N." (the site uses Lavern); the owner may want to fix the PDF.
+
+---
+
 # Change log: city hubs, unique content pass (2026-10-22)
 
 Problem measured before this pass: on the 22 auto-generated city hubs only 13 to 19% of the words were unique to the page (Woodbury: 80%).
