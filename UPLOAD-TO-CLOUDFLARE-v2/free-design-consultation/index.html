@@ -143,7 +143,7 @@
           city: (data && data.city) || '',
           service: (data && data.service) || '',
           project: (data && data.project) || '',
-          zip: (data && data.zip) || '',
+          zip: '',
           budget: (data && data.budget) || '',
           gclid: storedGclid(),
           page_path: location.pathname
@@ -819,18 +819,11 @@
             <div class="err-msg">Choose a project type.</div>
           </div>
 
-          <div class="field row2">
-            <div>
+          <div class="field">
               <label for="city">City <span class="req">*</span></label>
               <input type="text" id="city" name="city" autocomplete="address-level2" placeholder="Woodbury" />
               <div class="err-msg">Enter your city.</div>
             </div>
-            <div>
-              <label for="zip">ZIP Code <span class="req">*</span></label>
-              <input type="text" id="zip" name="zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="55042" />
-              <div class="err-msg">Enter a 5-digit ZIP.</div>
-            </div>
-          </div>
 
         <div class="field">
           <label for="budget">Estimated Investment <span class="req">*</span></label>
@@ -1320,7 +1313,6 @@
       if(!phoneOk(f.phone.value)){ showErr(f.phone,true); ok=false; }
       if(!emailOk(f.email.value)){ showErr(f.email,true); ok=false; }
       if(!f.city.value.trim()){ showErr(f.city,true); ok=false; }
-      if(!/^\d{5}$/.test(f.zip.value.trim())){ showErr(f.zip,true); ok=false; }
       if(!f.project.value){ showErr(f.project,true); ok=false; }
       if(!f.budget.value){ showErr(f.budget,true); ok=false; }
       if(!ok){
@@ -1350,7 +1342,7 @@
             city: data.city || '',
             service: data.project || '',
             project: '',
-            zip: data.zip || '',
+            zip: '',
             budget: data.budget || ''
           });
         }

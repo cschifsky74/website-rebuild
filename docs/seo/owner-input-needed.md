@@ -20,7 +20,7 @@ For each project, anything you can confirm from job records. Leave blank where u
 | Project | Need |
 | --- | --- |
 | Room to Gather (Stillwater) | patio square footage, paver product/pattern, stoop scope, what the $45K included, build duration, year |
-| Gather Round the Fire (Hugo) | is the water feature a plunge pool or a spa/hot tub? (site now says "plunge pool" everywhere; if it is a pool, the project should also be tagged as a pool project); confirm stone fireplace, outdoor kitchen (grill + kamado), pergola, water sphere; year; any homeowner quote we may publish |
+| Gather Round the Fire (Hugo) | resolved 2026-10-28 from the gallery photos: the water feature is a spa (hot tub), not a plunge pool; site copy now says "spa". Still needed: confirm stone fireplace, outdoor kitchen (grill + kamado), pergola, water sphere; year; any homeowner quote we may publish |
 | Terraced on White Bear Lake (Birchwood Village) | was the wall engineered / permitted; wall heights; stone type; driveway material; year |
 | Life on the Fairway (Woodbury) | pool type (fiberglass/vinyl), pergola product, putting green scope, year |
 | Woodbury Poolside | pool type, pergola product, cabana scope |
@@ -48,6 +48,9 @@ For each project, anything you can confirm from job records. Leave blank where u
 15. Review process: who asks for Google reviews and when; we will not fabricate or incentivize.
 
 ## E. Decisions
+
+15a. Timeline guide: confirm typical construction durations (patio 1 to 3 weeks; walls 1 to 3; outdoor living 3 to 6; complete backyard 4 to 8; pool backyard 6 to 12; new construction 2 to 6).
+15b. Idea Board: the four new guides offer a free idea board (homeowner sends photos, you send a short board). Confirm who produces it and the turnaround; the form promises a reply within one business day.
 
 16. Years in business now computes from the 1989 founding year at build time (currently 37). Confirm 1989 is the founding year you want cited.
 17. Keep or retire the five 2025 "Minneapolis" guides (lawn care, maintenance, full-service, trends, contractor)? They describe services the site no longer sells.

@@ -1,0 +1,285 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="facebook-domain-verification" content="xif1gwrfne310pqsgkop3laat7s085"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-HG3SZ6DEMB"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG3SZ6DEMB');
+      gtag('config', 'AW-791054221');
+    </script><!-- CallRail dynamic number insertion (call tracking) --><script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script><!-- Meta Pixel (Fall 2026 Pixel) --><script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1096242636418717');
+      fbq('track', 'PageView');
+    </script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1096242636418717&ev=PageView&noscript=1"></noscript><!-- Lead attribution: capture first-touch channel + gclid, persist, and expose window.scTracker() --><script>
+      (function () {
+        var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec';
+        var VALID = ['Google Ads','Google LSA','Google Business Profile','Organic Search','Direct','Instagram Ads','Referral','Repeat Client','Other'];
+        var NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
+        function ss() { try { return window.sessionStorage; } catch (e) { return null; } }
+        function ls() { try { return window.localStorage; } catch (e) { return null; } }
+
+        function detect() {
+          var params = new URLSearchParams(location.search);
+          var get = function (k) { return (params.get(k) || '').toLowerCase(); };
+          var gclid = params.get('gclid') || params.get('gbraid') || params.get('wbraid') || '';
+          var um = get('utm_medium'), us = get('utm_source'), uc = get('utm_campaign');
+          var fbclid = params.get('fbclid') || '';
+          var hasUTM = false;
+          params.forEach(function (_, k) { if (k.indexOf('utm_') === 0) hasUTM = true; });
+          var refHost = '';
+          try { refHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : ''; } catch (e) {}
+          var host = location.hostname.toLowerCase();
+          var extRef = refHost && refHost.indexOf(host) === -1 && host.indexOf(refHost) === -1;
+          var channel;
+          if (gclid) channel = 'Google Ads';
+          else if (um === 'cpc' || um === 'ppc' || um === 'paid') channel = 'Google Ads';
+          else if (um === 'gbp' || uc === 'gmb') channel = 'Google Business Profile';
+          else if (fbclid || us.indexOf('instagram') >= 0 || us.indexOf('facebook') >= 0 || (extRef && (refHost.indexOf('instagram') >= 0 || refHost.indexOf('facebook') >= 0))) channel = 'Instagram Ads';
+          else if (/google|bing|duckduckgo|yahoo|ecosia/.test(refHost)) channel = 'Organic Search';
+          else if (!refHost && !hasUTM) channel = 'Direct';
+          else if (extRef) channel = 'Referral';
+          else channel = 'Other';
+          return { channel: channel, gclid: gclid };
+        }
+
+        // Capture on first page of the session (first touch wins - never overwrite).
+        try {
+          var s = ss();
+          var d = detect();
+          if (d.gclid) { var l = ls(); if (l) l.setItem('sc_gclid', JSON.stringify({ v: d.gclid, t: Date.now() })); }
+          if (s && !s.getItem('sc_attr')) {
+            s.setItem('sc_attr', JSON.stringify({ channel: d.channel, gclid: d.gclid, landing: location.pathname, t: Date.now() }));
+          }
+        } catch (e) {}
+
+        function storedGclid() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.gclid) return a.gclid; } catch (e) {}
+          try { var m = JSON.parse(ls().getItem('sc_gclid') || 'null'); if (m && (Date.now() - m.t) < NINETY_DAYS) return m.v; } catch (e) {}
+          return '';
+        }
+        function storedChannel() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.channel && VALID.indexOf(a.channel) >= 0) return a.channel; } catch (e) {}
+          return detect().channel || 'Other';
+        }
+
+        // Fire-and-forget lead POST. form_source must always be present.
+        window.scTracker = function (data) {
+          try {
+            var payload = {
+              form_source: (data && data.form_source) || 'Website',
+              channel: storedChannel(),
+              name: (data && data.name) || '',
+              phone: (data && data.phone) || '',
+              email: (data && data.email) || '',
+              city: (data && data.city) || '',
+              service: (data && data.service) || '',
+              project: (data && data.project) || '',
+              zip: (data && data.zip) || '',
+              budget: (data && data.budget) || '',
+              gclid: storedGclid(),
+              page_path: location.pathname
+            };
+            var body = JSON.stringify(payload);
+            var sent = false;
+            if (navigator.sendBeacon) {
+              try { sent = navigator.sendBeacon(LEAD_ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })); } catch (e) {}
+            }
+            if (!sent) {
+              fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }).catch(function () {});
+            }
+          } catch (e) {}
+        };
+      })();
+    </script><title>Landscaping Around a Pool in Minnesota | Schifsky</title><meta name="description" content="The pool is the centerpiece; the yard around it is where you actually live. Zone 4 plants that survive our winters and stay out of the water"><link rel="canonical" href="https://www.schifskycompanies.com/landscaping-around-a-pool-in-minnesota/"><!-- Roboto (site brand font) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"><!-- Open Graph / social sharing --><meta property="og:type" content="article"><meta property="og:site_name" content="Schifsky Companies"><meta property="og:title" content="Landscaping Around a Pool in Minnesota | Schifsky"><meta property="og:description" content="The pool is the centerpiece; the yard around it is where you actually live. Zone 4 plants that survive our winters and stay out of the water"><meta property="og:url" content="https://www.schifskycompanies.com/landscaping-around-a-pool-in-minnesota/"><meta property="og:image" content="https://www.schifskycompanies.com/img/projects/prestwick-pool-landscape/prestwick-pool-landscape-08.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://www.schifskycompanies.com/img/projects/prestwick-pool-landscape/prestwick-pool-landscape-08.jpg"><meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><script type="application/ld+json">[{"@context":"https://schema.org","@type":"BlogPosting","headline":"Landscaping Around a Pool in Minnesota: What to Plant, What to Avoid, and How to Design the Space Around the Water","description":"The pool is the centerpiece; the yard around it is where you actually live. Zone 4 plants that survive our winters and stay out of the water, the trees to keep away, deck and shade decisions, privacy, wind, lighting and how a heater and auto cover stretch the season.","datePublished":"2026-10-28","dateModified":"2026-10-28","author":{"@type":"Person","name":"Carson Schifsky","jobTitle":"Owner, Schifsky Companies","url":"https://www.schifskycompanies.com/about/","worksFor":{"@type":"Organization","name":"Schifsky Companies"}},"publisher":{"@type":"Organization","name":"Schifsky Companies","url":"https://www.schifskycompanies.com"},"mainEntityOfPage":"https://www.schifskycompanies.com/landscaping-around-a-pool-in-minnesota/"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are the best plants to put around a pool in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Hardy, low-litter plants that look good from May to October: ornamental grasses like feather reed grass, little bluestem and prairie dropseed; panicle hydrangeas such as Limelight and Little Lime; spirea, ninebark and dwarf Korean lilac; catmint, daylily, sedum, coneflower and Russian sage in the sun; hosta in shade; and upright arborvitae or junipers for screening. All are rated for USDA zone 4 or colder, which covers the Twin Cities."}},{"@type":"Question","name":"What should you not plant near a pool?","acceptedAnswer":{"@type":"Answer","text":"Anything that drops into the water or hurts bare feet: cottonwood, silver maple, boxelder, willow and birch (seeds, catkins and leaves), crabapples and other fruit trees, oaks right over the deck, spruce and pine within reach of the water, thorny shrubs like barberry and roses at the deck edge, and heavy pollinator plants right beside the water where bees and swimmers meet. Plants with aggressive roots stay away from the shell and the plumbing."}},{"@type":"Question","name":"How far should trees be from a pool?","acceptedAnswer":{"@type":"Answer","text":"Far enough that the canopy never hangs over the water and the roots never reach the shell or plumbing, which for a shade tree usually means 25 to 30 feet or more. Smaller ornamental trees can come closer if they are low-litter. Existing trees are evaluated one at a time during design; some are worth building around."}},{"@type":"Question","name":"What is the best pool deck material for Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Large-format concrete pavers and porcelain pavers are the two we install most. Both tolerate freeze-thaw, can be reset if a section settles, and come in lighter colors that stay cooler underfoot. Poured concrete is cheaper up front but cracks with our winters and cannot be repaired invisibly."}},{"@type":"Question","name":"How do you get privacy around a pool without blocking the sun?","acceptedAnswer":{"@type":"Answer","text":"Screen the sightlines that matter, not the whole yard. A row of upright arborvitae or a slatted privacy screen on the neighbor side, a pergola or cabana for overhead cover, and plantings layered in front of the fence do most of the work while the south and west sides stay open for sun."}},{"@type":"Question","name":"How long is pool season in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Unheated, roughly Memorial Day to Labor Day. With a heater and an automatic cover, most of our pool families swim from spring into fall, and the cover is also what makes the heat affordable. The Minnesota energy code requires a vapor-retardant cover on heated pools anyway, so plan the cover into the deck design from the start."}}]}]</script><link rel="stylesheet" href="/_astro/_slug_.B77x14Kg.css"></head> <body> <a class="skip-link" href="#main">Skip to content</a> <div class="topbar"></div> <header id="siteHeader"> <div class="wrap nav"> <a class="logo" href="/" aria-label="Schifsky Companies home"> <img src="/logo.png" alt="Schifsky Companies - landscape design and build" width="240" height="83"> </a> <nav class="nav-links" aria-label="Primary"> <div class="nav-item has-sub"> <a class="nav-top" href="/services/" aria-haspopup="true"> Services <svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </a> <div class="nav-sub" role="menu"> <a role="menuitem" href="/custom-landscape-design/">Landscape Design</a><a role="menuitem" href="/fiberglass-pools/">Swimming Pools</a><a role="menuitem" href="/paver-patios/">Paver Patios &amp; Hardscape</a><a role="menuitem" href="/retaining-walls-twin-cities/">Retaining Walls</a><a role="menuitem" href="/outdoor-living/">Outdoor Living</a><a role="menuitem" href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a role="menuitem" href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/blog/">Guides</a> </nav> <div class="nav-right"> <a class="nav-phone js-call" href="tel:+16514390603"> <span class="ico" aria-hidden="true"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#1a191d"></path></svg> </span> <span class="txt"><small>Call us</small><span class="num">651-439-0603</span></span> </a> <a class="btn btn-primary nav-cta" href="/contact/">Free Consultation</a> <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#1a191d" stroke-width="2" stroke-linecap="round"></path></svg> </button> </div> </div> <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile"> <div class="wrap"> <div class="m-group"> <div class="m-parent"> <a href="/services/">Services</a> <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSubServices" aria-label="Show services"> <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> </div> <div class="m-sub" id="mSubServices"> <a href="/custom-landscape-design/">Landscape Design</a><a href="/fiberglass-pools/">Swimming Pools</a><a href="/paver-patios/">Paver Patios &amp; Hardscape</a><a href="/retaining-walls-twin-cities/">Retaining Walls</a><a href="/outdoor-living/">Outdoor Living</a><a href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/blog/">Guides</a> <a class="btn btn-primary" href="/contact/">Get a Free Quote</a> </div> </nav> </header> <script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('menuToggle');
+    if (!header || !toggle) return;
+    function close() { header.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Mobile "Services" accordion
+    document.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var sub = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        if (sub) sub.classList.toggle('open', !open);
+      });
+    });
+    // Close the whole menu when a real link (not the accordion toggle) is tapped
+    document.querySelectorAll('#mobileMenu a').forEach(function (a) { a.addEventListener('click', close); });
+  })();
+</script> <main id="main">  <section class="page-hero"> <div class="wrap" style="max-width:820px;"> <nav class="crumbs" aria-label="Breadcrumb"> <ol> <li> <a href="/">Home</a> </li><li> <a href="/blog/">Guides</a> </li><li> <span aria-current="page">Landscaping Around a Pool in Minnesota: What to Plant, What to Avoid, and How to Design the Space Around the Water</span> </li> </ol> </nav> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.schifskycompanies.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://www.schifskycompanies.com/blog/"},{"@type":"ListItem","position":3,"name":"Landscaping Around a Pool in Minnesota: What to Plant, What to Avoid, and How to Design the Space Around the Water"}]}</script> <span class="eyebrow on-dark">October 28, 2026</span> <h1>Landscaping Around a Pool in Minnesota: What to Plant, What to Avoid, and How to Design the Space Around the Water</h1> <p class="byline">By <a href="/about/">Carson Schifsky</a>, Owner, Schifsky Companies</p> </div> </section> <section style="padding-bottom:0;"> <div class="wrap" style="max-width:900px;"> <img src="/img/projects/prestwick-pool-landscape/prestwick-pool-landscape-08.jpg" alt="Landscaping Around a Pool in Minnesota: What to Plant, What to Avoid, and How to Design the Space Around the Water" width="1100" height="619" style="width:100%;border-radius:14px;border:1px solid var(--line);"> </div> </section><section> <article class="wrap prose"> <p>A pool is only as good as the space around it. That is not a slogan for us; it is the thing we hear from homeowners who built a pool first and the yard later, and it is why we design the two together. This guide is about the second half: the deck, the plantings, the privacy, the shade, the wind, the lighting and the small decisions that make a Minnesota pool backyard a place you live in from May to October instead of a hole in the lawn you look at from the kitchen.</p>
+<p>Everything here is written for the Twin Cities: USDA zone 4 winters, a short season, mosquitoes, and a summer wind that mostly comes out of the southwest.</p>
+<h2 id="start-with-the-deck-not-the-plants">Start with the deck, not the plants</h2>
+<p>The deck sets the size, the feel and the budget of a pool backyard, so it comes first.</p>
+<p><strong>Size it for how you live.</strong> A row of loungers needs about 7 feet of depth along the long side. A dining table for six wants a 12 by 14 foot area that is not in the splash zone. An outdoor kitchen run needs about 8 feet of depth plus room to stand behind the person cooking. A typical pool deck runs 500 to 1,200 square feet, and the difference between the two ends of that range is mostly whether the yard also has a lounge, a kitchen or a cabana.</p>
+<p><strong>Pick a surface that survives winter.</strong> Our two go-to materials are large-format concrete pavers and porcelain pavers. Both flex with freeze-thaw instead of cracking, both can be lifted and reset if a section ever settles, and both come in light colors that stay cooler underfoot in July. Our <a href="/concrete-vs-paver-patio-in-minnesota/">concrete vs. paver guide</a> and <a href="/porcelain-pavers-for-your-twin-cities-backyard/">porcelain paver guide</a> go deeper. <a href="/projects/shakopee-sustainable-modern/">The Sustainable Modern</a> in Shakopee uses a wide porcelain deck; <a href="/projects/woodbury-poolside/">Woodbury Poolside</a> and <a href="/projects/woodbury-poolside-on-the-hill/">Poolside on the Hill</a> use large-format pavers.</p>
+<p><strong>Plan the edges.</strong> The 2 to 3 feet beside the water is the splash zone. Mulch there ends up in the pool; river rock, a turf strip or planted beds set back from the coping stay put. <a href="/projects/stillwater-backyard-barn/">The Backyard Barn</a> in Stillwater uses a strip of turf along the deck for exactly that reason, plus bare feet.</p>
+<h2 id="what-to-plant-around-a-pool-in-minnesota">What to plant around a pool in Minnesota</h2>
+<p>The rules are simple: hardy to zone 4, low litter, no thorns, and good from May through October because that is when you are out there.</p>
+<h3 id="grasses-movement-privacy-almost-no-litter">Grasses (movement, privacy, almost no litter)</h3>
+<ul>
+<li><strong>Feather reed grass ‘Karl Foerster’</strong>: upright, 4 to 5 feet, the classic poolside grass; zone 4.</li>
+<li><strong>Little bluestem</strong>: native, blue-green turning copper in fall, 2 to 3 feet; zone 3.</li>
+<li><strong>Prairie dropseed</strong>: fine, fountain-shaped, 2 feet, smells like popcorn in late summer; zone 3.</li>
+<li><strong>Switchgrass ‘Northwind’</strong>: strictly upright, 5 feet, a living privacy screen; zone 4.</li>
+</ul>
+<h3 id="shrubs-structure-and-bloom">Shrubs (structure and bloom)</h3>
+<ul>
+<li><strong>Panicle hydrangeas (‘Limelight’, ‘Little Lime’, ‘Bobo’)</strong>: the most reliable big bloom in Minnesota, July to frost; zone 3.</li>
+<li><strong>Spirea</strong> and <strong>ninebark</strong>: tough, colorful foliage, easy to keep in scale; zone 3.</li>
+<li><strong>Dwarf Korean lilac</strong>: May fragrance, compact; zone 3.</li>
+<li><strong>Potentilla</strong>: blooms all summer, shrugs off winter; zone 2.</li>
+<li><strong>Red twig dogwood</strong>: winter color after the pool is closed; zone 2.</li>
+</ul>
+<h3 id="perennials-sun">Perennials (sun)</h3>
+<ul>
+<li><strong>Catmint ‘Walker’s Low’</strong>: blue haze from June on, loves heat off the deck; zone 3.</li>
+<li><strong>Daylily</strong>, <strong>sedum ‘Autumn Joy’</strong>, <strong>coneflower</strong>, <strong>black-eyed Susan</strong>: the Minnesota workhorses; zone 3.</li>
+<li><strong>Russian sage</strong> and <strong>salvia ‘May Night’</strong>: silver and purple against pavers; zone 4.</li>
+<li><strong>Allium</strong>: purple globes in June over the grasses; zone 4.</li>
+</ul>
+<h3 id="perennials-shade-side">Perennials (shade side)</h3>
+<ul>
+<li><strong>Hosta</strong>, <strong>coral bells</strong>, <strong>astilbe</strong>: for the north side of a cabana or under existing trees; zone 3 to 4.</li>
+</ul>
+<h3 id="screening">Screening</h3>
+<ul>
+<li><strong>Arborvitae ‘Technito’, ‘North Pole’ or ‘Holmstrup’</strong>: narrow, upright, 10 to 15 feet, the fastest route to privacy; zone 3.</li>
+<li><strong>Upright junipers</strong>: tolerate wind and sun better than arborvitae on an exposed lot; zone 3 to 4.</li>
+<li><strong>Boxwood (‘Green Velvet’, ‘Green Mountain’)</strong>: formal edging, but it can winter-burn in an open, windy spot. Our plant warranty excludes winter burn on boxwood and arborvitae for that reason, so we site them carefully and burlap evergreens their first winter.</li>
+</ul>
+<p>Lavender, many roses and most of the Mediterranean-looking plants in pool magazines are zone 5 or warmer, or they are thorny. We leave them out.</p>
+<h2 id="what-to-keep-away-from-the-water">What to keep away from the water</h2>
+<p>Some plants are wrong next to a pool no matter how hardy they are.</p>
+<ul>
+<li><strong>Litter trees:</strong> cottonwood, silver maple, boxelder, willow and river birch drop seed, catkins and leaves all season. Oaks drop acorns and tannin-staining leaves. Keep them 25 to 30 feet or more from the water, and never over the deck.</li>
+<li><strong>Fruit trees:</strong> crabapples, cherries and serviceberries feed birds, and birds over a pool are a cleaning problem.</li>
+<li><strong>Needles:</strong> spruce and pine within reach of the deck shed needles into the skimmer. Fine for a windbreak at the lot line, wrong at the coping.</li>
+<li><strong>Thorns:</strong> barberry, hawthorn and shrub roses have no business at a bare-foot edge.</li>
+<li><strong>Bee magnets at the deck:</strong> linden trees and masses of flowering plants right beside the water put bees and swimmers in the same place. Pollinator plantings belong in the yard, not at the coping.</li>
+<li><strong>Aggressive roots:</strong> willows, poplars and silver maples again. Roots follow water, and the pool plumbing is water.</li>
+</ul>
+<p>Existing trees get evaluated one at a time during design. <a href="/projects/mahtomedi-pool-landscape/">Still Waters</a> in Mahtomedi sits among the lot’s mature trees rather than in a clearing; working with the trees you have is usually the better answer than cutting them.</p>
+<h2 id="sun-wind-and-shade">Sun, wind and shade</h2>
+<p><strong>Sun.</strong> The deck goes on the sunny side of the pool, usually south or west of the water, so loungers get the afternoon and the water warms. A pool tucked on the north side of a two-story house is in shadow by 4 pm in September.</p>
+<p><strong>Wind.</strong> Our summer wind is mostly southwest. Wind cools the water, blows debris in and makes a 75-degree afternoon feel like 65 on a wet body. A fence section, a planted screen or a cabana on the southwest side takes the edge off without blocking the sun.</p>
+<p><strong>Shade on demand.</strong> The pergola is the most-used structure in our pool backyards because it is adjustable: open louvers at noon, closed at 4 pm, closed in rain. <a href="/projects/prestwick-pool-landscape/">Life on the Fairway</a> and Woodbury Poolside both pair a louvered aluminum pergola with the pool deck; our <a href="/how-much-does-an-aluminum-pergola-cost-in-minnesota/">pergola cost guide</a> covers the options. A cabana adds a changing room and a shaded bar and, on an open lot, a wind block.</p>
+<h2 id="privacy-without-a-wall">Privacy without a wall</h2>
+<p>Screen the sightlines that matter instead of fencing the world out. From the water, the view that bothers people is usually one neighbor’s second-story window and one side yard. A row of upright arborvitae or junipers there, a slatted screen beside the cabana, and layered plantings in front of the pool fence handle it while the south and west sides stay open. The pool fence itself is required by code (our <a href="/can-i-put-a-pool-in-my-yard-minnesota-pool-rules/">pool rules guide</a> covers the details by city); black aluminum disappears behind plantings and keeps the view, which is why it is on most of the pools we build.</p>
+<h2 id="fire-lighting-and-the-shoulder-seasons">Fire, lighting and the shoulder seasons</h2>
+<p>A fire feature is what makes the pool deck usable in May and September. A linear gas fire table beside the loungers, as at <a href="/projects/shakopee-sustainable-modern/">The Sustainable Modern</a> and Woodbury Poolside, warms the evening without smoke drifting over the water. Low-voltage lighting on the steps, under the pergola and in the beds makes the deck a room after dark, gates included.</p>
+<h2 id="heater-and-auto-cover-the-season-question">Heater and auto cover: the season question</h2>
+<p>Unheated, a Minnesota pool is roughly Memorial Day to Labor Day. A gas heater or heat pump stretches that into spring and fall, and an automatic cover is what makes the heat affordable, because an uncovered pool loses much of its heat to evaporation overnight. The Minnesota energy code requires a vapor-retardant cover on heated pools anyway, so the cover is not optional on most of the pools we build; the question is only whether it is automatic. Plan the cover housing into the deck design from the start. It affects the coping, the deck layout at one end of the pool, and where the loungers go.</p>
+<h2 id="putting-it-together">Putting it together</h2>
+<p>The pool backyards on this site were designed as one plan: the pool, the deck sized for how the family lives, the fence and gates, the shade, the fire, the screening, the plantings and the lighting, built in order by one crew. Our <a href="/how-much-does-an-inground-pool-cost-in-minnesota/">pool cost guide</a> explains why we recommend budgeting for the space around the pool from the beginning, the <a href="/fiberglass-pools/">pool page</a> shows the three fiberglass shells we install most often through our sister company Blaiser Pools, and the <a href="/plunge-pools-minnesota/">plunge pools page</a> covers the small-footprint option.</p>
+<p>If you are picturing a pool but not sure what the yard around it should be, send us a few photos and we will put together a free idea board for your space, plantings included.</p> <div style="margin-top:40px;"> <h2>Frequently Asked Questions</h2> <div class="faq-wrap" style="margin-top:18px;"> <details class="faq"> <summary>What are the best plants to put around a pool in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Hardy, low-litter plants that look good from May to October: ornamental grasses like feather reed grass, little bluestem and prairie dropseed; panicle hydrangeas such as Limelight and Little Lime; spirea, ninebark and dwarf Korean lilac; catmint, daylily, sedum, coneflower and Russian sage in the sun; hosta in shade; and upright arborvitae or junipers for screening. All are rated for USDA zone 4 or colder, which covers the Twin Cities.</div> </details><details class="faq"> <summary>What should you not plant near a pool? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Anything that drops into the water or hurts bare feet: cottonwood, silver maple, boxelder, willow and birch (seeds, catkins and leaves), crabapples and other fruit trees, oaks right over the deck, spruce and pine within reach of the water, thorny shrubs like barberry and roses at the deck edge, and heavy pollinator plants right beside the water where bees and swimmers meet. Plants with aggressive roots stay away from the shell and the plumbing.</div> </details><details class="faq"> <summary>How far should trees be from a pool? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Far enough that the canopy never hangs over the water and the roots never reach the shell or plumbing, which for a shade tree usually means 25 to 30 feet or more. Smaller ornamental trees can come closer if they are low-litter. Existing trees are evaluated one at a time during design; some are worth building around.</div> </details><details class="faq"> <summary>What is the best pool deck material for Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Large-format concrete pavers and porcelain pavers are the two we install most. Both tolerate freeze-thaw, can be reset if a section settles, and come in lighter colors that stay cooler underfoot. Poured concrete is cheaper up front but cracks with our winters and cannot be repaired invisibly.</div> </details><details class="faq"> <summary>How do you get privacy around a pool without blocking the sun? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Screen the sightlines that matter, not the whole yard. A row of upright arborvitae or a slatted privacy screen on the neighbor side, a pergola or cabana for overhead cover, and plantings layered in front of the fence do most of the work while the south and west sides stay open for sun.</div> </details><details class="faq"> <summary>How long is pool season in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Unheated, roughly Memorial Day to Labor Day. With a heater and an automatic cover, most of our pool families swim from spring into fall, and the cover is also what makes the heat affordable. The Minnesota energy code requires a vapor-retardant cover on heated pools anyway, so plan the cover into the deck design from the start.</div> </details> </div> </div> <aside class="author-box"> <img src="/img/team-showroom.jpg" alt="Carson Schifsky and the Schifsky Companies team" width="120" height="120" loading="lazy"> <div> <span class="eyebrow">About the Author</span> <b>Carson Schifsky</b> <span class="role">Owner, Schifsky Companies</span> <p>Carson Schifsky is the owner of Schifsky Companies, the family-owned landscape design-build firm founded in Stillwater in 1989 and based in Lake Elmo, MN. He leads clients through the design-build process on patios, pools, and outdoor living projects across the Twin Cities, and every price on this site comes from projects his team has actually built.</p> </div> </aside> <p style="margin-top:34px;border-top:1px solid var(--line);padding-top:24px;"> <a class="btn btn-dark" href="/blog/">&larr; All guides</a> <a class="btn btn-primary" href="#leadForm-bottom" style="margin-left:10px;">Get a Free Idea Board</a> </p> </article> </section> <section class="lead-cap-sec guide-cta"> <div class="wrap" style="max-width:900px;"> <div class="guide-cta-intro reveal"> <span class="eyebrow center">Still in the Dreaming Stage?</span> <h2>Get a Free Idea Board for Your Yard</h2> <p>Not ready for a quote? Perfect. Send us a few photos of your yard and tell us what you are picturing, and our design team will put together a free idea board: layouts, materials and features that fit your space and your range, pulled from projects we have actually built across the Twin Cities. No sales pitch, no obligation.</p> </div> <div class="lead-cap"> <div class="form-card"> <form class="lead-form" id="leadForm-bottom" novalidate data-source-label="Guide: landscaping-around-a-pool-in-minnesota"> <input type="hidden" name="access_key" value="fe71ba2a-53af-4c05-bc70-5639fc0b6472"> <input type="hidden" name="subject" value="New Lead - Idea Board (guide: landscaping-around-a-pool-in-minnesota)"> <input type="hidden" name="source" value="Guide: landscaping-around-a-pool-in-minnesota | /landscaping-around-a-pool-in-minnesota/"> <span class="tag">Free Idea Board · No Obligation</span> <h2>Get a Free Idea Board for Your Yard</h2> <p class="lede">Tell us a little about your yard and what you are dreaming about. We will reply within one business day with a few questions and a link to send photos, then put together a free idea board for your space.</p> <div class="field"> <label for="leadForm-bottom-name">Full Name <span class="req">*</span></label> <input type="text" id="leadForm-bottom-name" name="name" autocomplete="name" placeholder="Jane Smith"> <div class="err-msg">Please enter your name.</div> </div> <div class="field row2"> <div> <label for="leadForm-bottom-phone">Phone <span class="req">*</span></label> <input type="tel" id="leadForm-bottom-phone" name="phone" autocomplete="tel" placeholder="(651) 555-0123"> <div class="err-msg">Enter a valid phone number.</div> </div> <div> <label for="leadForm-bottom-email">Email <span class="req">*</span></label> <input type="email" id="leadForm-bottom-email" name="email" autocomplete="email" placeholder="jane@email.com"> <div class="err-msg">Enter a valid email.</div> </div> </div> <div class="field"> <label for="leadForm-bottom-project">Project Type <span class="req">*</span></label> <select id="leadForm-bottom-project" name="project"> <option value="">Select…</option> <option>Outdoor living / pool</option> <option>Patio &amp; hardscape</option> <option>Pergola &amp; shade structure</option> <option>Outdoor kitchen / fire feature</option> <option>Retaining walls</option> <option>Full landscape design</option> <option>Multiple / not sure yet</option> </select> <div class="err-msg">Choose a project type.</div> </div> <div class="field"> <label for="leadForm-bottom-city">City <span class="req">*</span></label> <input type="text" id="leadForm-bottom-city" name="city" autocomplete="address-level2" placeholder="Woodbury"> <div class="err-msg">Enter your city.</div> </div> <div class="field"> <label for="leadForm-bottom-budget">Estimated Investment <span class="req">*</span></label> <select id="leadForm-bottom-budget" name="budget"> <option value="">Select a range…</option> <option>Under $25,000</option> <option>$25,000 - $50,000</option> <option>$50,000 - $100,000</option> <option>$100,000 - $200,000</option> <option>$200,000+</option> </select> <div class="err-msg">Please select an estimated range.</div> </div> <button type="submit" class="btn btn-primary btn-block btn-lg">Send Me a Free Idea Board</button> <div class="form-trust"> <span class="stars" aria-hidden="true">★★★★★</span> <span><b>4.9</b> on Google</span> <span aria-hidden="true">·</span> <span>Licensed &amp; Insured</span> <span aria-hidden="true">·</span> <span>Family-Owned 37 Yrs</span> </div> <p class="form-fin">Financing available · low monthly payments, no equity required</p> <p class="legal">By submitting, you agree to be contacted about your project. No spam, ever.</p> </form> <div class="form-success" id="leadForm-bottom-success"> <div class="check" aria-hidden="true"> <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#2f9e44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg> </div> <h3>Thank you - request received!</h3> <p>We will reply within one business day with a few questions and a link to send photos of your yard.</p> <a class="btn btn-dark cta-call js-call" href="tel:+16514390603">Prefer to talk now? Call 651-439-0603</a> </div> </div> </div> </div> </section><script>
+      (function () {
+        // Pool model cards: flip render/dimensions, and carry the chosen model into the lead form
+        document.querySelectorAll('.model-flip').forEach(function (b) {
+          b.addEventListener('click', function () { b.closest('.model-card').classList.toggle('show-specs'); });
+        });
+        document.querySelectorAll('a[data-model]').forEach(function (a) {
+          a.addEventListener('click', function () {
+            var model = a.getAttribute('data-model');
+            document.querySelectorAll('form.lead-form').forEach(function (form) {
+              var hid = form.querySelector('[name="pool_model"]');
+              if (!hid) { hid = document.createElement('input'); hid.type = 'hidden'; hid.name = 'pool_model'; form.appendChild(hid); }
+              hid.value = model;
+              var sel = form.querySelector('[name="project"]');
+              if (sel) { sel.value = 'Outdoor living / pool'; }
+            });
+          });
+        });
+        var forms = document.querySelectorAll('form.lead-form');
+        if (!forms.length) return;
+        var ENDPOINT = 'https://api.web3forms.com/submit';
+        function emailOk(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+        function phoneOk(v) { return v.replace(/\D/g, '').length >= 10; }
+        forms.forEach(function (form) {
+          var card = form.closest('.lead-cap');
+          var success = card ? card.querySelector('.form-success') : null;
+          function fld(n) { return form.querySelector('[name="' + n + '"]'); }
+          function showErr(el, on) {
+            if (!el) return;
+            el.classList.toggle('err', on);
+            var m = el.parentElement.querySelector('.err-msg');
+            if (m) m.style.display = on ? 'block' : 'none';
+          }
+          form.querySelectorAll('input,select').forEach(function (el) {
+            el.addEventListener('input', function () { showErr(el, false); });
+            el.addEventListener('change', function () { showErr(el, false); });
+          });
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var ok = true;
+            var elName = fld('name'), elPhone = fld('phone'), elEmail = fld('email'),
+                elProject = fld('project'), elCity = fld('city'), elBudget = fld('budget');
+            if (!elName.value.trim()) { showErr(elName, true); ok = false; }
+            if (!phoneOk(elPhone.value)) { showErr(elPhone, true); ok = false; }
+            if (!emailOk(elEmail.value)) { showErr(elEmail, true); ok = false; }
+            if (!elProject.value) { showErr(elProject, true); ok = false; }
+            if (!elCity.value.trim()) { showErr(elCity, true); ok = false; }
+            if (!elBudget.value) { showErr(elBudget, true); ok = false; }
+            if (!ok) { var fe = form.querySelector('.err'); if (fe) fe.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+            var btn = form.querySelector('button[type=submit]');
+            btn.disabled = true; btn.textContent = 'Sending…';
+            var label = form.getAttribute('data-source-label') || 'Service Page';
+            function done() {
+              form.style.display = 'none';
+              if (success) { success.style.display = 'block'; success.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+              // GA4 conversion: exact event name "form_submission", success only
+              if (typeof gtag === 'function') {
+                gtag('event', 'form_submission', { form_source: label, page_path: window.location.pathname });
+              }
+              // Meta Pixel: standard Lead event, success only
+              if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: label });
+              // Additional POST to internal tracker (alongside Web3Forms). Channel + gclid
+              // come from first-touch attribution stored by window.scTracker (Base.astro).
+              if (typeof window.scTracker === 'function') {
+                window.scTracker({
+                  form_source: label,
+                  name: elName.value,
+                  phone: elPhone.value,
+                  email: elEmail.value,
+                  city: elCity.value,
+                  service: elProject.value,
+                  project: (fld('pool_model') ? fld('pool_model').value : ''),
+                  zip: '',
+                  budget: elBudget.value
+                });
+              }
+            }
+            fetch(ENDPOINT, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+              body: JSON.stringify(Object.fromEntries(new FormData(form)))
+            }).then(done).catch(done);
+          });
+        });
+      })();
+    </script> </main> <footer> <div class="wrap"> <div class="foot-top"> <div class="foot-brand"> <div class="foot-logo"> <img src="/logo.png" alt="Schifsky Companies" width="200" height="69"> </div> <p>
+Family-owned Twin Cities landscape design &amp; build for 37+ years-
+          outdoor living, pools, patios, pergolas, retaining walls, and drainage.
+</p> </div> <div class="foot-contact"> <a class="js-call" href="tel:+16514390603"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#ebd200"></path></svg> 651-439-0603 </a> <a href="mailto:support@schifskycompanies.com"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#ebd200" stroke-width="2"></path><path d="M3 7l9 6 9-6" stroke="#ebd200" stroke-width="2"></path></svg> support@schifskycompanies.com </a> <a href="https://maps.google.com/?q=Schifsky%20Companies%203520%20Lavern%20Ave%20N%20Lake%20Elmo%20MN%2055042" target="_blank" rel="noopener"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="#ebd200" stroke-width="2"></path><circle cx="12" cy="11" r="2.4" stroke="#ebd200" stroke-width="2"></circle></svg> 3520 Lavern Ave N, Lake Elmo, MN 55042 </a> </div> <nav class="foot-links" aria-label="Footer"> <a href="/services/">Services</a> <a href="/portfolio/">Portfolio</a> <a href="/about/">About</a> <a href="/reviews/">Reviews</a> <a href="/faq/">FAQ</a> <a href="/blog/">Guides</a> <a href="/contact/">Contact</a> </nav> </div> <div class="foot-bottom"> <span>© 2026 Schifsky Companies. All rights reserved. Licensed &amp; Insured.</span> <span>Landscape Design &amp; Build · Serving the Twin Cities Metro</span> </div> </div> </footer> <script>
+      document.documentElement.classList.add('js');
+      // Scroll-reveal animation
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold: .12 });
+        els.forEach(function (e) { io.observe(e); });
+      })();
+
+      // GA4: track clicks on any mailto: link (sitewide)
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (typeof gtag === 'function') gtag('event', 'email_click');
+          if (typeof fbq === 'function') fbq('track', 'Contact');
+        });
+      });
+    </script> </body> </html>

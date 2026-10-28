@@ -1,3 +1,48 @@
+# Change log: search-term insights applied (2026-10-28)
+
+Source: Google Ads search terms reports for Oct 14 to 28 (pool and landscaping campaigns). Ad-account changes are the owner's; these are the site changes.
+
+- New service page `/plunge-pools-minnesota/`: Latham Enchantment 9.17 card with dimensions and the approved price range ($85,000 to $130,000 installed), plunge pool sizes and prices block ($150,000 to $260,000 complete), heater and auto cover reasoning, process, options, Still Waters video, related projects (Still Waters, Sustainable Modern, Poolside on the Hill), six FAQs with FAQ schema, lead forms top and bottom (source "Plunge Pools"). Not in the header nav; linked from the pools page, the plunge pool cost guide, the inground pool cost guide and the pool landscaping guide. In the sitemap.
+- Pools page: models section retitled "Pool Sizes and Prices: Our Three Most-Installed Fiberglass Pools"; each model card now shows a pool price line from the approved figures (Corinthian 16 around $130,000; Monaco around $130,000 and up; Enchantment $85,000 to $130,000), with the intro stating the price is for the pool itself and the backyard around it is quoted from the design. Meta description now names Latham and "pool sizes and prices". Model card template gained an optional `price` field; `modelsIntro`/`modelsNote` accept HTML.
+- Correction: the Hugo (Gather Round the Fire) water feature is a spa, not a plunge pool (confirmed from gallery photos 06 and 13). All site copy now says "spa": homepage video note, outdoor living cost context and video note, outdoor kitchen guide, Hugo city text, both fall-offer landing pages. Hugo removed from the plunge page's slides and related projects. Owner-input item updated as resolved.
+- Desktop file `Schifsky-Google-Ads-Negative-Keywords.txt`: suggested negatives (competitor names, maintenance intent, retail/DIY, irrelevant and out-of-area terms) in a paste-ready list, plus a note to check location targeting is "presence".
+- Build: 90 pages, 0 broken links, JSON-LD parses, 0 em dashes.
+
+---
+
+# Change log: forms audit, city only (2026-10-28)
+
+Owner rule: every form asks for the city and nothing more specific (no ZIP, no street address).
+
+- LeadForm (service pages, city hubs, guides): ZIP field removed; City is a full-width required field. Shared submit handler no longer validates ZIP; the tracker payload sends `zip: ''` so the lead sheet columns are unchanged.
+- Contact page: City added as a required field; validated and sent to the tracker.
+- Showroom visit form: City added as a required field; validated and sent to the tracker.
+- Careers application: optional "City You Live In" added (not a lead form, so not required).
+- Three static landing pages (free-design-consultation, Woodbury and Lake Elmo fall offers): ZIP field and its validation removed; City field now full width (prefilled with the page's city on the offer pages, as before).
+- Build: 89 pages, all 13 forms carry a city field, 0 ZIP fields remain, 0 broken links.
+
+---
+
+# Change log: four top-of-funnel guides, contractor guide refresh, Idea Board offer (2026-10-28)
+
+New guides (all with FAQ schema, owner byline, project links, cover photo, shorter `seoTitle` for the <title>):
+- `/walkout-basement-backyard-ideas-minnesota/` : walkout and sloped-lot design (terraces, walls, steps, drainage), costs from the approved ranges, examples Birchwood, Modern Revival, Poolside on the Hill, Dellwood, Sustainable Modern.
+- `/can-i-put-a-pool-in-my-yard-minnesota-pool-rules/` : permits, fences, setbacks, hard-surface and shoreland limits, wells and septic, energy-code cover and heater rules, survey and fill rules. Every specific number is attributed to a linked city document (Minnetonka and Chanhassen verified by reading the pages; Shorewood, Shoreview, West St. Paul, St. Michael, Brooklyn Center, Inver Grove Heights, Prior Lake, Eureka, Ham Lake from the published handouts as surfaced in search). City table links East Metro cities to their building departments; Mahtomedi permits route through White Bear Lake.
+- `/when-to-start-a-landscaping-project-in-minnesota-timeline/` : month-by-month calendar, why winter is design season, construction durations by project type (typical ranges, owner to confirm), planting windows, three real timelines.
+- `/landscaping-around-a-pool-in-minnesota/` : zone-4 plant list (grasses, shrubs, perennials, screening) with hardiness zones, what to keep away from the water, deck sizing and materials, sun/wind/shade, privacy, fire and lighting, heater and auto cover. Warranty language on boxwood/arborvitae winter burn matches the warranty document.
+
+Refreshed: `/finding-the-right-landscaping-contractor-in-minneapolis-for-your-dream-outdoor-space/` (URL kept, `updatedDate: 2026-10-28`): rewritten as a Twin Cities hiring guide with MN DLI licensing and red-flag guidance, a question list, what a comparable quote contains, landscaper vs design-build vs landscape architect, FAQ schema.
+
+Idea Board offer: every guide now ends with a lead form headed "Get a Free Idea Board for Your Yard" (LeadForm with new `tag`, `buttonLabel`, `successText` props). Source label "Guide: {slug}", subject "New Lead - Idea Board (guide: {slug})", same Web3Forms, tracker, GA4 and Meta Lead wiring. The in-article "Get a Free Quote" button now scrolls to this form. LeadForm trust line corrected from "5.0 on Google" to "4.9 on Google".
+
+Linking: service pages' related guides updated (design: timeline + contractor; walls: walkout; pools: pool rules + pool landscaping; drainage: walkout). City hub pool and wall sections link the new guides (25+ inbound pages each). Guides hub lists the new four first.
+
+Owner to confirm: construction durations in the timeline guide; that the Idea Board is a service you want to deliver (the form promises a reply within one business day with a link to send photos).
+
+Build: 89 pages, 0 broken links, JSON-LD parses, 0 em dashes.
+
+---
+
 # Change log: unlisted warranty page (2026-10-26)
 
 - `/client-warranty/` : the Schifsky material and craftsmanship warranty, transcribed from the owner's PDF (3 pages) with a download button for the PDF itself (`/client-warranty/Schifsky-Warranty.pdf`).

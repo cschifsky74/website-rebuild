@@ -1,0 +1,296 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="facebook-domain-verification" content="xif1gwrfne310pqsgkop3laat7s085"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-HG3SZ6DEMB"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-HG3SZ6DEMB');
+      gtag('config', 'AW-791054221');
+    </script><!-- CallRail dynamic number insertion (call tracking) --><script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script><!-- Meta Pixel (Fall 2026 Pixel) --><script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1096242636418717');
+      fbq('track', 'PageView');
+    </script><noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1096242636418717&ev=PageView&noscript=1"></noscript><!-- Lead attribution: capture first-touch channel + gclid, persist, and expose window.scTracker() --><script>
+      (function () {
+        var LEAD_ENDPOINT = 'https://script.google.com/macros/s/AKfycbx_wBgGZE1Uk7esY_KcuHWmBkBqpYlRkNrEL1VgpfUQJPCNi_lEEGDThPqpdoXBZtGhFg/exec';
+        var VALID = ['Google Ads','Google LSA','Google Business Profile','Organic Search','Direct','Instagram Ads','Referral','Repeat Client','Other'];
+        var NINETY_DAYS = 90 * 24 * 60 * 60 * 1000;
+        function ss() { try { return window.sessionStorage; } catch (e) { return null; } }
+        function ls() { try { return window.localStorage; } catch (e) { return null; } }
+
+        function detect() {
+          var params = new URLSearchParams(location.search);
+          var get = function (k) { return (params.get(k) || '').toLowerCase(); };
+          var gclid = params.get('gclid') || params.get('gbraid') || params.get('wbraid') || '';
+          var um = get('utm_medium'), us = get('utm_source'), uc = get('utm_campaign');
+          var fbclid = params.get('fbclid') || '';
+          var hasUTM = false;
+          params.forEach(function (_, k) { if (k.indexOf('utm_') === 0) hasUTM = true; });
+          var refHost = '';
+          try { refHost = document.referrer ? new URL(document.referrer).hostname.toLowerCase() : ''; } catch (e) {}
+          var host = location.hostname.toLowerCase();
+          var extRef = refHost && refHost.indexOf(host) === -1 && host.indexOf(refHost) === -1;
+          var channel;
+          if (gclid) channel = 'Google Ads';
+          else if (um === 'cpc' || um === 'ppc' || um === 'paid') channel = 'Google Ads';
+          else if (um === 'gbp' || uc === 'gmb') channel = 'Google Business Profile';
+          else if (fbclid || us.indexOf('instagram') >= 0 || us.indexOf('facebook') >= 0 || (extRef && (refHost.indexOf('instagram') >= 0 || refHost.indexOf('facebook') >= 0))) channel = 'Instagram Ads';
+          else if (/google|bing|duckduckgo|yahoo|ecosia/.test(refHost)) channel = 'Organic Search';
+          else if (!refHost && !hasUTM) channel = 'Direct';
+          else if (extRef) channel = 'Referral';
+          else channel = 'Other';
+          return { channel: channel, gclid: gclid };
+        }
+
+        // Capture on first page of the session (first touch wins - never overwrite).
+        try {
+          var s = ss();
+          var d = detect();
+          if (d.gclid) { var l = ls(); if (l) l.setItem('sc_gclid', JSON.stringify({ v: d.gclid, t: Date.now() })); }
+          if (s && !s.getItem('sc_attr')) {
+            s.setItem('sc_attr', JSON.stringify({ channel: d.channel, gclid: d.gclid, landing: location.pathname, t: Date.now() }));
+          }
+        } catch (e) {}
+
+        function storedGclid() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.gclid) return a.gclid; } catch (e) {}
+          try { var m = JSON.parse(ls().getItem('sc_gclid') || 'null'); if (m && (Date.now() - m.t) < NINETY_DAYS) return m.v; } catch (e) {}
+          return '';
+        }
+        function storedChannel() {
+          try { var a = JSON.parse(ss().getItem('sc_attr') || '{}'); if (a.channel && VALID.indexOf(a.channel) >= 0) return a.channel; } catch (e) {}
+          return detect().channel || 'Other';
+        }
+
+        // Fire-and-forget lead POST. form_source must always be present.
+        window.scTracker = function (data) {
+          try {
+            var payload = {
+              form_source: (data && data.form_source) || 'Website',
+              channel: storedChannel(),
+              name: (data && data.name) || '',
+              phone: (data && data.phone) || '',
+              email: (data && data.email) || '',
+              city: (data && data.city) || '',
+              service: (data && data.service) || '',
+              project: (data && data.project) || '',
+              zip: (data && data.zip) || '',
+              budget: (data && data.budget) || '',
+              gclid: storedGclid(),
+              page_path: location.pathname
+            };
+            var body = JSON.stringify(payload);
+            var sent = false;
+            if (navigator.sendBeacon) {
+              try { sent = navigator.sendBeacon(LEAD_ENDPOINT, new Blob([body], { type: 'text/plain;charset=utf-8' })); } catch (e) {}
+            }
+            if (!sent) {
+              fetch(LEAD_ENDPOINT, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }).catch(function () {});
+            }
+          } catch (e) {}
+        };
+      })();
+    </script><title>Walkout Backyard Ideas for Sloped Minnesota Lots | Schifsky</title><meta name="description" content="Most Twin Cities suburbs are built on walkout lots: a deck up top, a slope, and a lower yard nobody uses."><link rel="canonical" href="https://www.schifskycompanies.com/walkout-basement-backyard-ideas-minnesota/"><!-- Roboto (site brand font) --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"><!-- Open Graph / social sharing --><meta property="og:type" content="article"><meta property="og:site_name" content="Schifsky Companies"><meta property="og:title" content="Walkout Backyard Ideas for Sloped Minnesota Lots | Schifsky"><meta property="og:description" content="Most Twin Cities suburbs are built on walkout lots: a deck up top, a slope, and a lower yard nobody uses."><meta property="og:url" content="https://www.schifskycompanies.com/walkout-basement-backyard-ideas-minnesota/"><meta property="og:image" content="https://www.schifskycompanies.com/img/projects/birchwood-village-lakefront/birchwood-village-lakefront-06.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://www.schifskycompanies.com/img/projects/birchwood-village-lakefront/birchwood-village-lakefront-06.jpg"><meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><script type="application/ld+json">[{"@context":"https://schema.org","@type":"BlogPosting","headline":"Walkout Backyard Ideas: How to Turn a Sloped Minnesota Lot Into a Yard You Actually Use","description":"Most Twin Cities suburbs are built on walkout lots: a deck up top, a slope, and a lower yard nobody uses. Here is how terraces, walls, steps, patios and drainage turn that slope into the best part of the house, with real Minnesota examples.","datePublished":"2026-10-28","dateModified":"2026-10-28","author":{"@type":"Person","name":"Carson Schifsky","jobTitle":"Owner, Schifsky Companies","url":"https://www.schifskycompanies.com/about/","worksFor":{"@type":"Organization","name":"Schifsky Companies"}},"publisher":{"@type":"Organization","name":"Schifsky Companies","url":"https://www.schifskycompanies.com"},"mainEntityOfPage":"https://www.schifskycompanies.com/walkout-basement-backyard-ideas-minnesota/"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What can you do with a sloped backyard in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"The three moves that work on almost every sloped lot are terracing (cutting the slope into two or three level steps with retaining walls), building the main patio on the level you actually walk out onto, and connecting the levels with wide steps so the yard reads as one space. Drainage is designed first, because a walkout patio sits at the bottom of the slope where water naturally collects."}},{"@type":"Question","name":"How do you landscape a walkout basement backyard?","acceptedAnswer":{"@type":"Answer","text":"Start with where the doors are. A walkout has an upper door onto a deck and a lower door onto grade, so the design should give each door a destination: a dining or grilling area up top, a patio with a fire feature or kitchen below, and a set of steps or a stair that makes going between them easy. Retaining walls hold the slope back so the lower patio can be level and large enough to use."}},{"@type":"Question","name":"Do I need a retaining wall for a sloped backyard?","acceptedAnswer":{"@type":"Answer","text":"If the grade change is more than a couple of feet across the usable part of the yard, usually yes. Walls are what create flat ground. Boulder walls suit wooded and lakeshore lots, segmental block walls give clean lines and integrated steps, and natural stone walls are the premium finish. Walls over about 4 feet, or walls holding a driveway or structure, typically need engineering and a permit in Twin Cities cities."}},{"@type":"Question","name":"How much does it cost to landscape a sloped backyard?","acceptedAnswer":{"@type":"Answer","text":"Walls are the variable. A focused patio with a modest wall and steps can land in the $30,000 to $60,000 range; a full terraced backyard with walls, stairs, patio, lighting and plantings is usually a $100,000 to $300,000 project. Our retaining wall cost guide and full backyard cost guide break down the numbers."}},{"@type":"Question","name":"Can you put a pool on a sloped lot?","acceptedAnswer":{"@type":"Answer","text":"Yes, and some of the best pool backyards we have built are on sloped, wooded lots. The pool is set on a cut-and-fill terrace held by walls, with the deck level and the slope above or below it planted. The Sustainable Modern in Shakopee and Poolside on the Hill in Woodbury are both examples."}},{"@type":"Question","name":"What is the best time to build walls and terraces in Minnesota?","acceptedAnswer":{"@type":"Answer","text":"Late April through October, once the ground is thawed and dry enough to excavate. Design and engineering happen over the winter, and homeowners who finalize by February get their preferred start week."}}]}]</script><link rel="stylesheet" href="/_astro/_slug_.B77x14Kg.css"></head> <body> <a class="skip-link" href="#main">Skip to content</a> <div class="topbar"></div> <header id="siteHeader"> <div class="wrap nav"> <a class="logo" href="/" aria-label="Schifsky Companies home"> <img src="/logo.png" alt="Schifsky Companies - landscape design and build" width="240" height="83"> </a> <nav class="nav-links" aria-label="Primary"> <div class="nav-item has-sub"> <a class="nav-top" href="/services/" aria-haspopup="true"> Services <svg class="caret" width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </a> <div class="nav-sub" role="menu"> <a role="menuitem" href="/custom-landscape-design/">Landscape Design</a><a role="menuitem" href="/fiberglass-pools/">Swimming Pools</a><a role="menuitem" href="/paver-patios/">Paver Patios &amp; Hardscape</a><a role="menuitem" href="/retaining-walls-twin-cities/">Retaining Walls</a><a role="menuitem" href="/outdoor-living/">Outdoor Living</a><a role="menuitem" href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a role="menuitem" href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/blog/">Guides</a> </nav> <div class="nav-right"> <a class="nav-phone js-call" href="tel:+16514390603"> <span class="ico" aria-hidden="true"> <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#1a191d"></path></svg> </span> <span class="txt"><small>Call us</small><span class="num">651-439-0603</span></span> </a> <a class="btn btn-primary nav-cta" href="/contact/">Free Consultation</a> <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"> <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke="#1a191d" stroke-width="2" stroke-linecap="round"></path></svg> </button> </div> </div> <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile"> <div class="wrap"> <div class="m-group"> <div class="m-parent"> <a href="/services/">Services</a> <button class="m-sub-toggle" type="button" aria-expanded="false" aria-controls="mSubServices" aria-label="Show services"> <svg class="caret" width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg> </button> </div> <div class="m-sub" id="mSubServices"> <a href="/custom-landscape-design/">Landscape Design</a><a href="/fiberglass-pools/">Swimming Pools</a><a href="/paver-patios/">Paver Patios &amp; Hardscape</a><a href="/retaining-walls-twin-cities/">Retaining Walls</a><a href="/outdoor-living/">Outdoor Living</a><a href="/aluminum-pergola-builder-minnesota/">Aluminum Pergolas</a><a href="/landscape-drainage-in-lake-elmo/">Landscape Drainage</a> </div> </div><a href="/portfolio/">Portfolio</a><a href="/showroom/">Showroom</a><a href="/financing/">Financing</a><a href="/about/">About</a><a href="/blog/">Guides</a> <a class="btn btn-primary" href="/contact/">Get a Free Quote</a> </div> </nav> </header> <script>
+  (function () {
+    var header = document.getElementById('siteHeader');
+    var toggle = document.getElementById('menuToggle');
+    if (!header || !toggle) return;
+    function close() { header.classList.remove('menu-open'); toggle.setAttribute('aria-expanded', 'false'); }
+    toggle.addEventListener('click', function () {
+      var open = header.classList.toggle('menu-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    // Mobile "Services" accordion
+    document.querySelectorAll('.m-sub-toggle').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var sub = document.getElementById(btn.getAttribute('aria-controls'));
+        var open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', open ? 'false' : 'true');
+        if (sub) sub.classList.toggle('open', !open);
+      });
+    });
+    // Close the whole menu when a real link (not the accordion toggle) is tapped
+    document.querySelectorAll('#mobileMenu a').forEach(function (a) { a.addEventListener('click', close); });
+  })();
+</script> <main id="main">  <section class="page-hero"> <div class="wrap" style="max-width:820px;"> <nav class="crumbs" aria-label="Breadcrumb"> <ol> <li> <a href="/">Home</a> </li><li> <a href="/blog/">Guides</a> </li><li> <span aria-current="page">Walkout Backyard Ideas: How to Turn a Sloped Minnesota Lot Into a Yard You Actually Use</span> </li> </ol> </nav> <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.schifskycompanies.com/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://www.schifskycompanies.com/blog/"},{"@type":"ListItem","position":3,"name":"Walkout Backyard Ideas: How to Turn a Sloped Minnesota Lot Into a Yard You Actually Use"}]}</script> <span class="eyebrow on-dark">October 28, 2026</span> <h1>Walkout Backyard Ideas: How to Turn a Sloped Minnesota Lot Into a Yard You Actually Use</h1> <p class="byline">By <a href="/about/">Carson Schifsky</a>, Owner, Schifsky Companies</p> </div> </section> <section style="padding-bottom:0;"> <div class="wrap" style="max-width:900px;"> <img src="/img/projects/birchwood-village-lakefront/birchwood-village-lakefront-06.jpg" alt="Walkout Backyard Ideas: How to Turn a Sloped Minnesota Lot Into a Yard You Actually Use" width="1100" height="619" style="width:100%;border-radius:14px;border:1px solid var(--line);"> </div> </section><section> <article class="wrap prose"> <p>Drive through Woodbury, Eden Prairie, Chanhassen, Hugo or almost any Twin Cities suburb built after 1980 and you will see the same backyard over and over: a deck off the kitchen, a slope dropping a full story to the lower level, a sliding door onto a small concrete pad, and a lawn that is mowed but never used. That is a walkout lot, and it is the most common design problem we solve.</p>
+<p>The good news is that a walkout backyard has something a flat lot never will: levels. Done right, the slope becomes terraces, the terraces become rooms, and the yard ends up with more usable space than the flat lot next door. This guide walks through how we think about it, what the options cost, and what it looks like when it is finished, using projects we have built across the metro.</p>
+<h2 id="why-walkout-backyards-go-unused">Why walkout backyards go unused</h2>
+<p>Three things conspire against a walkout yard.</p>
+<p><strong>The grade.</strong> A typical walkout drops 8 to 10 feet from the upper door to the lower one. Anything built on the slope itself is unusable, and the flat ground at the bottom is often narrow and wet.</p>
+<p><strong>The water.</strong> Every roof downspout, every rain and every spring thaw sends water downhill toward the lower door. If the lower patio is built before the drainage is solved, it becomes a puddle and the basement door becomes a problem.</p>
+<p><strong>The disconnect.</strong> The deck and the lower pad are two separate places with no good way between them, so the family lives on the deck and the lower yard becomes where the trampoline goes.</p>
+<p>Every walkout design we do is really an answer to those three things.</p>
+<h2 id="the-three-moves-that-fix-a-sloped-yard">The three moves that fix a sloped yard</h2>
+<h3 id="1-terrace-it">1. Terrace it</h3>
+<p>Instead of one long slope, cut the yard into two or three level steps and hold each one with a retaining wall. A terrace can be a patio, a lawn, a planting bed or a pool deck. The walls do the structural work, and the terraces become the rooms.</p>
+<p>Wall choice depends on the lot and the look:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Wall type</th><th>Best for</th><th>Installed cost (per sq ft of wall face)</th></tr></thead><tbody><tr><td>Boulder wall</td><td>Wooded lots, lakeshores, natural look, big grade changes on a budget</td><td>$65 to $85</td></tr><tr><td>Segmental block wall</td><td>Clean lines, integrated steps, seat walls, tight spaces near a patio</td><td>$85 to $120</td></tr><tr><td>Natural stone wall</td><td>The premium finish, lakeshore estates, matching stone veneer on the house</td><td>$120 and up</td></tr></tbody></table>
+<p>Full detail is in our <a href="/how-much-does-a-retaining-wall-cost-in-the-twin-cities/">retaining wall cost guide</a>. The part you never see, the compacted base, drainage stone, perforated pipe and geogrid behind the wall, is what decides whether it is still straight in 20 years.</p>
+<p><a href="/projects/birchwood-village-lakefront/">Terraced on White Bear Lake</a> is the clearest example: a steep shoreline lot in Birchwood Village, cut into tiered natural stone walls with stairs and cable railings down to the water. The slope did not go away. It became the design.</p>
+<h3 id="2-put-the-patio-where-you-actually-walk-out">2. Put the patio where you actually walk out</h3>
+<p>The instinct on a walkout is to put the patio at the top, next to the kitchen. The better answer is usually both: a modest grilling and dining space at the deck level, and the main patio at the lower level where there is room to spread out. The lower patio is where the fire feature, the outdoor kitchen or the pool goes, because that is where the flat ground is once the walls are in.</p>
+<p>Sizing matters more on a walkout than on a flat lot, because the walls fix the footprint. A dining area for six needs roughly 12 by 14 feet. A fire pit with seating all the way around needs a 16 to 18 foot circle. An outdoor kitchen run with a grill, counter and seating needs about 8 feet of depth. We lay these out in 3D before a wall is built so the terrace is the right size the first time.</p>
+<p><a href="/projects/woodbury-modern-makeover/">The Modern Revival</a> in Woodbury shows the lower-level approach on an established lot: block walls holding the grade, a paver patio with a linear fire table and built-in bench seating, an outdoor kitchen and bar, and a flagstone path tying it back to the rest of the yard.</p>
+<h3 id="3-connect-the-levels">3. Connect the levels</h3>
+<p>Steps are what make a walkout yard feel like one space instead of two. Wide steps, 5 feet or more, read as part of the patio rather than a utility stair. On bigger grade changes, a landing halfway down gives you a place to pause and a spot for a planter or light. Boulder steps suit a natural wall; block steps match a block wall and can be lit from the riser.</p>
+<p><a href="/projects/woodbury-poolside-on-the-hill/">Poolside on the Hill</a> uses boulder retaining and boulder steps to climb the slope behind a new pool, so the lawn above and the pool deck below are a single yard.</p>
+<h2 id="drainage-comes-first-always">Drainage comes first, always</h2>
+<p>On a walkout, water management is not a line item, it is the foundation of the design. The pieces we plan before anything else:</p>
+<ul>
+<li><strong>Downspouts to daylight.</strong> Roof water is routed in buried pipe away from the house and the patio, not dumped onto the slope.</li>
+<li><strong>Swales and grading.</strong> The terraces are pitched so water moves across them and off, never toward the lower door.</li>
+<li><strong>Drain tile behind every wall.</strong> Water trapped behind a retaining wall is what makes it lean. Clean stone and a perforated pipe behind the wall carry it to an outlet.</li>
+<li><strong>A real outlet.</strong> Water has to go somewhere: a daylight outlet on a lower slope, a catch basin, or a dry well, chosen for the lot.</li>
+</ul>
+<p>Our <a href="/landscape-drainage-in-lake-elmo/">landscape drainage page</a> covers the methods. The short version is that a walkout patio built without this work is a patio you will rebuild.</p>
+<h2 id="what-it-costs">What it costs</h2>
+<p>The honest range for a walkout backyard is wide, because the walls are the variable.</p>
+<ul>
+<li>A focused project, one wall, a set of steps and a lower patio of 300 to 400 square feet, typically lands in the <strong>$30,000 to $60,000</strong> range.</li>
+<li>A terraced backyard with two levels of walls, stairs, a larger patio, a fire feature, lighting and plantings is usually <strong>$100,000 to $300,000</strong>. The Modern Revival was $235,000 as a complete project.</li>
+<li>Add a pool on the terrace and the complete project is typically <strong>$200,000 to $430,000 and up</strong>. The Sustainable Modern in Shakopee was $380,000.</li>
+</ul>
+<p>The <a href="/what-does-a-full-backyard-landscape-project-cost-in-the-twin-cities/">full backyard cost guide</a> and the <a href="/how-much-does-a-paver-patio-cost-in-the-twin-cities/">paver patio cost guide</a> break those numbers down further.</p>
+<h2 id="ideas-by-lot-type">Ideas by lot type</h2>
+<p><strong>Shallow slope, 3 to 5 feet.</strong> One low seat wall doing double duty as retaining and seating, a wide patio at the bottom, and a single run of steps. Often the best value on the list.</p>
+<p><strong>Classic walkout, 8 to 10 feet.</strong> Two terraces: a small upper landing off the deck stairs and a large lower patio. Walls at both levels, a fire feature below, and lighting on the steps so the yard works after dark.</p>
+<p><strong>Wooded or lakeshore slope.</strong> Boulder or natural stone walls, stairs that follow the grade rather than fight it, plantings between the terraces, and the patio placed to hold the view. See <a href="/projects/birchwood-village-lakefront/">Terraced on White Bear Lake</a> and <a href="/projects/dellwood-retreat/">Carved in Stone</a> in Dellwood.</p>
+<p><strong>New construction on a graded lot.</strong> The builder leaves a slope that was shaped for drainage, not for living. The complete plan, walls, patio, pool if you want one, and plantings, is designed once and can be built in phases. <a href="/projects/lake-elmo-new-construction/">From the Ground Up</a> in Lake Elmo and <a href="/projects/shakopee-sustainable-modern/">The Sustainable Modern</a> in Shakopee both started that way.</p>
+<h2 id="how-the-process-works">How the process works</h2>
+<ol>
+<li><strong>Free consultation.</strong> We walk the slope with you, look at where the water goes, and talk about what you want the yard to do.</li>
+<li><strong>3D design.</strong> You see the terraces, walls, steps and patio on screen, from the deck and from the lower door, and we adjust until it is right. Walls over about 4 feet, or walls holding a structure, get engineered at this stage.</li>
+<li><strong>Firm, itemized quote.</strong> Once the design and materials are set.</li>
+<li><strong>Build in order.</strong> Drainage and walls first, then hardscape, then lighting and plantings, then lawn. On a walkout the order is not optional.</li>
+</ol>
+<p>If you are at the stage of looking out the window and wondering what the slope could be, that is exactly the right time to talk. Send us a few photos of the yard and we will put together a free idea board for it.</p> <div style="margin-top:40px;"> <h2>Frequently Asked Questions</h2> <div class="faq-wrap" style="margin-top:18px;"> <details class="faq"> <summary>What can you do with a sloped backyard in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">The three moves that work on almost every sloped lot are terracing (cutting the slope into two or three level steps with retaining walls), building the main patio on the level you actually walk out onto, and connecting the levels with wide steps so the yard reads as one space. Drainage is designed first, because a walkout patio sits at the bottom of the slope where water naturally collects.</div> </details><details class="faq"> <summary>How do you landscape a walkout basement backyard? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Start with where the doors are. A walkout has an upper door onto a deck and a lower door onto grade, so the design should give each door a destination: a dining or grilling area up top, a patio with a fire feature or kitchen below, and a set of steps or a stair that makes going between them easy. Retaining walls hold the slope back so the lower patio can be level and large enough to use.</div> </details><details class="faq"> <summary>Do I need a retaining wall for a sloped backyard? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">If the grade change is more than a couple of feet across the usable part of the yard, usually yes. Walls are what create flat ground. Boulder walls suit wooded and lakeshore lots, segmental block walls give clean lines and integrated steps, and natural stone walls are the premium finish. Walls over about 4 feet, or walls holding a driveway or structure, typically need engineering and a permit in Twin Cities cities.</div> </details><details class="faq"> <summary>How much does it cost to landscape a sloped backyard? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Walls are the variable. A focused patio with a modest wall and steps can land in the $30,000 to $60,000 range; a full terraced backyard with walls, stairs, patio, lighting and plantings is usually a $100,000 to $300,000 project. Our retaining wall cost guide and full backyard cost guide break down the numbers.</div> </details><details class="faq"> <summary>Can you put a pool on a sloped lot? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Yes, and some of the best pool backyards we have built are on sloped, wooded lots. The pool is set on a cut-and-fill terrace held by walls, with the deck level and the slope above or below it planted. The Sustainable Modern in Shakopee and Poolside on the Hill in Woodbury are both examples.</div> </details><details class="faq"> <summary>What is the best time to build walls and terraces in Minnesota? <span class="pm" aria-hidden="true">+</span></summary> <div class="ans">Late April through October, once the ground is thawed and dry enough to excavate. Design and engineering happen over the winter, and homeowners who finalize by February get their preferred start week.</div> </details> </div> </div> <aside class="author-box"> <img src="/img/team-showroom.jpg" alt="Carson Schifsky and the Schifsky Companies team" width="120" height="120" loading="lazy"> <div> <span class="eyebrow">About the Author</span> <b>Carson Schifsky</b> <span class="role">Owner, Schifsky Companies</span> <p>Carson Schifsky is the owner of Schifsky Companies, the family-owned landscape design-build firm founded in Stillwater in 1989 and based in Lake Elmo, MN. He leads clients through the design-build process on patios, pools, and outdoor living projects across the Twin Cities, and every price on this site comes from projects his team has actually built.</p> </div> </aside> <p style="margin-top:34px;border-top:1px solid var(--line);padding-top:24px;"> <a class="btn btn-dark" href="/blog/">&larr; All guides</a> <a class="btn btn-primary" href="#leadForm-bottom" style="margin-left:10px;">Get a Free Idea Board</a> </p> </article> </section> <section class="lead-cap-sec guide-cta"> <div class="wrap" style="max-width:900px;"> <div class="guide-cta-intro reveal"> <span class="eyebrow center">Still in the Dreaming Stage?</span> <h2>Get a Free Idea Board for Your Yard</h2> <p>Not ready for a quote? Perfect. Send us a few photos of your yard and tell us what you are picturing, and our design team will put together a free idea board: layouts, materials and features that fit your space and your range, pulled from projects we have actually built across the Twin Cities. No sales pitch, no obligation.</p> </div> <div class="lead-cap"> <div class="form-card"> <form class="lead-form" id="leadForm-bottom" novalidate data-source-label="Guide: walkout-basement-backyard-ideas-minnesota"> <input type="hidden" name="access_key" value="fe71ba2a-53af-4c05-bc70-5639fc0b6472"> <input type="hidden" name="subject" value="New Lead - Idea Board (guide: walkout-basement-backyard-ideas-minnesota)"> <input type="hidden" name="source" value="Guide: walkout-basement-backyard-ideas-minnesota | /walkout-basement-backyard-ideas-minnesota/"> <span class="tag">Free Idea Board · No Obligation</span> <h2>Get a Free Idea Board for Your Yard</h2> <p class="lede">Tell us a little about your yard and what you are dreaming about. We will reply within one business day with a few questions and a link to send photos, then put together a free idea board for your space.</p> <div class="field"> <label for="leadForm-bottom-name">Full Name <span class="req">*</span></label> <input type="text" id="leadForm-bottom-name" name="name" autocomplete="name" placeholder="Jane Smith"> <div class="err-msg">Please enter your name.</div> </div> <div class="field row2"> <div> <label for="leadForm-bottom-phone">Phone <span class="req">*</span></label> <input type="tel" id="leadForm-bottom-phone" name="phone" autocomplete="tel" placeholder="(651) 555-0123"> <div class="err-msg">Enter a valid phone number.</div> </div> <div> <label for="leadForm-bottom-email">Email <span class="req">*</span></label> <input type="email" id="leadForm-bottom-email" name="email" autocomplete="email" placeholder="jane@email.com"> <div class="err-msg">Enter a valid email.</div> </div> </div> <div class="field"> <label for="leadForm-bottom-project">Project Type <span class="req">*</span></label> <select id="leadForm-bottom-project" name="project"> <option value="">Select…</option> <option>Outdoor living / pool</option> <option>Patio &amp; hardscape</option> <option>Pergola &amp; shade structure</option> <option>Outdoor kitchen / fire feature</option> <option>Retaining walls</option> <option>Full landscape design</option> <option>Multiple / not sure yet</option> </select> <div class="err-msg">Choose a project type.</div> </div> <div class="field"> <label for="leadForm-bottom-city">City <span class="req">*</span></label> <input type="text" id="leadForm-bottom-city" name="city" autocomplete="address-level2" placeholder="Woodbury"> <div class="err-msg">Enter your city.</div> </div> <div class="field"> <label for="leadForm-bottom-budget">Estimated Investment <span class="req">*</span></label> <select id="leadForm-bottom-budget" name="budget"> <option value="">Select a range…</option> <option>Under $25,000</option> <option>$25,000 - $50,000</option> <option>$50,000 - $100,000</option> <option>$100,000 - $200,000</option> <option>$200,000+</option> </select> <div class="err-msg">Please select an estimated range.</div> </div> <button type="submit" class="btn btn-primary btn-block btn-lg">Send Me a Free Idea Board</button> <div class="form-trust"> <span class="stars" aria-hidden="true">★★★★★</span> <span><b>4.9</b> on Google</span> <span aria-hidden="true">·</span> <span>Licensed &amp; Insured</span> <span aria-hidden="true">·</span> <span>Family-Owned 37 Yrs</span> </div> <p class="form-fin">Financing available · low monthly payments, no equity required</p> <p class="legal">By submitting, you agree to be contacted about your project. No spam, ever.</p> </form> <div class="form-success" id="leadForm-bottom-success"> <div class="check" aria-hidden="true"> <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="#2f9e44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg> </div> <h3>Thank you - request received!</h3> <p>We will reply within one business day with a few questions and a link to send photos of your yard.</p> <a class="btn btn-dark cta-call js-call" href="tel:+16514390603">Prefer to talk now? Call 651-439-0603</a> </div> </div> </div> </div> </section><script>
+      (function () {
+        // Pool model cards: flip render/dimensions, and carry the chosen model into the lead form
+        document.querySelectorAll('.model-flip').forEach(function (b) {
+          b.addEventListener('click', function () { b.closest('.model-card').classList.toggle('show-specs'); });
+        });
+        document.querySelectorAll('a[data-model]').forEach(function (a) {
+          a.addEventListener('click', function () {
+            var model = a.getAttribute('data-model');
+            document.querySelectorAll('form.lead-form').forEach(function (form) {
+              var hid = form.querySelector('[name="pool_model"]');
+              if (!hid) { hid = document.createElement('input'); hid.type = 'hidden'; hid.name = 'pool_model'; form.appendChild(hid); }
+              hid.value = model;
+              var sel = form.querySelector('[name="project"]');
+              if (sel) { sel.value = 'Outdoor living / pool'; }
+            });
+          });
+        });
+        var forms = document.querySelectorAll('form.lead-form');
+        if (!forms.length) return;
+        var ENDPOINT = 'https://api.web3forms.com/submit';
+        function emailOk(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }
+        function phoneOk(v) { return v.replace(/\D/g, '').length >= 10; }
+        forms.forEach(function (form) {
+          var card = form.closest('.lead-cap');
+          var success = card ? card.querySelector('.form-success') : null;
+          function fld(n) { return form.querySelector('[name="' + n + '"]'); }
+          function showErr(el, on) {
+            if (!el) return;
+            el.classList.toggle('err', on);
+            var m = el.parentElement.querySelector('.err-msg');
+            if (m) m.style.display = on ? 'block' : 'none';
+          }
+          form.querySelectorAll('input,select').forEach(function (el) {
+            el.addEventListener('input', function () { showErr(el, false); });
+            el.addEventListener('change', function () { showErr(el, false); });
+          });
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var ok = true;
+            var elName = fld('name'), elPhone = fld('phone'), elEmail = fld('email'),
+                elProject = fld('project'), elCity = fld('city'), elBudget = fld('budget');
+            if (!elName.value.trim()) { showErr(elName, true); ok = false; }
+            if (!phoneOk(elPhone.value)) { showErr(elPhone, true); ok = false; }
+            if (!emailOk(elEmail.value)) { showErr(elEmail, true); ok = false; }
+            if (!elProject.value) { showErr(elProject, true); ok = false; }
+            if (!elCity.value.trim()) { showErr(elCity, true); ok = false; }
+            if (!elBudget.value) { showErr(elBudget, true); ok = false; }
+            if (!ok) { var fe = form.querySelector('.err'); if (fe) fe.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+            var btn = form.querySelector('button[type=submit]');
+            btn.disabled = true; btn.textContent = 'Sending…';
+            var label = form.getAttribute('data-source-label') || 'Service Page';
+            function done() {
+              form.style.display = 'none';
+              if (success) { success.style.display = 'block'; success.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+              // GA4 conversion: exact event name "form_submission", success only
+              if (typeof gtag === 'function') {
+                gtag('event', 'form_submission', { form_source: label, page_path: window.location.pathname });
+              }
+              // Meta Pixel: standard Lead event, success only
+              if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: label });
+              // Additional POST to internal tracker (alongside Web3Forms). Channel + gclid
+              // come from first-touch attribution stored by window.scTracker (Base.astro).
+              if (typeof window.scTracker === 'function') {
+                window.scTracker({
+                  form_source: label,
+                  name: elName.value,
+                  phone: elPhone.value,
+                  email: elEmail.value,
+                  city: elCity.value,
+                  service: elProject.value,
+                  project: (fld('pool_model') ? fld('pool_model').value : ''),
+                  zip: '',
+                  budget: elBudget.value
+                });
+              }
+            }
+            fetch(ENDPOINT, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+              body: JSON.stringify(Object.fromEntries(new FormData(form)))
+            }).then(done).catch(done);
+          });
+        });
+      })();
+    </script> </main> <footer> <div class="wrap"> <div class="foot-top"> <div class="foot-brand"> <div class="foot-logo"> <img src="/logo.png" alt="Schifsky Companies" width="200" height="69"> </div> <p>
+Family-owned Twin Cities landscape design &amp; build for 37+ years-
+          outdoor living, pools, patios, pergolas, retaining walls, and drainage.
+</p> </div> <div class="foot-contact"> <a class="js-call" href="tel:+16514390603"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .58 3.6 1 1 0 0 1-.24 1Z" fill="#ebd200"></path></svg> 651-439-0603 </a> <a href="mailto:support@schifskycompanies.com"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="#ebd200" stroke-width="2"></path><path d="M3 7l9 6 9-6" stroke="#ebd200" stroke-width="2"></path></svg> support@schifskycompanies.com </a> <a href="https://maps.google.com/?q=Schifsky%20Companies%203520%20Lavern%20Ave%20N%20Lake%20Elmo%20MN%2055042" target="_blank" rel="noopener"> <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10Z" stroke="#ebd200" stroke-width="2"></path><circle cx="12" cy="11" r="2.4" stroke="#ebd200" stroke-width="2"></circle></svg> 3520 Lavern Ave N, Lake Elmo, MN 55042 </a> </div> <nav class="foot-links" aria-label="Footer"> <a href="/services/">Services</a> <a href="/portfolio/">Portfolio</a> <a href="/about/">About</a> <a href="/reviews/">Reviews</a> <a href="/faq/">FAQ</a> <a href="/blog/">Guides</a> <a href="/contact/">Contact</a> </nav> </div> <div class="foot-bottom"> <span>© 2026 Schifsky Companies. All rights reserved. Licensed &amp; Insured.</span> <span>Landscape Design &amp; Build · Serving the Twin Cities Metro</span> </div> </div> </footer> <script>
+      document.documentElement.classList.add('js');
+      // Scroll-reveal animation
+      (function () {
+        var els = document.querySelectorAll('.reveal');
+        if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+        }, { threshold: .12 });
+        els.forEach(function (e) { io.observe(e); });
+      })();
+
+      // GA4: track clicks on any mailto: link (sitewide)
+      document.querySelectorAll('a[href^="mailto:"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+          if (typeof gtag === 'function') gtag('event', 'email_click');
+          if (typeof fbq === 'function') fbq('track', 'Contact');
+        });
+      });
+    </script> </body> </html>
