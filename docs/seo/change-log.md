@@ -1,3 +1,52 @@
+# Change log: six specialty "pocket" pages (2026-10-28)
+
+Owner priority: own "porcelain paver patio installer" first, then driveways, lake homes, new construction, pool landscaping and timber wall replacement (Latham model pages skipped by owner decision). Research record: `search-pockets-2026-10-28.md`.
+
+Fact correction first: owner confirmed the Woodbury Shuck project (Poolside on the Hill) used porcelain and The Sustainable Modern (Bukacek) did not. `site.js` story/intro/blurb and the Woodbury hub copy updated accordingly; the porcelain guide cover and proof paragraph now point at Poolside on the Hill instead of the Modern Makeover photo.
+
+New pages (all `kind: service`, data in `src/data/pocketPages.js`, spread into `servicePages`; each has `parent` for a four-level breadcrumb, a photo gallery with lightbox, FAQ schema, lead forms, reviews, related projects and guides):
+
+| URL | Parent | Proof used |
+| --- | --- | --- |
+| /porcelain-paver-patios-minnesota/ | paver patios | Poolside on the Hill (porcelain deck), $55 to $77 per sq ft and brand list from the 2026 porcelain guide, showroom samples |
+| /paver-driveways-minnesota/ | paver patios | Birchwood driveway photo; no driveway price quoted (none approved), factors only |
+| /lake-home-landscaping-minnesota/ | landscape design | Birchwood ($400K), Sustainable Modern ($380K, lake setbacks per Bukacek review), Doherty review; general shoreland rule language, hedged by city/county |
+| /new-construction-landscaping-minnesota/ | landscape design | From the Ground Up ($75K), Life on the Prairie ($140K), The Crown Jewel ($689K, TVLS design) |
+| /pool-landscaping-minnesota/ | swimming pools | Poolside on the Hill, Backyard Barn, Home Resort, Still Waters, Woodbury Poolside, Hamptons; "$75,000 to $150,000" reconciles the existing "from about $75,000" hub figure with the $40K and $230K examples |
+| /timber-retaining-wall-replacement-minnesota/ | retaining walls | Doherty review (wood walls and stairs, WI lake home), Birchwood, Dellwood, Sustainable Modern walls; approved wall prices |
+
+Template changes (`src/pages/[slug].astro`): optional `gallery` module reusing the hub mosaic styles and a new shared `Lightbox.astro` (extracted from CityHub, which now imports it); optional `specialties` link-card module (`a.opt-link` CSS); breadcrumb includes the parent service when `page.parent` is set.
+
+Cross-links: nav dropdown gains Porcelain Paver Patios; /services/ gains a Specialties grid (7 cards incl. plunge pools) and the ItemList schema includes them; specialties blocks added to the patios, walls, pools, plunge, design and outdoor living pages; inline links from the patios cost copy (porcelain), walls cost copy (timber), pools cost copy (pool landscaping); generic city hub service copy links porcelain, pool landscaping and timber replacement; guide links added in the paver patio cost guide, retaining wall cost guide (new timber paragraph), pool landscaping guide, walkout guide and timeline guide.
+
+Verification: 96 pages built, 0 em dashes, 0 broken internal links or images, all JSON-LD parses, all six URLs in sitemap.xml, titles 55 to 68 characters. Visual check of the porcelain page (hero, gallery, options, cost box, reviews) and the services Specialties grid in the preview panel.
+
+# Change log: homepage project tile badge removed (2026-10-28)
+
+Owner request: the small type badge in the top-left corner of the six homepage project tiles felt busy. Removed `<div class="cap-type">` from `src/pages/index.astro` and the dead `.tile .cap-type` rule from `global.css`. Tiles keep the project name, city and scope caption. No other page used the badge (confirmed 0 matches in the built output). Build 90 pages, 0 em dashes, staged to `UPLOAD-TO-CLOUDFLARE-v2/`.
+
+# Change log: drainage and pergola pages (organic performers) (2026-10-28)
+
+Owner reports Search Console shows /landscape-drainage-in-lake-elmo/ and /aluminum-pergola-builder-minnesota/ among the top five pages with no paid traffic behind them.
+
+- URLs unchanged on purpose (the "lake-elmo" slug is part of what ranks; renaming would reset it).
+- Service template: optional `ctaLabel` and `formHeading` per page; optional `reviewNames`/`reviewsHeading` renders real Google reviews on a service page.
+- Drainage page: hero CTA "Get a Free Drainage Assessment", form heading "Get a Free Yard Drainage Assessment", two reviews (Kathy Boudreau's is a drainage job: "fixing the rain drain off issue").
+- Pergola page: CTA "Get a Free Pergola Quote", two reviews.
+- All 23 city hubs: walls section renamed "Retaining Walls, Grading and Drainage", copy covers standing water, regrading, drain tile and French drains, and the section's guide link now points to the drainage page (23 new internal links). Woodbury hub walls copy gained a drainage paragraph with the link.
+- Still needed from Search Console (owner): the query lists for both pages, to tune titles, H1s and FAQs to the exact phrases, and to decide whether a yard-drainage cost guide and a dedicated boulder-wall page are worth writing.
+
+---
+
+# Change log: guide cross-references on service and city pages (2026-10-28)
+
+- Service pages: `relatedGuides` expanded to 4 to 6 per page under a new "Plan Before You Build / {Service} Guides and Costs" heading. Design: full backyard cost, timeline, contractor, walkout, paver cost, pool cost. Patios: paver cost, concrete vs paver, porcelain, fire pit vs fireplace, walkout, timeline. Walls: wall cost, walkout, full backyard, timeline, contractor. Outdoor living: kitchen cost, fire pit vs fireplace, pergola cost, full backyard, pool landscaping, timeline. Pools: pool rules, pool cost, pool landscaping, fiberglass vs vinyl, plunge cost, timeline. Plunge: plunge cost, pool rules, pool landscaping, pool cost, fiberglass vs vinyl. Pergolas: pergola cost, kitchen cost, fire pit vs fireplace, pool landscaping, full backyard. Drainage: walkout, wall cost, full backyard, timeline.
+- City hubs: new "Planning Guides for {City} Homeowners" module (6 cards) after the investment block. Woodbury, Lake Elmo, Stillwater and White Bear Lake lead with their own paver cost guide; other cities lead with the Twin Cities paver guide; all include timeline, walkout, full backyard cost, pool rules and the contractor guide. Woodbury also shows the 2025 Woodbury landscape design post.
+- Result: every guide except the five 2025 Minneapolis lawn-care/maintenance/trends posts is now linked from at least one service or city page (those five describe services not sold and remain a retire-or-rewrite decision, owner-input item 17).
+- Build: 90 pages, 0 broken links, JSON-LD parses, 0 em dashes.
+
+---
+
 # Change log: search-term insights applied (2026-10-28)
 
 Source: Google Ads search terms reports for Oct 14 to 28 (pool and landscaping campaigns). Ad-account changes are the owner's; these are the site changes.

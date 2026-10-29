@@ -24,13 +24,24 @@ For each project, anything you can confirm from job records. Leave blank where u
 | Terraced on White Bear Lake (Birchwood Village) | was the wall engineered / permitted; wall heights; stone type; driveway material; year |
 | Life on the Fairway (Woodbury) | pool type (fiberglass/vinyl), pergola product, putting green scope, year |
 | Woodbury Poolside | pool type, pergola product, cabana scope |
-| The Sustainable Modern (Shakopee) | pool type, paver product (porcelain?), wall system, year completed |
+| The Sustainable Modern (Shakopee) | resolved 2026-10-28: deck is NOT porcelain (owner), copy now says large-format pavers. Still needed: pool type, paver product, wall system, year completed |
 | Still Waters (Mahtomedi) | pool size (the plunge pool guide calls it compact; confirm), year |
 | Carved in Stone (Dellwood) | wall system (block, boulder, both), length/height, year |
 | From the Ground Up (Lake Elmo) | does this project include drainage/grading work? It is currently cited on the drainage page because of the new-construction grading shown in photos |
-| Poolside on the Hill (Woodbury, Shuck) | confirm $120K is the landscape/hardscape scope (pool by Blaiser excluded), year, auto-cover yes/no, lighting included |
+| Poolside on the Hill (Woodbury, Shuck) | confirmed 2026-10-28: deck is porcelain (owner). Still needed: porcelain brand and format, deck square footage, year, auto-cover yes/no, lighting included |
 | The Backyard Barn (Stillwater, Stensland) | confirm what the $40K covered (deck? turf? plantings?), who built the pool deck, year |
 | All projects | one line per gallery photo describing what is shown (we currently use "view N of M" alt text) |
+
+### Specialty pages added 2026-10-28 (facts that would strengthen them)
+
+| Page | Need |
+| --- | --- |
+| /porcelain-paver-patios-minnesota/ | any other porcelain projects (patio, pool deck, pedestal) with photos; brand used on Poolside on the Hill; whether a pedestal install has been done (page says we build both ways, as the 2026 guide already did) |
+| /paver-driveways-minnesota/ | more driveway projects and photos (only the Birchwood driveway exists); a typical per-square-foot or project range for driveways so the page can quote a number; confirm the 1 to 2 week build estimate |
+| /lake-home-landscaping-minnesota/ | the R. Doherty western Wisconsin lake project as a case study (photos, lake name, scope, price); any White Bear Lake, Mahtomedi or St. Croix projects not yet on the site |
+| /new-construction-landscaping-minnesota/ | builder partners we can name; confirm The Crown Jewel and Life on the Prairie were landscaped on new builds (stories say so); typical builder allowance amounts seen |
+| /pool-landscaping-minnesota/ | pools finished around other installers (not Blaiser) with photos, so the "we work with your pool builder" line has a case study; who installed the Backyard Barn pool and deck |
+| /timber-retaining-wall-replacement-minnesota/ | before/after photos of any timber or railroad-tie wall we replaced (the Doherty job especially); typical demolition and haul-off cost so it can be quoted |
 
 ## C. City pages (affects 23 /landscape-design-build-services-in-... pages)
 
