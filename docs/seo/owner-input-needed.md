@@ -19,6 +19,7 @@ For each project, anything you can confirm from job records. Leave blank where u
 
 | Project | Need |
 | --- | --- |
+| The Crown Jewel (Lake Elmo) | resolved 2026-11-02 (owner): scope was landscape/outdoor living install, plantings and artificial turf; design by TVLS, pool by others; no dollar figure. Still useful: did we build the pergola structure, and year |
 | Room to Gather (Stillwater) | patio square footage, paver product/pattern, stoop scope, what the $45K included, build duration, year |
 | Gather Round the Fire (Hugo) | resolved 2026-10-28 from the gallery photos: the water feature is a spa (hot tub), not a plunge pool; site copy now says "spa". Still needed: confirm stone fireplace, outdoor kitchen (grill + kamado), pergola, water sphere; year; any homeowner quote we may publish |
 | Terraced on White Bear Lake (Birchwood Village) | was the wall engineered / permitted; wall heights; stone type; driveway material; year |

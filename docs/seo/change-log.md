@@ -1,3 +1,16 @@
+# Change log: The Crown Jewel scope correction (2026-11-02)
+
+Owner: Schifsky's scope on The Crown Jewel (Lake Elmo) was the landscape and outdoor living installation, the plantings and the artificial turf. The landscape design was by TVLS and the pool was built by another contractor. Remove the dollar value entirely.
+
+- `site.js`: scope cleared (no "Total investment" row, no price in tile captions or the portfolio slider; the project shows only under "Any" budget), category tags reduced to `outdoor` (the "Services on this project" list no longer shows Swimming pool or Landscape design), `typeLabel`/`shortType` overrides, explicit related projects and guides, new blurb/intro/story that name TVLS as designer and the pool as another contractor's.
+- Photo 02 (the indoor spa room looking out) removed from the gallery; it is interior work. File kept on disk.
+- Design page: Crown Jewel removed from hero slides, lead image and related projects (we did not design it); $689K example replaced with Life on the Fairway ($430K). Pools page: Crown Jewel removed from hero slides. Outdoor living and pergola pages keep their Crown Jewel photos (that work was ours).
+- City hubs: the pools service photo (generic and Woodbury) swapped to Poolside on the Hill / The Home Resort; default city hero slide swapped to The Sustainable Modern; highlight-reel and hub alt text rewritten to "we installed ... around a pool"; Lake Elmo "Working in" paragraph rewritten.
+- New construction page: Crown Jewel now described as installation from a TVLS plan with the pool by others; $689,000 removed from the cost box; Estate Scale option no longer names it.
+- Guides: full backyard cost guide loses "our largest: $689K" and the Crown Jewel table example (Woodbury Poolside $425K instead); Lake Elmo patio cost guide rewritten.
+- Landing pages: `/free-design-consultation/` and `/lake-elmo-fall-patio-offer/` tile captions and alt text no longer say pool, cabana or $689K.
+- Verified: 0 occurrences of "689" in the built HTML, 96 pages, 0 em dashes, 0 broken links, JSON-LD valid.
+
 # Change log: six specialty "pocket" pages (2026-10-28)
 
 Owner priority: own "porcelain paver patio installer" first, then driveways, lake homes, new construction, pool landscaping and timber wall replacement (Latham model pages skipped by owner decision). Research record: `search-pockets-2026-10-28.md`.
