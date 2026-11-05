@@ -75,11 +75,18 @@
 </script>
 
 <!-- CallRail dynamic number insertion (call tracking) -->
-<script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script>
+<script>
+  (function(){function l(){var s=document.createElement('script');s.async=true;s.src='https://cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js';document.head.appendChild(s);}
+    if(document.readyState==='complete')l();else window.addEventListener('load',l);})();
+</script>
 
 <!-- Meta Pixel (Fall 2026 Pixel) -->
 <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  // Meta Pixel: fbq() queue defined now; the 115 KB fbevents.js download is deferred until 1.5 s after load.
+  !function(f,b,e,v,n){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+    function l(){var t=b.createElement(e);t.async=!0;t.src=v;var s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    if(b.readyState==='complete')setTimeout(l,1500);else f.addEventListener('load',function(){setTimeout(l,1500)});
+  }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1096242636418717');
   fbq('track', 'PageView');
 </script>
@@ -164,7 +171,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="/img/lp/wb-hero-900.jpg" media="(max-width: 760px)" fetchpriority="high" />
+<link rel="preload" as="image" href="/img/lp/wb-hero.jpg" media="(min-width: 761px)" fetchpriority="high" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" /></noscript></noscript>
 
 <style>
   :root{
@@ -589,6 +600,10 @@
     .btn,.btn-lg{font-size:15px;padding:15px 16px}
     .mobilebar .btn{font-size:14px}
   }
+
+@media (max-width:760px){ :root{--hero-img:url('/img/lp/wb-hero-900.jpg')} }
+
+.yt-lite{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;margin:0;background:#000;cursor:pointer;display:block;overflow:hidden}.yt-lite img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92}.yt-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);filter:drop-shadow(0 2px 10px rgba(0,0,0,.5))}
 </style>
 
 <style>
@@ -919,7 +934,7 @@
   <div class="wrap split">
     <div class="reveal">
       <div class="video-wrap">
-        <iframe src="https://www.youtube.com/embed/b3KiKqRN25w?rel=0&modestbranding=1" title="Gather Round the Fire - Hugo, MN backyard by Schifsky Companies" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <button type="button" class="yt-lite" data-id="b3KiKqRN25w" data-title="Gather Round the Fire - Hugo, MN backyard by Schifsky Companies" aria-label="Play video: Gather Round the Fire - Hugo, MN backyard by Schifsky Companies"><img src="https://i.ytimg.com/vi/b3KiKqRN25w/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async" /><span class="yt-play" aria-hidden="true"><svg width="68" height="48" viewBox="0 0 68 48"><path d="M66.5 7.7c-.8-2.9-3-5.2-5.9-6C55.4 0 34 0 34 0S12.6 0 7.4 1.7c-2.9.8-5.1 3.1-5.9 6C0 13 0 24 0 24s0 11 1.5 16.3c.8 2.9 3 5.2 5.9 6C12.6 48 34 48 34 48s21.4 0 26.6-1.7c2.9-.8 5.1-3.1 5.9-6C68 35 68 24 68 24s0-11-1.5-16.3z" fill="#f00"/><path d="M45 24 27 14v20" fill="#fff"/></svg></span></button>
       </div>
       <p style="text-align:center;font-size:13.5px;color:#5c5c60;margin-top:12px">Gather Round the Fire &middot; Hugo, MN &middot; stone fireplace, spa, outdoor kitchen &amp; paver patio</p>
     </div>
@@ -1018,27 +1033,27 @@
     </div>
     <div class="gallery">
       <div class="tile reveal">
-        <img src="/img/lp/wb-01.jpg" alt="Natural stone fireplace, stone sphere water feature and planter in a Hugo, MN backyard by Schifsky Companies" width="1400" height="934" loading="lazy" />
+        <img src="/img/lp/wb-01.jpg" srcset="/img/lp/wb-01-800.jpg 800w, /img/lp/wb-01.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Natural stone fireplace, stone sphere water feature and planter in a Hugo, MN backyard by Schifsky Companies" width="1400" height="934" loading="lazy" />
         <div class="cap">Fireplace, patio &amp; plantings &middot; Hugo &middot; $295K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/wb-03.jpg" alt="Linear gas fire table with built-in seating and fall plantings in a Woodbury, MN backyard" width="1400" height="1098" loading="lazy" />
+        <img src="/img/lp/wb-03.jpg" srcset="/img/lp/wb-03-800.jpg 800w, /img/lp/wb-03.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Linear gas fire table with built-in seating and fall plantings in a Woodbury, MN backyard" width="1400" height="1098" loading="lazy" />
         <div class="cap">Fire table, kitchen &amp; patio &middot; Woodbury &middot; $235K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/wb-04.jpg" alt="Gas fire pit under a louvered pergola beside a pool in Woodbury, MN" width="1400" height="934" loading="lazy" />
+        <img src="/img/lp/wb-04.jpg" srcset="/img/lp/wb-04-800.jpg 800w, /img/lp/wb-04.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Gas fire pit under a louvered pergola beside a pool in Woodbury, MN" width="1400" height="934" loading="lazy" />
         <div class="cap">Fire pit, pergola &amp; pool &middot; Woodbury &middot; $425K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/wb-02.jpg" alt="Stone outdoor fireplace with modern seating and lush greenery in Hugo, MN" width="1400" height="934" loading="lazy" />
+        <img src="/img/lp/wb-02.jpg" srcset="/img/lp/wb-02-800.jpg 800w, /img/lp/wb-02.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Stone outdoor fireplace with modern seating and lush greenery in Hugo, MN" width="1400" height="934" loading="lazy" />
         <div class="cap">Outdoor fireplace &amp; seating &middot; Hugo &middot; $295K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/wb-05.jpg" alt="Fire table and lounge seating under a pergola on a Prestwick golf course home in Woodbury, MN" width="1400" height="935" loading="lazy" />
+        <img src="/img/lp/wb-05.jpg" srcset="/img/lp/wb-05-800.jpg 800w, /img/lp/wb-05.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Fire table and lounge seating under a pergola on a Prestwick golf course home in Woodbury, MN" width="1400" height="935" loading="lazy" />
         <div class="cap">Fire table &amp; covered lounge &middot; Woodbury &middot; $430K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/wb-06.jpg" alt="New paver patio and refreshed stoop on a Stillwater, MN home" width="1400" height="1050" loading="lazy" />
+        <img src="/img/lp/wb-06.jpg" srcset="/img/lp/wb-06-800.jpg 800w, /img/lp/wb-06.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="New paver patio and refreshed stoop on a Stillwater, MN home" width="1400" height="1050" loading="lazy" />
         <div class="cap">Paver patio refresh &middot; Stillwater &middot; $45K</div>
       </div>
     </div>
@@ -1185,7 +1200,7 @@
       </div>
     </div>
     <div class="split-img reveal">
-      <img src="/img/lp/wb-woodbury.jpg" alt="Covered pergola with fire pit and pool in a Woodbury, MN backyard built by Schifsky Companies" width="1400" height="934" loading="lazy" />
+      <img src="/img/lp/wb-woodbury.jpg" srcset="/img/lp/wb-woodbury-800.jpg 800w, /img/lp/wb-woodbury.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Covered pergola with fire pit and pool in a Woodbury, MN backyard built by Schifsky Companies" width="1400" height="934" loading="lazy" />
       <div class="badge-float"><b>Woodbury</b><span>Poolside &middot; $425K</span></div>
     </div>
   </div>
@@ -1415,5 +1430,6 @@
     tick(); setInterval(tick, 60000);
   })();
 </script>
+<script>document.querySelectorAll('.yt-lite').forEach(function(el){el.addEventListener('click',function(){var f=document.createElement('iframe');f.src='https://www.youtube.com/embed/'+el.getAttribute('data-id')+'?rel=0&modestbranding=1&autoplay=1';f.title=el.getAttribute('data-title')||'Project video';f.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');f.setAttribute('allowfullscreen','');f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');el.replaceWith(f);},{once:true});});</script>
 </body>
 </html>

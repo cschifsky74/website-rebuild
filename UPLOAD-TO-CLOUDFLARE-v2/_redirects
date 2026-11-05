@@ -29,3 +29,10 @@
 # Friendly alias for the guides hub (canonical URL stays /blog/ to preserve rankings)
 /guides/   /blog/   301
 /guides    /blog/   301
+
+# Google Ads sitelink destinations that never existed on the new site (found 2026-11-05 in the
+# Ads asset report, both "Disapproved: Destination not working"). Resolve them instead of 404ing.
+/aluminum-pergolas-minnesota/   /aluminum-pergola-builder-minnesota/   301
+/aluminum-pergolas-minnesota    /aluminum-pergola-builder-minnesota/   301
+/excavation/   /services/   301
+/excavation    /services/   301

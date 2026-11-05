@@ -52,6 +52,10 @@ For each project, anything you can confirm from job records. Leave blank where u
 
 ## D. Accounts and external tasks
 
+- Google Ads (2026-11-05): remove or re-point the ~15 paused Smart campaigns (Snow Plowing, Dirtwork, Excavating, Demo, etc.) whose landing pages include the dead `lp.schifskycompanies.com`; that is what the "Your website is unavailable" banner refers to. The live Search ads are fine.
+- Google Ads sitelinks (2026-11-05): change the "Aluminum Pergola" sitelink URL to https://www.schifskycompanies.com/aluminum-pergola-builder-minnesota/ and delete the "Excavation Services" sitelinks (URL /excavation never existed). Three Business logo assets are disapproved for Logo Prominence (upload a logo with less padding / larger mark).
+- Fall offer LPs expired October 31: retire or re-date `/woodbury-fall-patio-offer/` and `/lake-elmo-fall-patio-offer/`.
+
 10. GoDaddy DNS: done 2026-10-21. The bare domain now 301s to `https://www.schifskycompanies.com` (root only). Decide how to preserve paths on the bare domain (options in `apex-domain-redirect-2026-10-21.md`) and shut down the old DigitalOcean droplet if it is still billed.
 11. Google Search Console: add me as a user (or export Performance and Pages reports for the last 3 and 12 months). Needed to decide the guide consolidations in `content-map.md`.
 12. Google Business Profile: confirm categories, hours (site says Mon-Fri 7am-5pm), service list, and that the website link is `https://www.schifskycompanies.com/`.

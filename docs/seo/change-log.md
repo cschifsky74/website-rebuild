@@ -1,3 +1,39 @@
+# Change log: Google Ads "website unavailable" diagnosis and mobile speed fixes (2026-11-05)
+
+## What Google Ads actually shows (checked in the account)
+
+- All enabled Search ads are Eligible; Policy Manager reports no ad issues; the two active campaigns served 1,355 impressions and 53 clicks in the prior 7 days. No landing page is disapproved.
+- The "Your website is unavailable" banner is the Smart-campaign notice ("to turn ads back on, fix the issue with your website or send people to your Business Profile"). The account has about 15 paused Smart campaigns from earlier years. Known-dead destinations in the account history: `lp.schifskycompanies.com` (DNS points at 35.215.92.170, no response, 686 historical clicks) and bare-domain paths such as `schifskycompanies.com/...` (GoDaddy forwarder returns 404 for anything but the root). Owner action in Ads: remove those Smart campaigns or set their landing page to `https://www.schifskycompanies.com/`.
+- Mobile speed score is blank for the current pages because they have too few clicks since the rebuild (Google still documents the metric; older URLs in the account show 8/10 and 10/10).
+- PageSpeed Insights, mobile, before the fixes: /fiberglass-pools/ 37 (LCP 13.8 s, 8.1 MB, of which the 720p hero video was 5.75 MB and YouTube 0.9 MB); /custom-landscape-design/ 60 (LCP 21.4 s, hero slide was a 465 KB JPG loaded via CSS with no preload).
+
+## Follow-up (same day): the specific "Destination not working" items
+
+Found in Campaigns > Assets > Associations (sitelinks). Two sitelink assets are "Disapproved (Destination not working)" because their final URLs 404 on the site:
+
+| Sitelink | Final URL | Live status | Campaigns |
+| --- | --- | --- | --- |
+| Aluminum Pergola | https://www.schifskycompanies.com/aluminum-pergolas-minnesota/ | 404 | Search - Non Brand - Landscaping (not eligible), disapproved Jun 27, 2025 |
+| Excavation Services | https://www.schifskycompanies.com/excavation | 404 | Search - Brand - Schifsky Companies, #2, Search - Competitors (all paused), disapproved Nov 2024 / Apr 2025 |
+
+Neither campaign is one of the two enabled campaigns, so no serving ad is affected, but these are the only "crawler could not read the destination" records in the account. Site fix: `_redirects` now sends `/aluminum-pergolas-minnesota/` to `/aluminum-pergola-builder-minnesota/` and `/excavation` to `/services/` (301). Owner action in Ads: edit the Aluminum Pergola sitelink URL to `https://www.schifskycompanies.com/aluminum-pergola-builder-minnesota/` and remove the Excavation Services sitelinks (service no longer offered); disapprovals clear on the next review. Three "Business logo" assets are disapproved for Logo Prominence (image policy, unrelated to the website).
+
+Also verified live: `robots.txt` explicitly allows AdsBot-Google and AdsBot-Google-Mobile; every current ad final URL returns 200 to a Googlebot smartphone user agent.
+
+## Site fixes (source + built output)
+
+- Hero video (service pages, city hubs, homepage): no `autoplay`, `preload="none"`; the clip is attached only after `load` (+600 ms desktop, +2.5 s phones), phones always get the 540p cut, and reduced-motion or data-saver / 2G-3G users keep the poster. New `/video/pools-hero-540.mp4` (1.8 MB). Mobile posters added (`pools-hero-poster-mobile.jpg`, `woodbury-hero-poster-mobile.jpg`) and all posters recompressed (366 KB to 181 KB etc.).
+- Hero slides (service pages, 22 generic city hubs): `background-image` divs replaced with a `<picture>` (800px file on phones, full size on desktop, `fetchpriority="high"`); slides 2+ have no `src` until 2.5 s after load; no rotation on slow connections.
+- `<link rel="preload" as="image">` with media queries for the hero poster or first slide on every hero page (Base.astro `preload` prop).
+- YouTube: every embed (service video sections, project pages, homepage, city hub features, offer LPs) is now a click-to-play facade (`YouTubeLite.astro`), saving ~900 KB of player JS per page load.
+- Third parties: Meta Pixel script download deferred 1.5 s after load (the `fbq()` queue is still defined immediately so form Lead events are not lost); CallRail swap.js loaded after `load` instead of render-blocking in `<head>`; Google Fonts stylesheet made non-blocking. gtag unchanged (needed for Ads conversions).
+- `_headers`: `Cache-Control` for `/_astro/*` (1 year, immutable), `/img/*` and `/video/*` (30 days).
+- Static landing pages (`/free-design-consultation/`, `/woodbury-fall-patio-offer/`, `/lake-elmo-fall-patio-offer/`): same deferrals, hero preload plus a 900px mobile hero via media query, gallery images get `srcset` with new `-800` variants, offer-page YouTube iframes replaced with the facade.
+
+Verified: 96 pages, 0 em dashes, 0 broken references (including data-src and srcset), JSON-LD valid, 0 raw YouTube iframes. Re-test on PageSpeed Insights after the push; targets are LCP under 2.5 s on phones and a mobile Performance score above 80 on the ad landing pages.
+
+Not changed: the Woodbury and Lake Elmo fall offer pages still say "ends October 31" (expired); they are noindex and not current ad destinations, but should be retired or re-dated.
+
 # Change log: The Crown Jewel scope correction (2026-11-02)
 
 Owner: Schifsky's scope on The Crown Jewel (Lake Elmo) was the landscape and outdoor living installation, the plantings and the artificial turf. The landscape design was by TVLS and the pool was built by another contractor. Remove the dollar value entirely.

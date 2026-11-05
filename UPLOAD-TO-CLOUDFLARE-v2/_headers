@@ -3,3 +3,14 @@
   X-Robots-Tag: noindex, nofollow
 /client-warranty
   X-Robots-Tag: noindex, nofollow
+
+# Long-lived caching for static assets. Hashed Astro bundles are immutable; photos and
+# video are versioned by filename and change rarely. HTML keeps Cloudflare's defaults.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+/img/*
+  Cache-Control: public, max-age=2592000
+/video/*
+  Cache-Control: public, max-age=2592000
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

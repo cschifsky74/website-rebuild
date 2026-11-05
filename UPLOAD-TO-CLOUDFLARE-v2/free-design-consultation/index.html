@@ -74,11 +74,18 @@
 </script>
 
 <!-- CallRail dynamic number insertion (call tracking) -->
-<script type="text/javascript" src="//cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js"></script>
+<script>
+  (function(){function l(){var s=document.createElement('script');s.async=true;s.src='https://cdn.callrail.com/companies/799104580/303e1444a30adab8176b/12/swap.js';document.head.appendChild(s);}
+    if(document.readyState==='complete')l();else window.addEventListener('load',l);})();
+</script>
 
 <!-- Meta Pixel (Fall 2026 Pixel) -->
 <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  // Meta Pixel: fbq() queue defined now; the 115 KB fbevents.js download is deferred until 1.5 s after load.
+  !function(f,b,e,v,n){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+    function l(){var t=b.createElement(e);t.async=!0;t.src=v;var s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+    if(b.readyState==='complete')setTimeout(l,1500);else f.addEventListener('load',function(){setTimeout(l,1500)});
+  }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '1096242636418717');
   fbq('track', 'PageView');
 </script>
@@ -163,7 +170,11 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+<link rel="preload" as="image" href="/img/lp/lp-hero-900.jpg" media="(max-width: 760px)" fetchpriority="high" />
+<link rel="preload" as="image" href="/img/lp/lp-hero.jpg" media="(min-width: 761px)" fetchpriority="high" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+<noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" /></noscript></noscript>
 
 <style>
   :root{
@@ -588,6 +599,8 @@
     .btn,.btn-lg{font-size:15px;padding:15px 16px}
     .mobilebar .btn{font-size:14px}
   }
+
+@media (max-width:760px){ :root{--hero-img:url('/img/lp/lp-hero-900.jpg')} }
 </style>
 
 <style>
@@ -888,7 +901,7 @@
 <section class="why-section">
   <div class="wrap split">
     <div class="split-img reveal">
-      <img src="/img/lp/lp-03.jpg" alt="Schifsky-built backyard pool with louvered pergola, outdoor kitchen, and fire table in Woodbury, MN" width="1400" height="934" />
+      <img src="/img/lp/lp-03.jpg" srcset="/img/lp/lp-03-800.jpg 800w, /img/lp/lp-03.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Schifsky-built backyard pool with louvered pergola, outdoor kitchen, and fire table in Woodbury, MN" width="1400" height="934" />
       <div class="badge-float"><b>One Team</b><span>Design → Build → Warranty</span></div>
     </div>
     <div class="reveal">
@@ -976,27 +989,27 @@
     </div>
     <div class="gallery">
       <div class="tile reveal">
-        <img src="/img/lp/lp-04.jpg" alt="Aerial view of a Hamptons-style pool, natural stone and gardens in Maple Plain, MN" width="1024" height="767" loading="lazy" />
+        <img src="/img/lp/lp-04.jpg" srcset="/img/lp/lp-04-800.jpg 800w, /img/lp/lp-04.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Aerial view of a Hamptons-style pool, natural stone and gardens in Maple Plain, MN" width="1024" height="767" loading="lazy" />
         <div class="cap">Pool &amp; landscape &middot; Maple Plain &middot; $298K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/lp-05.jpg" alt="Outdoor living, plantings and turf installed around a pool at a Lake Elmo, MN estate" width="1400" height="933" loading="lazy" />
+        <img src="/img/lp/lp-05.jpg" srcset="/img/lp/lp-05-800.jpg 800w, /img/lp/lp-05.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Outdoor living, plantings and turf installed around a pool at a Lake Elmo, MN estate" width="1400" height="933" loading="lazy" />
         <div class="cap">Outdoor living &amp; plantings &middot; Lake Elmo</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/lp-06.jpg" alt="Backyard pool and paver patio on a Prestwick golf course home in Woodbury, MN" width="1400" height="935" loading="lazy" />
+        <img src="/img/lp/lp-06.jpg" srcset="/img/lp/lp-06-800.jpg 800w, /img/lp/lp-06.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Backyard pool and paver patio on a Prestwick golf course home in Woodbury, MN" width="1400" height="935" loading="lazy" />
         <div class="cap">Pool, patio &amp; full landscape &middot; Woodbury &middot; $430K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/lp-07.jpg" alt="Terraced natural-stone retaining walls on a White Bear Lake lakefront lot" width="1400" height="933" loading="lazy" />
+        <img src="/img/lp/lp-07.jpg" srcset="/img/lp/lp-07-800.jpg 800w, /img/lp/lp-07.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Terraced natural-stone retaining walls on a White Bear Lake lakefront lot" width="1400" height="933" loading="lazy" />
         <div class="cap">Terraced lakefront &middot; White Bear Lake &middot; $400K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/lp-08.jpg" alt="Modern fire feature, water and stone in a Woodbury, MN backyard" width="1400" height="1314" loading="lazy" />
+        <img src="/img/lp/lp-08.jpg" srcset="/img/lp/lp-08-800.jpg 800w, /img/lp/lp-08.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Modern fire feature, water and stone in a Woodbury, MN backyard" width="1400" height="1314" loading="lazy" />
         <div class="cap">Fire, water &amp; stone &middot; Woodbury &middot; $235K</div>
       </div>
       <div class="tile reveal">
-        <img src="/img/lp/lp-09.jpg" alt="Custom pool and full landscape near White Bear Lake in Mahtomedi, MN" width="1400" height="1049" loading="lazy" />
+        <img src="/img/lp/lp-09.jpg" srcset="/img/lp/lp-09-800.jpg 800w, /img/lp/lp-09.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Custom pool and full landscape near White Bear Lake in Mahtomedi, MN" width="1400" height="1049" loading="lazy" />
         <div class="cap">Custom pool &amp; landscape &middot; Mahtomedi &middot; $260K</div>
       </div>
     </div>
@@ -1144,7 +1157,7 @@
       </div>
     </div>
     <div class="split-img reveal">
-      <img src="/img/lp/lp-10.jpg" alt="Aerial view of a Schifsky-built pool and patio at sunset" width="1100" height="824" loading="lazy" />
+      <img src="/img/lp/lp-10.jpg" srcset="/img/lp/lp-10-800.jpg 800w, /img/lp/lp-10.jpg 1400w" sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 33vw" alt="Aerial view of a Schifsky-built pool and patio at sunset" width="1100" height="824" loading="lazy" />
     </div>
   </div>
 </section>
