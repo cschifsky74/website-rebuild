@@ -97,6 +97,10 @@ Findings from the audit prompt, re-checked against source:
 | R-B02 | Woodbury hub: video hero, photo mosaic, 3 project features with video, 5 service sections, investment, local FAQ | done 2026-10-22 (CityHub.astro, hubs/woodbury.js) |
 | R-B03 | All 23 city pages converted to the hub component (generic builder); Lake Elmo and Stillwater hand-written sections still to come | done 2026-10-22 (generic), hand-written next |
 | R-C01 | Six specialty pocket pages (porcelain first, then driveways, lake, new construction, pool landscaping, timber walls) with gallery, lightbox, parent breadcrumb, specialties cross-links, services hub grid | done 2026-10-28, see change-log and search-pockets-2026-10-28.md |
+| R-D01 | SERP deep dive for Lake Elmo, Woodbury, Chaska, Victoria, Minnetrista (Phase A to F of the brief) | done 2026-11-05, docs/seo/serp/ |
+| R-D02 | Deep-dive items 3, 4, 5, 7: city-named hub service headings with nearest-project sentences (all 24 hubs), service pages linking to hub anchors with southwest-metro mentions, /pool-landscaping-woodbury-mn/, Minnetrista hub | done 2026-11-05 |
+| R-D03 | Deep-dive items 6 and 10: guide size tables and PAA FAQs; small relevance edits | pending |
+| R-D04 | Shakopee location page (item 2) | blocked: owner must confirm what is at 2419 Eagle Creek Blvd |
 | R-C02 | Validate pocket phrases in Search Console and Keyword Planner after 4 to 6 weeks of indexing; add proof photos per owner-input-needed | pending, owner |
 
 ## Phase 7: measurement

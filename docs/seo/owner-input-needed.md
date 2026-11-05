@@ -42,6 +42,8 @@ For each project, anything you can confirm from job records. Leave blank where u
 | /lake-home-landscaping-minnesota/ | the R. Doherty western Wisconsin lake project as a case study (photos, lake name, scope, price); any White Bear Lake, Mahtomedi or St. Croix projects not yet on the site |
 | /new-construction-landscaping-minnesota/ | builder partners we can name; confirm The Crown Jewel and Life on the Prairie were landscaped on new builds (stories say so); typical builder allowance amounts seen |
 | /pool-landscaping-minnesota/ | pools finished around other installers (not Blaiser) with photos, so the "we work with your pool builder" line has a case study; who installed the Backyard Barn pool and deck |
+| /pool-landscaping-woodbury-mn/ | confirm the Fairway and Woodbury Poolside pools were Blaiser installs (page says all three were, per your note that Blaiser installs all the pools); any fourth Woodbury pool backyard with photos; a Blaiser Pools link back to this page from blaiserpools.com would help both sites |
+| /landscape-design-build-services-in-minnetrista-mn/ | any project west of Lake Minnetonka (Minnetrista, Mound, Orono, St. Bonifacius) with photos; until then the hub shows Maple Plain and Shakopee as the closest work |
 | /timber-retaining-wall-replacement-minnesota/ | before/after photos of any timber or railroad-tie wall we replaced (the Doherty job especially); typical demolition and haul-off cost so it can be quoted |
 
 ## C. City pages (affects 23 /landscape-design-build-services-in-... pages)

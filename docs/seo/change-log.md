@@ -1,3 +1,46 @@
+# Change log: deep-dive action plan items 3, 4, 5 and 7 (2026-11-05)
+
+Owner decisions that unlocked this batch: Minnetrista hub wanted ("good work is there"); Blaiser Pools installs all of our pools and is a sister company under shared ownership, so pool advertising on our site is fine.
+
+## Item 3: every city hub now names the city in its service headings and opens each section with a real nearby project
+
+- `src/data/hubs/generic.js`: `buildHub` maps the five shared service sections per city. Headings are now "Paver Patios and Hardscape in Chaska" style (was location-neutral). Each section opens with a computed sentence naming the nearest completed project in that category: a project in the city itself when one exists ("Our closest patio project is in Lake Elmo itself: The 45th Patio & Showroom"), otherwise the closest by straight-line distance with its real city and miles ("Our closest completed pool backyard to Victoria is The Home Resort in Shakopee, MN, about 8 miles away"). Category map: design = any project, patios, pools, outdoor-living = outdoor or pergolas, walls = retaining. When the same project would be named twice, the next-closest within 10 miles is used for variety. Nothing is presented as local unless the project is in that city.
+- `src/data/hubs/woodbury.js` (hand-built hub): the five headings gained "in Woodbury"; the pools section links the new Woodbury pool backyard page.
+- Applies to all 24 hubs (23 existing plus Minnetrista).
+
+## Item 4: service pages now point at the matching section of each city hub and name the southwest metro
+
+- `src/pages/[slug].astro`: the "Where we build" card on service pages links to `/{city}/#{hubAnchor}` with the text "{Service} in {City}" (for example "Paver patios in Woodbury" to `/landscape-design-build-services-in-woodbury-mn/#patios`); heading region is per page (`whereRegion`); a new optional `where` paragraph renders after the body (and after the pool models on the pools page). 104 anchor links verified against the target ids.
+- `src/data/servicePages.js`: each of the eight main service pages gained `hubAnchor`, `hubLabel`, `whereRegion` and a `where` paragraph naming Lake Elmo, Woodbury, Stillwater, White Bear Lake, Mahtomedi and Hugo in the east metro and Chaska, Victoria, Chanhassen and Minnetrista in the southwest, with inline links to the five deep-dive cities' hub sections; Shakopee and Maple Plain are cited as the closest built examples, never as a base. `priorityCities` on all eight pages gained Chaska and Victoria (design and pergola also Minnetrista). Drainage title is now "Landscape Drainage Contractor in Lake Elmo & the Twin Cities | Schifsky".
+- `src/data/pocketPages.js` (lake home page): "Which lakes" FAQ adds the west end of Lake Minnetonka (Minnetrista, Orono) and no longer says "also work from Shakopee"; Minnetrista added to its city list.
+- `src/pages/showroom.astro`: one sentence linking `/paver-patios/` and `/paver-patio-cost-in-lake-elmo-mn/` (the showroom page was ranking for "paver patio Lake Elmo").
+- `src/content/blog/concrete-vs-paver-patio-in-minnesota.md`: one paragraph naming Lake Elmo, Woodbury, Chaska, Victoria and the Lake Minnetonka area (the guide ranks in Chaska and Victoria).
+
+## Item 5: new page /pool-landscaping-woodbury-mn/
+
+- `src/data/pocketPages.js`: "Pool Backyards in Woodbury, MN", child of `/pool-landscaping-minnesota/` (breadcrumb Home > Services > Pool Landscaping > Woodbury Pool Backyards). Built only on the three published Woodbury pool projects with their published figures: Life on the Fairway ($430,000 complete), Woodbury Poolside ($425,000 complete), Poolside on the Hill ($120,000 landscape around a separately installed pool). States on every one that the pool was installed by Blaiser Pools, the sister company under shared ownership, and that Schifsky designed and built everything around it. Eight-photo gallery with lightbox, features, why, five-step process (including the Blaiser pool-set step), the three projects as the options grid, cost section using only approved ranges ($200K to $430K+ complete; pool about $130K; landscape $75K to $150K; plunge $85K to $130K), seven FAQs (who installs what, cost, fence and permits, HOA review, same-season finish, phases, distance), reviews from Mallory Shuck, Peg Lundquist and Erin Bukacek, city links to Woodbury, Lake Elmo, Stillwater, Afton, Hudson at `#pools`. No neighborhood other than Prestwick is claimed.
+- Linked from: pool landscaping page specialties (new `LINK.woodburyPools`), the pools service page `where` paragraph, the Woodbury hub pools section, and the /services/ Specialties grid and ItemList (`site.js` `specialties`). In the sitemap automatically.
+
+## Item 7: new hub /landscape-design-build-services-in-minnetrista-mn/
+
+- `src/data/cities.js`: Minnetrista record (coords 44.9436, -93.7142; hero photo Hamptons in the Heartland; title "Landscapers in Minnetrista, MN | Design & Build | Schifsky"; lede, two body paragraphs, serve FAQ naming Mound and Maple Plain, shared cost and design FAQs; no local projects, so the hub shows the nearest completed projects: Hamptons in the Heartland, Maple Plain, about 5 miles; The Sustainable Modern and The Home Resort, Shakopee, about 14 miles).
+- `src/data/cityLocal.js`: two "Working in Minnetrista" paragraphs (west end of Lake Minnetonka, Halsted and Jennings bays, Lake Minnetonka Regional Park, Gale Woods Farm, County Road 110 and Highway 7, Mound and St. Bonifacius neighbors; shoreland rules and clay soils, linking the lake home page). The office-distance FAQ computes to about 41 miles; the hub never implies a base nearer than Lake Elmo.
+- Picked up automatically by /services/#areas, the sitemap and the nearby-cities module of the west-metro hubs.
+
+## Verification (2026-11-05 build)
+
+- 98 Astro pages built (101 index.html including the three static LPs); 0 em dashes; 0 broken internal references (href, src, srcset, data-src, data-full); all JSON-LD parses; 104 hub anchor links resolve to existing ids; both new URLs in sitemap.xml.
+- Staged to `UPLOAD-TO-CLOUDFLARE-v2/` (not pushed; owner pushes in GitHub Desktop).
+
+## Not done in this batch (from the same action plan)
+
+- Item 1 (Lake Elmo GBP category and reviews) and item 2 (Shakopee location page) are owner-side; the Shakopee page still waits on what is physically at 2419 Eagle Creek Blvd.
+- Item 6 (guide size tables and PAA FAQs) and item 10 (small relevance edits) remain pending.
+
+# Change log: SERP deep dive, five locations (2026-11-05)
+
+Research only; no site changes in this entry. Findings in `docs/seo/serp/` (method and cross-location file plus one file per location: Lake Elmo, Woodbury, Chaska, Victoria, Minnetrista) and a consolidated Word document on the owner's Desktop. 61 live Google queries captured in two samples (a non-signed-in baseline and the owner's signed-in Chrome), 12 competitor pages torn down, gap verdicts and page-level recommendations per location. Headline: cost intent is won statewide and per city; hire intent is won only by the city hubs and only for "landscapers / design build" phrasing; service-plus-city queries go to competitors' thin city-service pages; the local pack is reachable in Woodbury (a Lake Elmo competitor is in it) and in Chaska and Victoria through the Shakopee profile, which has 13 reviews and shows only as a paid entry today. Recommended build order is in `00-method-and-cross-location-findings.md`.
+
 # Change log: Google Ads "website unavailable" diagnosis and mobile speed fixes (2026-11-05)
 
 ## What Google Ads actually shows (checked in the account)
